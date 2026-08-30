@@ -1,0 +1,99 @@
+---
+import Header from "../components/Header.astro";
+import Footer from "../components/Footer.astro";
+
+interface Props {
+  title: string;
+  description?: string;
+  canonical?: string;
+  ogType?: string;
+  jsonLd?: Record<string, unknown> | Record<string, unknown>[];
+  noindex?: boolean;
+}
+
+const {
+  title,
+  description = "Fast, accurate, and affordable bird DNA testing services backed by 15 years of molecular diagnostics expertise.",
+  canonical,
+  ogType = "website",
+  jsonLd,
+  noindex = false,
+} = Astro.props;
+
+const SITE = "https://aviantestpro.com";
+const fullTitle = title.includes("SENO") || title.includes("AviantestPro") ? title : `${title} — SENO INTERNATIONAL AVIAN GENETIC TEST`;
+const canonicalUrl = canonical ? (canonical.startsWith("http") ? canonical : SITE + canonical) : SITE;
+const jsonLdArray = jsonLd ? (Array.isArray(jsonLd) ? jsonLd : [jsonLd]) : [];
+const orgJsonLd = {
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  "@id": SITE + "/#organization",
+  "name": "SENO INTERNATIONAL AVIAN GENETIC TEST",
+  "legalName": "ZHANGJIAKOU SENO TESTING CENTER CO., LTD",
+  "url": SITE,
+  "logo": SITE + "/images/logo1.jpg",
+  "email": "info@senobiocorp.com",
+  "telephone": "+86-13323237275",
+  "duns": "84-655-4226",
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "Floor 3, Building 3, Hebei Guokong Beifang Guigu High-Tech New Town, No.28, Zhanqian E. Street, Qiaodong District",
+    "addressLocality": "Zhangjiakou",
+    "addressRegion": "Hebei",
+    "addressCountry": "CN"
+  },
+  "sameAs": [
+    "https://www.facebook.com/profile.php?id=100086183041562",
+    "https://www.instagram.com/senobiocorp/",
+    "https://x.com/martinw13461856",
+    "https://www.youtube.com/channel/UCZOyQrl2Io0NaJ-OXMCCNVA"
+  ]
+};
+const webSiteJsonLd = {
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  "@id": SITE + "/#website",
+  "url": SITE,
+  "name": "SENO INTERNATIONAL AVIAN GENETIC TEST",
+  "publisher": { "@id": SITE + "/#organization" }
+};
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>{fullTitle}</title>
+    <meta name="description" content={description} />
+    <link rel="canonical" href={canonicalUrl} />
+    {noindex && <meta name="robots" content="noindex" />}
+
+    <meta property="og:site_name" content="SENO INTERNATIONAL AVIAN GENETIC TEST" />
+    <meta property="og:title" content={fullTitle} />
+    <meta property="og:description" content={description} />
+    <meta property="og:type" content={ogType} />
+    <meta property="og:url" content={canonicalUrl} />
+    <meta name="twitter:card" content="summary_large_image" />
+
+    <link rel="icon" type="image/jpeg" href="/images/logo1.jpg" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;600;700&family=Open+Sans:wght@400;500;600;700&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="/styles/global.css" />
+
+    {jsonLdArray.map((block) => (
+      <script type="application/ld+json" set:html={JSON.stringify(block)} />
+    ))}
+    <script type="application/ld+json" set:html={JSON.stringify(orgJsonLd)} />
+    <script type="application/ld+json" set:html={JSON.stringify(webSiteJsonLd)} />
+  </head>
+  <body>
+    <Header />
+    <main>
+      <slot />
+    </main>
+    <Footer />
+  </body>
+</html>
