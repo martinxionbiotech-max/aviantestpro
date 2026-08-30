@@ -27,7 +27,31 @@
 }
 
 * { box-sizing: border-box; }
-html { scroll-behavior: smooth; }
+
+@media (prefers-reduced-motion: no-preference) {
+  html { scroll-behavior: smooth; }
+}
+
+:focus-visible {
+  outline: 3px solid var(--primary);
+  outline-offset: 2px;
+}
+
+.skip-link {
+  position: absolute;
+  left: -9999px;
+  top: 0;
+  background: var(--primary);
+  color: #fff;
+  padding: 0.6rem 1rem;
+  z-index: 200;
+  border-radius: 0 0 6px 0;
+  text-decoration: none;
+}
+.skip-link:focus {
+  left: 0;
+  color: #fff;
+}
 
 body {
   margin: 0;
@@ -70,7 +94,7 @@ img { max-width: 100%; height: auto; border-radius: var(--radius); }
   z-index: 100;
   box-shadow: var(--shadow-sm);
 }
-.site-header .container {
+.site-header .container.header-inner {
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -85,7 +109,8 @@ img { max-width: 100%; height: auto; border-radius: var(--radius); }
   gap: 0.6rem;
   font-family: var(--font-heading);
   font-weight: 700;
-  font-size: 1.15rem;
+  font-size: 1.05rem;
+  line-height: 1.2;
   color: var(--ink);
 }
 .brand:hover { color: var(--primary); text-decoration: none; }
@@ -259,8 +284,20 @@ table.data-table { width: 100%; border-collapse: collapse; font-size: 0.94rem; }
   margin-top: 4rem;
   font-size: 0.9rem;
 }
-.site-footer .container { padding: 3rem 1.25rem; display: grid; gap: 2rem; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); }
-.site-footer h4 { color: #fff; font-family: var(--font-heading); font-size: 1rem; margin-bottom: 0.75rem; }
+.site-footer .container.footer-inner {
+  padding: 3rem 1.25rem;
+  display: grid;
+  gap: 2rem;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+}
+.site-footer .footer-col address { font-style: normal; }
+.site-footer .footer-col address p { margin: 0 0 0.5rem; }
+.site-footer h2 {
+  color: #fff;
+  font-family: var(--font-heading);
+  font-size: 1rem;
+  margin-bottom: 0.75rem;
+}
 .site-footer a { color: #cbd5e1; display: block; padding: 0.25rem 0; }
 .site-footer a:hover { color: #fff; }
 .footer-bottom {

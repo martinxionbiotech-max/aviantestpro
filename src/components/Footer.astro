@@ -1,17 +1,21 @@
 ---
+const year = new Date().getFullYear();
 ---
+
 <footer class="site-footer">
-  <div class="footer-inner">
+  <div class="container footer-inner">
     <div class="footer-col">
-      <h4>Company</h4>
-      <p>ZHANGJIAKOU SENO TESTING CENTER CO., LTD</p>
-      <p>Phone: 0086 13323237275</p>
-      <p>Email: info@senobiocorp.com</p>
-      <p>Address: Floor 3, Building 3, Hebei Guokong Beifang Guigu High-Tech New Town, No.28, Zhanqian E. Street, Qiaodong District, Zhangjiakou, Hebei, China</p>
-      <p>D-U-N-S® Number: 84-655-4226</p>
+      <h2>Company</h2>
+      <address>
+        <p><strong>ZHANGJIAKOU SENO TESTING CENTER CO., LTD</strong></p>
+        <p>Phone: <a href="tel:+8613323237275">0086 13323237275</a></p>
+        <p>Email: <a href="mailto:info@senobiocorp.com">info@senobiocorp.com</a></p>
+        <p>Floor 3, Building 3, Hebei Guokong Beifang Guigu High-Tech New Town, No.28, Zhanqian E. Street, Qiaodong District, Zhangjiakou, Hebei, China</p>
+        <p>D-U-N-S&reg; Number: 84-655-4226</p>
+      </address>
     </div>
     <div class="footer-col">
-      <h4>Quick Links</h4>
+      <h2>Quick Links</h2>
       <nav aria-label="Footer navigation">
         <a href="/">Home</a>
         <a href="/html-sitemap/">Sitemap</a>
@@ -23,14 +27,14 @@
       </nav>
     </div>
     <div class="footer-col">
-      <h4>Knowledge Centers</h4>
+      <h2>Knowledge Centers</h2>
       <nav aria-label="Knowledge center links">
         <a href="https://data.aviantestpro.com/" target="_blank" rel="noopener">Tech Data Center</a>
         <a href="https://research.aviantestpro.com/" target="_blank" rel="noopener">SENO Research Center</a>
       </nav>
     </div>
     <div class="footer-col">
-      <h4>Follow Us</h4>
+      <h2>Follow Us</h2>
       <nav aria-label="Social links">
         <a href="https://www.facebook.com/profile.php?id=100086183041562" target="_blank" rel="noopener">Facebook</a>
         <a href="https://www.instagram.com/senobiocorp/" target="_blank" rel="noopener">Instagram</a>
@@ -40,6 +44,6 @@
     </div>
   </div>
   <div class="footer-bottom">
-    <p>&copy; 2026 ZHANGJIAKOU SENO TESTING CENTER CO., LTD. All rights reserved.</p>
+    <p>&copy; {year} ZHANGJIAKOU SENO TESTING CENTER CO., LTD. All rights reserved.</p>
   </div>
 </footer>
