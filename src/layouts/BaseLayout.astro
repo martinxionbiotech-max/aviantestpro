@@ -14,6 +14,9 @@ interface Props {
   datePublished?: string;
   dateModified?: string;
   noindex?: boolean;
+  lang?: string;
+  dir?: string;
+  hreflang?: string;
 }
 
 const {
@@ -27,6 +30,9 @@ const {
   datePublished,
   dateModified,
   noindex = false,
+  lang = "en",
+  dir = "ltr",
+  hreflang,
 } = Astro.props;
 
 const SITE = "https://aviantestpro.com";
@@ -144,13 +150,14 @@ const breadcrumbJsonLd = {
 ---
 
 <!doctype html>
-<html lang="en">
+<html lang={lang} dir={dir}>
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>{fullTitle}</title>
     <meta name="description" content={description} />
     <link rel="canonical" href={canonicalUrl} />
+    {hreflang && <Fragment set:html={hreflang} />}
     <meta name="robots" content={noindex ? "noindex" : "max-image-preview:large"} />
     {author && <meta name="author" content={author} />}
 

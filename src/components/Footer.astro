@@ -1,9 +1,49 @@
 ---
 const year = new Date().getFullYear();
+const currentLang = Astro.url.pathname.split("/")[1];
+const LANG_CODES = ["ar", "ja", "ko", "es", "fr", "de"];
+const isLangPage = LANG_CODES.includes(currentLang);
+const prefix = isLangPage ? `/${currentLang}` : "";
+
+const languages = [
+  { code: "en", name: "English", flag: "🇬🇧" },
+  { code: "ar", name: "العربية", flag: "🇸🇦" },
+  { code: "ja", name: "日本語", flag: "🇯🇵" },
+  { code: "ko", name: "한국어", flag: "🇰🇷" },
+  { code: "es", name: "Español", flag: "🇪🇸" },
+  { code: "fr", name: "Français", flag: "🇫🇷" },
+  { code: "de", name: "Deutsch", flag: "🇩🇪" },
+];
+
+// 当前页去掉语言前缀的路径
+const pathWithoutLang = isLangPage
+  ? Astro.url.pathname.replace(/^\/[a-z]{2}\//, "/") || "/"
+  : Astro.url.pathname;
+
+function langPath(code: string) {
+  if (code === "en") return pathWithoutLang;
+  return `/${code}${pathWithoutLang === "/" ? "/" : pathWithoutLang}`;
+}
 ---
 
 <footer class="site-footer">
   <div class="container footer-inner">
+    <div class="footer-col">
+      <h2>Language</h2>
+      <nav aria-label="Language switcher">
+        {
+          languages.map((l) => (
+            <a
+              href={langPath(l.code)}
+              lang={l.code}
+              class={l.code === (isLangPage ? currentLang : "en") ? "lang-active" : undefined}
+            >
+              {l.flag} {l.name}
+            </a>
+          ))
+        }
+      </nav>
+    </div>
     <div class="footer-col">
       <h2>Company</h2>
       <address>
@@ -17,13 +57,13 @@ const year = new Date().getFullYear();
     <div class="footer-col">
       <h2>Quick Links</h2>
       <nav aria-label="Footer navigation">
-        <a href="/">Home</a>
-        <a href="/html-sitemap/">Sitemap</a>
-        <a href="/disclaimer/">Disclaimer</a>
-        <a href="/privacy-policy/">Privacy Policy</a>
-        <a href="/terms-and-conditions/">Terms and Conditions</a>
-        <a href="/scientific-regulatory-compliance-statement/">Scientific, Regulatory &amp; Compliance Statement</a>
-        <a href="/sample-shipping/">Sample Shipping</a>
+        <a href={`${prefix}/`}>Home</a>
+        <a href={`${prefix}/html-sitemap/`}>Sitemap</a>
+        <a href={`${prefix}/disclaimer/`}>Disclaimer</a>
+        <a href={`${prefix}/privacy-policy/`}>Privacy Policy</a>
+        <a href={`${prefix}/terms-and-conditions/`}>Terms and Conditions</a>
+        <a href={`${prefix}/scientific-regulatory-compliance-statement/`}>Scientific, Regulatory &amp; Compliance Statement</a>
+        <a href={`${prefix}/sample-shipping/`}>Sample Shipping</a>
       </nav>
     </div>
     <div class="footer-col">
