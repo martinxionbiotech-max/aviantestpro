@@ -14,6 +14,8 @@ const isActive = (href: string) =>
 // 各语言导航菜单标签
 const MENU_LABELS: Record<string, Record<string, string>> = {
   en: {
+    "services": "Services",
+    "business": "Business",
     "about-us": "About",
     "racing-pigeon-performance-dna-test": "Racing Pigeon Performance DNA Test",
     "avian-virus-rt-pcr-test": "Avian Virus qPCR Test",
@@ -27,6 +29,8 @@ const MENU_LABELS: Record<string, Record<string, string>> = {
     "contact": "Contact",
   },
   ar: {
+    "services": "الخدمات",
+    "business": "الأعمال",
     "about-us": "من نحن",
     "racing-pigeon-performance-dna-test": "اختبار DNA لأداء الحمام الزاجل",
     "avian-virus-rt-pcr-test": "اختبار qPCR للفيروسات الطيرية",
@@ -40,6 +44,8 @@ const MENU_LABELS: Record<string, Record<string, string>> = {
     "contact": "اتصل بنا",
   },
   ja: {
+    "services": "サービス",
+    "business": "ビジネス",
     "about-us": "会社概要",
     "racing-pigeon-performance-dna-test": "レーシング鳩パフォーマンスDNA検査",
     "avian-virus-rt-pcr-test": "鳥類ウイルスqPCR検査",
@@ -53,6 +59,8 @@ const MENU_LABELS: Record<string, Record<string, string>> = {
     "contact": "お問い合わせ",
   },
   ko: {
+    "services": "서비스",
+    "business": "비즈니스",
     "about-us": "회사 소개",
     "racing-pigeon-performance-dna-test": "경주용 비둘기 성능 DNA 검사",
     "avian-virus-rt-pcr-test": "조류 바이러스 qPCR 검사",
@@ -66,6 +74,8 @@ const MENU_LABELS: Record<string, Record<string, string>> = {
     "contact": "문의",
   },
   es: {
+    "services": "Servicios",
+    "business": "Negocios",
     "about-us": "Acerca de",
     "racing-pigeon-performance-dna-test": "Prueba de ADN de Rendimiento en Palomas de Carrera",
     "avian-virus-rt-pcr-test": "Prueba qPCR de Virus Aviar",
@@ -79,6 +89,8 @@ const MENU_LABELS: Record<string, Record<string, string>> = {
     "contact": "Contacto",
   },
   fr: {
+    "services": "Services",
+    "business": "Affaires",
     "about-us": "À propos",
     "racing-pigeon-performance-dna-test": "Test ADN de performance pour pigeons voyageurs",
     "avian-virus-rt-pcr-test": "Test qPCR de virus aviaire",
@@ -92,6 +104,8 @@ const MENU_LABELS: Record<string, Record<string, string>> = {
     "contact": "Contact",
   },
   de: {
+    "services": "Dienstleistungen",
+    "business": "Geschäft",
     "about-us": "Über uns",
     "racing-pigeon-performance-dna-test": "DNA-Leistungstest für Rennbrieftauben",
     "avian-virus-rt-pcr-test": "Vogelvirus-qPCR-Test",
@@ -109,13 +123,25 @@ const labels = MENU_LABELS[isLangPage ? currentLang : "en"] ?? MENU_LABELS.en;
 
 const navItems = [
   { href: "/about-us/", key: "about-us" },
-  { href: "/racing-pigeon-performance-dna-test/", key: "racing-pigeon-performance-dna-test" },
-  { href: "/avian-virus-rt-pcr-test/", key: "avian-virus-rt-pcr-test" },
-  { href: "/avian-gender-dna-test/", key: "avian-gender-dna-test" },
-  { href: "/pigeon-dna-fingerprinting/", key: "pigeon-dna-fingerprinting" },
-  { href: "/build-avian-dna-test-lab/", key: "build-avian-dna-test-lab" },
-  { href: "/become-an-agent/", key: "become-an-agent" },
-  { href: "/avian-dna-test-kits/", key: "avian-dna-test-kits" },
+  {
+    key: "services",
+    label: "Services",
+    children: [
+      "racing-pigeon-performance-dna-test",
+      "avian-virus-rt-pcr-test",
+      "avian-gender-dna-test",
+      "pigeon-dna-fingerprinting",
+      "avian-dna-test-kits",
+    ],
+  },
+  {
+    key: "business",
+    label: "Business",
+    children: [
+      "build-avian-dna-test-lab",
+      "become-an-agent",
+    ],
+  },
   { href: "/articles/", key: "articles" },
   { href: "/faq/", key: "faq" },
   { href: "/contact/", key: "contact" },
@@ -251,6 +277,27 @@ const currentLangLabel = (isLangPage ? LANG_OPTIONS.find((l) => l.code === curre
     <nav class="site-nav" aria-label="Main navigation">
       {
         navItems.map((item) => {
+          if (item.children) {
+            return (
+              <details class="nav-drop">
+                <summary>{labels[item.key] ?? item.label}</summary>
+                <div class="nav-drop-menu">
+                  {
+                    item.children.map((ck) => {
+                      const localized = isLangPage ? (LANG_SLUGS[currentLang]?.[ck] ?? ck) : ck;
+                      const href = isLangPage ? `/${currentLang}/${localized}/` : `/${localized}/`;
+                      const plainPath = `/${localized}/`;
+                      return (
+                        <a href={href} aria-current={isActive(plainPath) ? "page" : undefined}>
+                          {labels[ck]}
+                        </a>
+                      );
+                    })
+                  }
+                </div>
+              </details>
+            );
+          }
           const localized = isLangPage ? (LANG_SLUGS[currentLang]?.[item.key] ?? item.key) : item.key;
           const href = isLangPage ? `/${currentLang}/${localized}/` : `/${localized}/`;
           const plainPath = `/${localized}/`;

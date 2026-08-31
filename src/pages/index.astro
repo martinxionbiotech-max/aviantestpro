@@ -13,7 +13,8 @@ const hreflang = "<link rel=\"alternate\" hreflang=\"en-US\" href=\"https://avia
 ---
 <BaseLayout title={page.title} hreflang={hreflang} description={page.description} canonical={page.canonical} ogType="article">
   <article class="page-content">
-    <section class="hero">
+    <section class="hero hero-bg">
+      <div class="hero-overlay"></div>
       <div class="container">
         <h1>Global Leader in Avian Genetic &amp; DNA Testing</h1>
         <p class="lead">Fast, accurate, and affordable bird DNA testing services backed by <a href="/about-us/">15 years of molecular diagnostics expertise</a>.</p>
@@ -74,6 +75,18 @@ const hreflang = "<link rel=\"alternate\" hreflang=\"en-US\" href=\"https://avia
 
     <section class="section">
       <div class="container">
+        <h2 class="section-title">Inside Our Laboratory</h2>
+        <p class="lead">Take a look inside our molecular diagnostics facility — where every sample is processed with validated protocols and quality control.</p>
+        <div class="lab-gallery">
+          <figure><img src="/images/Zhangjiakou-SENO-Testing-Center-Co.-Ltd-Bird-DNA-Testing.png" alt="Zhangjiakou SENO Testing Center laboratory" loading="lazy" /><figcaption>Our laboratory</figcaption></figure>
+          <figure><img src="/images/Zhangjiakou-SENO-Testing-Center-Co.-Ltd-Bird-DNA-Testing-2.png" alt="Zhangjiakou SENO Testing Center equipment" loading="lazy" /><figcaption>Testing equipment</figcaption></figure>
+          <figure><img src="/images/Zhangjiakou-SENO-Testing-Center-Co.-Ltd-Bird-DNA-Testing-3.png" alt="Zhangjiakou SENO Testing Center workflow" loading="lazy" /><figcaption>Sample processing</figcaption></figure>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container">
         <h2 class="section-title">How Many Tests We Do</h2>
         <p>Based on statistics from our laboratory testing activities over the past several years, we have achieved:</p>
         <div class="stats">
@@ -88,14 +101,20 @@ const hreflang = "<link rel=\"alternate\" hreflang=\"en-US\" href=\"https://avia
     </section>
 
     <section class="section section-alt">
-      <div class="container">
-        <h2 class="section-title">Fast Turnaround &amp; Reliable Results</h2>
-        <ul>
-          <li>Up to <strong>99% accuracy</strong> (validated internally)</li>
-          <li>Most tests completed within <strong>1–2 working days</strong></li>
-          <li>~20% sample retesting for quality control</li>
-          <li>Stable international turnaround: <strong>~7–10 days total</strong></li>
-        </ul>
+      <div class="container split">
+        <div class="split-text">
+          <h2 class="section-title">Fast Turnaround &amp; Reliable Results</h2>
+          <ul>
+            <li>Up to <strong>99% accuracy</strong> (validated internally)</li>
+            <li>Most tests completed within <strong>1–2 working days</strong></li>
+            <li>~20% sample retesting for quality control</li>
+            <li>Stable international turnaround: <strong>~7–10 days total</strong></li>
+          </ul>
+        </div>
+        <figure class="split-img">
+          <img src="/images/Racing-Pigeon-Performance-DNA-Testing.jpg" alt="Racing pigeon performance DNA testing results" loading="lazy" />
+          <figcaption>Racing pigeon performance DNA testing</figcaption>
+        </figure>
       </div>
     </section>
 

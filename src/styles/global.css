@@ -419,7 +419,15 @@ main#main {
   height: auto;
   border-radius: 15px;
 }
-.wp-block-cover__background { display: none; }
+.wp-block-cover__background {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  border-radius: 15px;
+  background-color: #000;
+}
+.wp-block-cover__background.has-background-dim-30 { opacity: 0.30; }
+.wp-block-cover__background.has-background-dim-40 { opacity: 0.40; }
 .wp-block-cover__inner-container {
   position: absolute;
   inset: 0;
@@ -702,4 +710,136 @@ p a, li a, .entry-content a { text-decoration: underline; }
 }
 @media (max-width: 480px) {
   .cert-gallery figure { flex: 1 1 100%; }
+}
+
+/* ============================================================
+   Nav dropdown menu (compress 11 items → grouped)
+   ============================================================ */
+.nav-drop { position: relative; }
+.nav-drop > summary {
+  list-style: none;
+  cursor: pointer;
+  color: var(--ink-soft);
+  font-weight: 500;
+  padding: .5rem .75rem;
+  border-radius: 6px;
+  display: flex;
+  align-items: center;
+  gap: .25rem;
+  white-space: nowrap;
+}
+.nav-drop > summary::-webkit-details-marker { display: none; }
+.nav-drop > summary::after {
+  content: "▾";
+  font-size: .7rem;
+  margin-left: .2rem;
+  opacity: .7;
+}
+.nav-drop > summary:hover { color: var(--primary); }
+.nav-drop[open] > summary { color: var(--primary); }
+
+.nav-drop-menu {
+  position: absolute;
+  top: calc(100% + 6px);
+  left: 0;
+  background: #fff;
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  box-shadow: var(--shadow-md);
+  min-width: 260px;
+  padding: .4rem;
+  z-index: 300;
+}
+.nav-drop-menu a {
+  display: block;
+  padding: .55rem .8rem;
+  border-radius: 6px;
+  color: var(--ink-soft);
+  font-size: .92rem;
+  line-height: 1.35;
+  white-space: normal;
+}
+.nav-drop-menu a:hover { background: var(--bg-alt); color: var(--primary); }
+
+/* 移动端：下拉展开为内联列表 */
+@media (max-width: 900px) {
+  .nav-drop { width: 100%; }
+  .nav-drop > summary { padding: .7rem .5rem; width: 100%; }
+  .nav-drop-menu {
+    position: static;
+    box-shadow: none;
+    border: none;
+    border-left: 2px solid var(--border);
+    margin: 0 0 0 .5rem;
+    padding: .2rem 0 .2rem .75rem;
+    min-width: 0;
+  }
+}
+
+/* ============================================================
+   Homepage hero bg + lab gallery + split layout
+   ============================================================ */
+.hero-bg {
+  position: relative;
+  background-image: url("/images/Zhangjiakou-Seno-Testing-Center-Global-Avians-Genetic-Test-Services.png");
+  background-size: cover;
+  background-position: center;
+}
+.hero-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(135deg, rgba(4,107,210,.92), rgba(17,24,39,.78));
+  z-index: 0;
+}
+.hero-bg .container { position: relative; z-index: 1; }
+.hero-bg h1, .hero-bg .lead, .hero-bg .hero-badge { color: #fff; }
+.hero-bg .lead { color: rgba(255,255,255,.92); }
+.hero-bg .lead a { color: #fff; border-bottom-color: rgba(255,255,255,.6); }
+
+.lab-gallery {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.5rem;
+  margin-top: 1.5rem;
+}
+.lab-gallery figure { margin: 0; }
+.lab-gallery img {
+  width: 100%;
+  aspect-ratio: 4 / 3;
+  object-fit: cover;
+  border-radius: var(--radius);
+  box-shadow: var(--shadow-sm);
+}
+.lab-gallery figcaption {
+  margin-top: .5rem;
+  font-size: .85rem;
+  color: var(--ink-soft);
+  text-align: center;
+}
+
+.split {
+  display: grid;
+  grid-template-columns: 1.1fr 1fr;
+  gap: 2.5rem;
+  align-items: center;
+}
+.split-img { margin: 0; }
+.split-img img {
+  width: 100%;
+  max-height: 420px;
+  object-fit: cover;
+  border-radius: var(--radius);
+  box-shadow: var(--shadow-md);
+}
+.split-img figcaption {
+  margin-top: .5rem;
+  font-size: .85rem;
+  color: var(--ink-soft);
+  text-align: center;
+}
+
+@media (max-width: 780px) {
+  .lab-gallery { grid-template-columns: 1fr; }
+  .split { grid-template-columns: 1fr; }
+  .split-img img { max-height: none; }
 }
