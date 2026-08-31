@@ -9,9 +9,175 @@ const page = {
   author: "",
   date: "",
 };
+const faqJsonLd = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "このDNA検査はレースの勝者を予測できますか？",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "いいえ。この遺伝子検査はレースの勝者を予測したり、チャンピオンシップのパフォーマンスを保証したりするものではありません。長距離適応、回復効率、エネルギー代謝に影響を与える可能性のある遺伝的持久力関連の生物学的傾向に関する参考情報を提供します。実際のレースパフォーマンスは、トレーニングの質、鳩舎管理、健康状態、栄養、天候、レース距離、ブリーダーの経験に大きく依存します。"
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "「高持久力関連プロファイル」とはどういう意味ですか？",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "高持久力関連プロファイルとは、鳩が持久力関連の生物学的機能に統計的に関連する遺伝子マーカーのより高い割合を持っていることを意味します。これらのマーカーは、有酸素代謝、エネルギー利用効率、回復能力、神経応答、または長距離適応に関連している可能性があります。ただし、遺伝的関連性は優れたレース結果を保証するものではありません。"
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "高持久力の結果は常に良いですか？",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "必ずしもそうではありません。より高い持久力関連の遺伝子プロファイルは、より長いレースに対するより強い生物学的適応を示唆する可能性がありますが、レースの成功は複数の相互作用する要因に依存します。中程度または低い持久力関連プロファイルを持つ一部の鳩は、優れたコンディショニング、トレーニングシステム、レース戦略、健康管理、環境適応を通じて優れた結果を達成する可能性があります。"
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "低い持久力プロファイルの鳩でも良いパフォーマンスを発揮できますか？",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "はい。持久力関連マーカーが少ない鳩でも、特にスプリントや中距離レースでは競争力のあるパフォーマンスを発揮できます。遺伝学はパフォーマンスポテンシャルの1つの要素に過ぎず、トレーニング強度、筋肉コンディショニング、呼吸効率、鳩舎環境、ブリーダーの管理も主要な役割を果たします。"
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "持久力遺伝子検査の目的は何ですか？",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "持久力遺伝子検査の目的は、ブリーダーに遺伝的生物学的傾向に関する科学的参考情報を提供することです。遺伝子分析は、繁殖選抜、ペアリング戦略の最適化、家系評価、長期的な繁殖管理の決定をサポートするのに役立つ可能性があります。"
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "遺伝学はレースパフォーマンスを完全に決定しますか？",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "いいえ。レースパフォーマンスは、遺伝学と環境条件の両方に影響される多因子形質と見なされています。トレーニングプログラム、栄養、疾病予防、ストレス管理、天候条件、輸送ストレス、レース経験はすべてレース結果に大きく影響します。"
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "類似した遺伝学を持つ2羽の鳩が異なるパフォーマンスを発揮することはありますか？",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "はい。非常に類似した遺伝子プロファイルを持つ鳩でも、コンディショニング、鳩舎環境、免疫状態、筋肉回復、トレーニング強度、ブリーダーの管理システムの違いにより、非常に異なるレースパフォーマンスを示す場合があります。"
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "レース鳩の持久力検査で一般的に分析される遺伝子は何ですか？",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "レース鳩の持久力遺伝子分析には、筋肉代謝、神経応答、概日リズム調節、回復効率、エネルギー利用経路に関連するマーカーが含まれる場合があります。一般的に研究される遺伝子にはLDHA、DRD4、CRY1が含まれますが、持久力パフォーマンスは複数の遺伝子と複雑な生物学的相互作用に影響されます。"
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "LDHA遺伝子とは何ですか？",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "LDHA遺伝子は乳酸代謝と筋肉のエネルギー変換に関連しています。レース鳩では、LDHA関連マーカーは、長時間の飛行活動中の持久力能力と筋肉エネルギー効率との潜在的な関係についてしばしば研究されています。"
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "DRD4遺伝子とは何ですか？",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "DRD4遺伝子はドーパミン受容体シグナル伝達と神経行動特性に関連しています。鳩や他の動物では、DRD4関連の遺伝的変異が行動、応答パターン、環境適応性との可能な関連について研究されています。"
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "CRY1遺伝子とは何ですか？",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "CRY1は生物時計の調節に関与する概日リズム関連遺伝子です。いくつかの研究は、概日リズムメカニズムが鳥類の方向認識行動、日周活動サイクル、長距離ナビゲーション関連の生物学的プロセスに影響を与える可能性があることを示唆しています。"
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "レース鳩の遺伝子検査は科学的に受け入れられていますか？",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "PCRベースの遺伝子分析は分子生物学および動物育種研究で広く使用されています。ただし、レース鳩のパフォーマンス遺伝学は、絶対的な予測ではなく統計的生物学的関連分析として解釈されるべきです。パフォーマンス形質は複雑であり、複数の遺伝的および環境的変数に影響されます。"
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "持久力関連の遺伝学は遺伝しますか？",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "はい。代謝、回復効率、筋肉生理学、神経応答に関連する多くの生物学的形質には遺伝的要素があります。遺伝子検査はブリーダーが繁殖系統および家系グループ内の遺伝的傾向を評価するのに役立つ可能性があります。"
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "遺伝子検査はレースパフォーマンス評価を置き換えることができますか？",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "いいえ。遺伝子検査は、レース記録、血統分析、身体観察、ブリーダーの経験の代わりではなく、補足的な繁殖参考ツールとして使用されるべきです。"
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "なぜ一部のチャンピオン鳩が「高持久力」プロファイルを示さないのですか？",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "レースの成功は、現在の遺伝子検査パネルに含まれるマーカーを超えた多くの生物学的および環境的要因に影響されます。鳩は、卓越したコンディショニング、トレーニングシステム、健康管理、方向認識能力、環境適応、または測定されていない遺伝的要因を通じて優れたパフォーマンスを達成する可能性があります。"
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "この検査は若い鳩に適していますか？",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "はい。遺伝子検査は、広範なレース履歴が利用可能になる前に遺伝的生物学的傾向を評価できるため、若い鳩に特に有用です。"
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "どのようなサンプルタイプが必要ですか？",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "新鮮に抜かれた羽毛の毛包がDNA抽出および分析に最も一般的に使用されます。ラボのプロトコルに応じて、血液および組織サンプルも受け入れられる場合があります。"
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "なぜ羽毛の毛包が重要なのですか？",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "毛包には分子分析に必要なゲノムDNAを含む生きた細胞が含まれています。完全な毛包のない羽毛は、信頼性の高い検査に十分なDNA量または品質を提供しない場合があります。"
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "汚染は遺伝子検査に影響を与える可能性がありますか？",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "はい。混合羽毛、外部DNA汚染、または不適切なサンプル取り扱いはPCR分析を妨げる可能性があります。分析の信頼性を維持するために、適切な採取と個別の包装が推奨されます。"
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "ブリーダーは検査結果をどのように使用すべきですか？",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "結果は科学的参考情報として解釈され、繁殖決定を行う際にレースパフォーマンス記録、血統分析、鳩舎観察、身体コンディショニング評価、長期的な繁殖経験と組み合わせるべきです。 科学的限界と重要な解釈上の注意 レース鳩パフォーマンスDNA検査は確率的な遺伝子分析ツールです。遺伝子マーカーに基づく生物学的参考情報を提供しますが、決定的なパフォーマンス結果を提供するものではありません。 単一の遺伝子がパフォーマンスを制御することはない 現在、単一の遺伝子が鳩のレースパフォーマンスを決定できるという科学的証拠はありません。 持久力、ナビゲーション能力、回復速度、レースの一貫性などの形質は、複雑な生物学的経路で協働する複数の遺伝子に影響されます。 したがって、パフォーマンス関連の形質は常に単一遺伝子の結果ではなく多因子の遺伝的影響として解釈されるべきです。 多遺伝子形質構造 レースパフォーマンスは 多遺伝子形質 であり、多くの遺伝子が同時に制御していることを意味します。 各遺伝子は小さな生物学的効果に寄与する可能性がありますが、個々の遺伝子が全体的なレース能力に単独で責任を負うことはありません。 最終的な表現型（実際のレースパフォーマンス）は、複数の遺伝的相互作用の複合効果から生じます。 環境依存性 遺伝的ポテンシャルは環境および管理要因に強く影響されます。 主要な外部要因には以下が含まれます： トレーニングシステムと強度 栄養と給餌戦略 健康状態と疾病曝露 鳩舎環境とストレスレベル 天候とレース条件 好ましい遺伝子マーカーを持つ鳩でも、適切なトレーニングと環境サポートがなければ過小パフォーマンスになる可能性があります。 最終的な解釈原則 DNA検査結果は 遺伝的傾向指標 として解釈されるべきであり、絶対的なパフォーマンス予測ではありません。 最も正確な繁殖決定は以下を組み合わせることで達成されます： 遺伝子検査結果 レースパフォーマンス履歴 身体観察 ブリーダーの経験 科学的参考文献と遺伝的証拠（DOIソース） 以下の査読付き研究は、鳥類遺伝学、SNP変異、動物のパフォーマンス関連遺伝子関連の科学的基盤をサポートしています。これらの参考文献は、パフォーマンスDNA検査における一般的な生物学および分子原理をサポートするために使用されます。 Vignal, A., Milan, D., SanCristobal, M., & Eggen, A. (2002). SNP markers and their application in animal genetics. Genetics Selection Evolution . DOI: 10.1186/1297-9686-34-3-275 Morin, P. A., Luikart, G., & Wayne, R. K. (2004). SNPs in ecology, evolution and conservation genetics. Trends in Ecology & Evolution . DOI: 10.1016/j.tree.2004.01.009 Brumfield, R. T., Beerli, P., Nickerson, D. A., & Edwards, S. V. (2003). The utility of SNPs in population genetics inference. Trends in Ecology & Evolution . DOI: 10.1016/S0169-5347(03)00018-1 Bustin, S. A., et al. (2009). MIQE guidelines for real-time PCR experiments. Clinical Chemistry . DOI: 10.1373/clinchem.2008.112797 Heid, C. A., Stevens, J., Livak, K. J., & Williams, P. M. (1996). Real-time quantitative PCR. Genome Research . DOI: 10.1101/gr.6.10.986 Ellegren, H. (2008). Comparative genomics and genetic markers in avian species. Nature Reviews Genetics . DOI: 10.1038/nrg2361"
+      }
+    }
+  ]
+};
 const hreflang = "<link rel=\"alternate\" hreflang=\"en-US\" href=\"https://aviantestpro.com/racing-pigeon-performance-dna-test/\" /> <link rel=\"alternate\" hreflang=\"en\" href=\"https://aviantestpro.com/racing-pigeon-performance-dna-test/\" /> <link rel=\"alternate\" hreflang=\"ar\" href=\"https://aviantestpro.com/ar/اختبار-الحمض-النووي-لأداء-الحمام-الزا/\" /> <link rel=\"alternate\" hreflang=\"ja\" href=\"https://aviantestpro.com/ja/レース鳩パフォーマンスdna検査/\" /> <link rel=\"alternate\" hreflang=\"ko-KR\" href=\"https://aviantestpro.com/ko/레이싱-비둘기-성능-dna-테스트/\" /> <link rel=\"alternate\" hreflang=\"ko\" href=\"https://aviantestpro.com/ko/레이싱-비둘기-성능-dna-테스트/\" /> <link rel=\"alternate\" hreflang=\"es-ES\" href=\"https://aviantestpro.com/es/prueba-de-adn-del-rendimiento-de-las-palomas-de-carreras/\" /> <link rel=\"alternate\" hreflang=\"es\" href=\"https://aviantestpro.com/es/prueba-de-adn-del-rendimiento-de-las-palomas-de-carreras/\" /> <link rel=\"alternate\" hreflang=\"fr-FR\" href=\"https://aviantestpro.com/fr/test-dadn-pour-la-performance-des-pigeons-voyageurs/\" /> <link rel=\"alternate\" hreflang=\"fr\" href=\"https://aviantestpro.com/fr/test-dadn-pour-la-performance-des-pigeons-voyageurs/\" /> <link rel=\"alternate\" hreflang=\"de-DE\" href=\"https://aviantestpro.com/de/brieftauben-leistungs-dna-test/\" /> <link rel=\"alternate\" hreflang=\"de\" href=\"https://aviantestpro.com/de/brieftauben-leistungs-dna-test/\" /> <link rel=\"alternate\" hreflang=\"x-default\" href=\"https://aviantestpro.com/racing-pigeon-performance-dna-test/\" />";
 ---
-<BaseLayout title={page.title} description={page.description} canonical={page.canonical} ogType="article" lang="ja" dir="ltr" hreflang={hreflang}>
+<BaseLayout title={page.title} description={page.description} canonical={page.canonical} ogType="article" jsonLd={faqJsonLd} lang="ja" dir="ltr" hreflang={hreflang}>
   <article class="page-content">
     <h1 class="page-title">{page.h1}</h1>
     <div class="entry-content" set:html={`<div class=\"wp-block-columns is-layout-flex wp-container-core-columns-is-layout-7387b849 wp-block-columns-is-layout-flex\"><div class=\"wp-block-column is-layout-flow wp-block-column-is-layout-flow\"><h2>レース鳩のための高度遺伝子性能検査</h2><p>レース鳩のパフォーマンスDNA検査は、鳩のブリーダーが鳩の遺伝的生物学的特性をより深く理解するために設計された、現代的な遺伝子解析サービスです。</p><p>当ラボでは、レースに関連する重要な形質に関連する選択された遺伝子マーカーを分析します。例：</p><ul><li>持久力</li><li>筋肉パフォーマンス</li><li>回復能力</li><li>ナビゲーション関連の生物学的機能</li><li>ストレス適応</li><li>代謝効率</li><li>繁殖ポテンシャル</li></ul><p>この検査の目的は、絶対的な確実性をもって「レースの勝者を予測する」ことではありません。</p><p>その代わりに、ブリーダーが繁殖、選抜、長期的なレース管理においてより情報に基づいた意思決定を行うのに役立つ科学的な遺伝子参考情報を提供することを目的としています。</p><p>遺伝学はレース鳩のパフォーマンスの一部に過ぎません。トレーニング、栄養、環境、健康管理、繁殖戦略も重要な役割を果たします。</p><p>しかし、遺伝子検査は、長距離レースのパフォーマンスや繁殖価値に寄与する可能性のある遺伝的生物学的優位性を特定するのに役立ちます。</p></div></div><div class=\"wp-block-columns has-ast-global-color-4-color has-ast-global-color-0-background-color has-text-color has-background has-link-color wp-elements-1 is-layout-flex wp-container-core-columns-is-layout-7387b849 wp-block-columns-is-layout-flex\" style=\"border-top-left-radius:15px;border-top-right-radius:15px;border-bottom-left-radius:15px;border-bottom-right-radius:15px\"><div class=\"wp-block-column is-layout-flow wp-block-column-is-layout-flow\"><h3>Consultant: Martin.W</h3><p><strong>メール:</strong> <a href=\"mailto:martin@senobiocorp.com\">martin@senobiocorp.com</a></p></div><div class=\"wp-block-column is-layout-flow wp-block-column-is-layout-flow\"><div class=\"nta_wa_button\" data-id=\"255\" data-info=\"{&quot;name&quot;:&quot;Martin.W&quot;,&quot;info&quot;:{&quot;number&quot;:&quot;+8613323237275&quot;,&quot;title&quot;:&quot;Martin.Wong&quot;,&quot;predefinedText&quot;:&quot;&quot;,&quot;willBeBackText&quot;:&quot;I will be back in [njwa_time_work]&quot;,&quot;dayOffsText&quot;:&quot;I will be back soon&quot;,&quot;isAlwaysAvailable&quot;:&quot;ON&quot;,&quot;daysOfWeekWorking&quot;:{&quot;sunday&quot;:{&quot;isWorkingOnDay&quot;:&quot;OFF&quot;,&quot;workHours&quot;:[{&quot;startTime&quot;:&quot;08:00&quot;,&quot;endTime&quot;:&quot;17:30&quot;}]},&quot;monday&quot;:{&quot;isWorkingOnDay&quot;:&quot;OFF&quot;,&quot;workHours&quot;:[{&quot;startTime&quot;:&quot;08:00&quot;,&quot;endTime&quot;:&quot;17:30&quot;}]},&quot;tuesday&quot;:{&quot;isWorkingOnDay&quot;:&quot;OFF&quot;,&quot;workHours&quot;:[{&quot;startTime&quot;:&quot;08:00&quot;,&quot;endTime&quot;:&quot;17:30&quot;}]},&quot;wednesday&quot;:{&quot;isWorkingOnDay&quot;:&quot;OFF&quot;,&quot;workHours&quot;:[{&quot;startTime&quot;:&quot;08:00&quot;,&quot;endTime&quot;:&quot;17:30&quot;}]},&quot;thursday&quot;:{&quot;isWorkingOnDay&quot;:&quot;OFF&quot;,&quot;workHours&quot;:[{&quot;startTime&quot;:&quot;08:00&quot;,&quot;endTime&quot;:&quot;17:30&quot;}]},&quot;friday&quot;:{&quot;isWorkingOnDay&quot;:&quot;OFF&quot;,&quot;workHours&quot;:[{&quot;startTime&quot;:&quot;08:00&quot;,&quot;endTime&quot;:&quot;17:30&quot;}]},&quot;saturday&quot;:{&quot;isWorkingOnDay&quot;:&quot;OFF&quot;,&quot;workHours&quot;:[{&quot;startTime&quot;:&quot;08:00&quot;,&quot;endTime&quot;:&quot;17:30&quot;}]}}},&quot;styles&quot;:{&quot;type&quot;:&quot;round&quot;,&quot;backgroundColor&quot;:&quot;#2DB742&quot;,&quot;textColor&quot;:&quot;#fff&quot;,&quot;label&quot;:&quot;Chat with Me Online Now&quot;,&quot;width&quot;:300,&quot;height&quot;:64},&quot;avatar&quot;:false,&quot;options&quot;:{&quot;display&quot;:{&quot;displayCondition&quot;:&quot;showAllPage&quot;,&quot;includePages&quot;:[],&quot;excludePages&quot;:[],&quot;includePosts&quot;:[],&quot;showOnDesktop&quot;:&quot;ON&quot;,&quot;showOnMobile&quot;:&quot;ON&quot;,&quot;time_symbols&quot;:&quot;h:m&quot;},&quot;styles&quot;:{&quot;title&quot;:&quot;Start a Conversation&quot;,&quot;responseText&quot;:&quot;The team typically replies in a few minutes.&quot;,&quot;description&quot;:&quot;Hi! Click one of our member below to chat on &lt;strong&gt;WhatsApp&lt;\\\\/strong&gt;&quot;,&quot;backgroundColor&quot;:&quot;#2db742&quot;,&quot;textColor&quot;:&quot;#fff&quot;,&quot;titleSize&quot;:18,&quot;accountNameSize&quot;:14,&quot;descriptionTextSize&quot;:12,&quot;regularTextSize&quot;:11,&quot;scrollHeight&quot;:500,&quot;isShowScroll&quot;:&quot;OFF&quot;,&quot;isShowResponseText&quot;:&quot;ON&quot;,&quot;btnLabel&quot;:&quot;Need Help? &lt;strong&gt;Chat with us&lt;\\\\/strong&gt;&quot;,&quot;btnLabelWidth&quot;:156,&quot;btnPosition&quot;:&quot;right&quot;,&quot;btnLeftDistance&quot;:30,&quot;btnRightDistance&quot;:30,&quot;btnBottomDistance&quot;:30,&quot;isShowBtnLabel&quot;:&quot;ON&quot;,&quot;isShowGDPR&quot;:&quot;OFF&quot;,&quot;gdprContent&quot;:&quot;Please accept our &lt;a href=\\\\&quot;https:\\\\/\\\\/ninjateam.org\\\\/privacy-policy\\\\/\\\\&quot;&gt;privacy policy&lt;\\\\/a&gt; first to start a conversation.&quot;},&quot;analytics&quot;:{&quot;enabledGoogle&quot;:&quot;OFF&quot;,&quot;enabledFacebook&quot;:&quot;OFF&quot;,&quot;enabledGoogleGA4&quot;:&quot;OFF&quot;}},&quot;gdprStatus&quot;:false,&quot;defaultAvatar&quot;:&quot;https:\\\\/\\\\/aviantestpro.com\\\\/wp-content\\\\/plugins\\\\/wp-whatsapp\\\\/assets\\\\/img\\\\/whatsapp_logo.svg&quot;}\"></div></div></div><div style=\"height:18px\" aria-hidden=\"true\" class=\"wp-block-spacer\"></div><div class=\"wp-block-columns has-ast-global-color-4-color has-ast-global-color-0-background-color has-text-color has-background has-link-color wp-elements-4 is-layout-flex wp-container-core-columns-is-layout-7387b849 wp-block-columns-is-layout-flex\" style=\"border-top-left-radius:15px;border-top-right-radius:15px;border-bottom-left-radius:15px;border-bottom-right-radius:15px\"><div class=\"wp-block-column is-layout-flow wp-block-column-is-layout-flow\"><h3>Consultant: Aaron.W</h3><p><strong>メール:</strong> <a href=\"mailto:aaron@senobiocorp.com\">aaron@senobiocorp.com</a></p></div><div class=\"wp-block-column is-layout-flow wp-block-column-is-layout-flow\"><div class=\"nta_wa_button\" data-id=\"256\" data-info=\"{&quot;name&quot;:&quot;Aaron.W&quot;,&quot;info&quot;:{&quot;number&quot;:&quot;+8613313137465&quot;,&quot;title&quot;:&quot;Aaron.Wong&quot;,&quot;predefinedText&quot;:&quot;&quot;,&quot;willBeBackText&quot;:&quot;I will be back in [njwa_time_work]&quot;,&quot;dayOffsText&quot;:&quot;I will be back soon&quot;,&quot;isAlwaysAvailable&quot;:&quot;ON&quot;,&quot;daysOfWeekWorking&quot;:{&quot;sunday&quot;:{&quot;isWorkingOnDay&quot;:&quot;OFF&quot;,&quot;workHours&quot;:[{&quot;startTime&quot;:&quot;08:00&quot;,&quot;endTime&quot;:&quot;17:30&quot;}]},&quot;monday&quot;:{&quot;isWorkingOnDay&quot;:&quot;OFF&quot;,&quot;workHours&quot;:[{&quot;startTime&quot;:&quot;08:00&quot;,&quot;endTime&quot;:&quot;17:30&quot;}]},&quot;tuesday&quot;:{&quot;isWorkingOnDay&quot;:&quot;OFF&quot;,&quot;workHours&quot;:[{&quot;startTime&quot;:&quot;08:00&quot;,&quot;endTime&quot;:&quot;17:30&quot;}]},&quot;wednesday&quot;:{&quot;isWorkingOnDay&quot;:&quot;OFF&quot;,&quot;workHours&quot;:[{&quot;startTime&quot;:&quot;08:00&quot;,&quot;endTime&quot;:&quot;17:30&quot;}]},&quot;thursday&quot;:{&quot;isWorkingOnDay&quot;:&quot;OFF&quot;,&quot;workHours&quot;:[{&quot;startTime&quot;:&quot;08:00&quot;,&quot;endTime&quot;:&quot;17:30&quot;}]},&quot;friday&quot;:{&quot;isWorkingOnDay&quot;:&quot;OFF&quot;,&quot;workHours&quot;:[{&quot;startTime&quot;:&quot;08:00&quot;,&quot;endTime&quot;:&quot;17:30&quot;}]},&quot;saturday&quot;:{&quot;isWorkingOnDay&quot;:&quot;OFF&quot;,&quot;workHours&quot;:[{&quot;startTime&quot;:&quot;08:00&quot;,&quot;endTime&quot;:&quot;17:30&quot;}]}}},&quot;styles&quot;:{&quot;type&quot;:&quot;round&quot;,&quot;backgroundColor&quot;:&quot;#2DB742&quot;,&quot;textColor&quot;:&quot;#fff&quot;,&quot;label&quot;:&quot;Chat with Me Online Now&quot;,&quot;width&quot;:300,&quot;height&quot;:64},&quot;avatar&quot;:false,&quot;options&quot;:{&quot;display&quot;:{&quot;displayCondition&quot;:&quot;showAllPage&quot;,&quot;includePages&quot;:[],&quot;excludePages&quot;:[],&quot;includePosts&quot;:[],&quot;showOnDesktop&quot;:&quot;ON&quot;,&quot;showOnMobile&quot;:&quot;ON&quot;,&quot;time_symbols&quot;:&quot;h:m&quot;},&quot;styles&quot;:{&quot;title&quot;:&quot;Start a Conversation&quot;,&quot;responseText&quot;:&quot;The team typically replies in a few minutes.&quot;,&quot;description&quot;:&quot;Hi! Click one of our member below to chat on &lt;strong&gt;WhatsApp&lt;\\\\/strong&gt;&quot;,&quot;backgroundColor&quot;:&quot;#2db742&quot;,&quot;textColor&quot;:&quot;#fff&quot;,&quot;titleSize&quot;:18,&quot;accountNameSize&quot;:14,&quot;descriptionTextSize&quot;:12,&quot;regularTextSize&quot;:11,&quot;scrollHeight&quot;:500,&quot;isShowScroll&quot;:&quot;OFF&quot;,&quot;isShowResponseText&quot;:&quot;ON&quot;,&quot;btnLabel&quot;:&quot;Need Help? &lt;strong&gt;Chat with us&lt;\\\\/strong&gt;&quot;,&quot;btnLabelWidth&quot;:156,&quot;btnPosition&quot;:&quot;right&quot;,&quot;btnLeftDistance&quot;:30,&quot;btnRightDistance&quot;:30,&quot;btnBottomDistance&quot;:30,&quot;isShowBtnLabel&quot;:&quot;ON&quot;,&quot;isShowGDPR&quot;:&quot;OFF&quot;,&quot;gdprContent&quot;:&quot;Please accept our &lt;a href=\\\\&quot;https:\\\\/\\\\/ninjateam.org\\\\/privacy-policy\\\\/\\\\&quot;&gt;privacy policy&lt;\\\\/a&gt; first to start a conversation.&quot;},&quot;analytics&quot;:{&quot;enabledGoogle&quot;:&quot;OFF&quot;,&quot;enabledFacebook&quot;:&quot;OFF&quot;,&quot;enabledGoogleGA4&quot;:&quot;OFF&quot;}},&quot;gdprStatus&quot;:false,&quot;defaultAvatar&quot;:&quot;https:\\\\/\\\\/aviantestpro.com\\\\/wp-content\\\\/plugins\\\\/wp-whatsapp\\\\/assets\\\\/img\\\\/whatsapp_logo.svg&quot;}\"></div></div></div><div class=\"wp-block-columns is-layout-flex wp-container-core-columns-is-layout-7387b849 wp-block-columns-is-layout-flex\"><div class=\"wp-block-column is-layout-flow wp-block-column-is-layout-flow\"><h2>レース鳩パフォーマンスDNA検査とは何ですか？</h2><p>レース鳩パフォーマンスDNA検査は、レース鳩において重要な身体的および生物学的特性に関連する特定の遺伝子マーカーを評価する分子遺伝学分析です。</p><p>すべての鳩は両親から遺伝情報を受け継ぎます。</p><p>一部の遺伝子は以下に影響を与えます：</p><ul><li>筋線維特性</li><li>酸素利用</li><li>エネルギー代謝</li><li>回復効率</li><li>細胞ストレス応答</li><li>神経シグナル伝達</li><li>持久力関連の生物学的経路</li></ul><p>これらの遺伝的変異を分析することにより、ラボは鳩の遺伝的生物学的ポテンシャルに関する追加の洞察を提供する遺伝子プロファイルを構築できます。</p><hr class=\"wp-block-separator has-alpha-channel-opacity\"/><h2>レース鳩における遺伝子分析の重要性</h2><p>現代のレース鳩繁殖はますます科学的になっています。</p><p>従来の選抜方法はしばしば以下に依存しています：</p><ul><li>レース結果</li><li>外観</li><li>血統</li><li>ブリーダーの経験</li><li>トレーニング観察</li></ul><p>これらの方法は依然として重要です。</p><p>しかし、遺伝学は視覚的に見ることができない別の情報層を提供します。</p><p>2羽の鳩が外見は似ていても、非常に異なる遺伝的生物学的特性を持っている場合があります。</p><p>DNA分析はブリーダーが以下をよりよく理解するのに役立ちます：</p><ul><li>どの鳩がより強い持久力関連遺伝子を持っている可能性があるか</li><li>どの鳥が好ましい回復関連マーカーを持っている可能性があるか</li><li>どの繁殖ペアが子孫に価値ある形質を伝える可能性があるか</li><li>どの血統がより強い遺伝的一貫性を含む可能性があるか</li></ul><p>遺伝子検査はブリーダーの経験を置き換えるものではありません。</p><p>その代わりに、分子生物学的データでブリーダーの意思決定をサポートします。</p></div></div><div class=\"wp-block-columns is-layout-flex wp-container-core-columns-is-layout-7387b849 wp-block-columns-is-layout-flex\"><div class=\"wp-block-column is-layout-flow wp-block-column-is-layout-flow\"><figure class=\"wp-block-image aligncenter size-large\">

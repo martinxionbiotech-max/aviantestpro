@@ -9,9 +9,63 @@ const page = {
   author: "SENO Testing Center",
   date: "July 8, 2026",
 };
+const faqJsonLd = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Combien de temps prend le sexage par ADN chez les oiseaux ?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "La plupart des laboratoires terminent les tests en 1 à 2 jours ouvrables après l'arrivée de l'échantillon. Le délai total, expédition internationale comprise, est généralement de 7 à 10 jours."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Une seule plume peut-elle être utilisée pour le sexage par ADN ?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Oui, une seule plume fraîchement arrachée avec un follicule intact est suffisante. Cependant, il est recommandé d'envoyer 2 à 3 plumes par oiseau par mesure de sécurité."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Le sexage par ADN est-il douloureux pour l'oiseau ?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Non. L'arrachage de plumes provoque un léger inconfort momentané comparable à un pincement rapide. Il est classé comme une procédure non invasive."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Peut-on sexer par ADN les oisillons ?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Oui. Les oiseaux peuvent être sexés par ADN à tout âge — des nouveau-nés aux adultes. L'ADN ne change pas avec l'âge, donc un seul test est fiable à vie."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Quelle est la précision des kits de sexage ADN à domicile ?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Les véritables kits de traitement à domicile peuvent avoir une précision aussi faible que 70 à 85 % en raison de conditions non contrôlées et du risque de contamination. La plupart des « kits à domicile » sont en réalité des kits de collecte d'échantillons qui sont envoyés à un laboratoire."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Ai-je besoin d'un vétérinaire pour le sexage par ADN chez les oiseaux ?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Non. La collecte d'échantillons de plumes peut être effectuée par les éleveurs, les propriétaires d'animaux ou les manipulateurs d'oiseaux. L'intervention d'un vétérinaire est recommandée pour la collecte de sang ou les tests de maladies. En résumé Le sexage par ADN chez les oiseaux a transformé l'élevage aviaire au cours des deux dernières décennies. Ce qui nécessitait autrefois une chirurgie invasive peut désormais être déterminé à partir de quelques plumes avec une précision supérieure à 99 %. Trois règles pour des résultats précis : 1. Collectez des plumes fraîches, pas des plumes tombées — La qualité du follicule détermine la qualité de l'ADN 2. Expédiez plusieurs échantillons ensemble — Réduit les coûts et améliore l'efficacité 3. Choisissez un laboratoire avec un contrôle qualité transparent — ~20 % de re-tests est un signe de qualité Pour des sujets plus spécifiques, consultez nos articles détaillés sur le test ADN pour le sexe des perroquets, l'analyse des coûts et le guide complet de biologie moléculaire aviaire."
+      }
+    }
+  ]
+};
 const hreflang = "<link rel=\"alternate\" hreflang=\"en-US\" href=\"https://aviantestpro.com/the-complete-guide-to-bird-dna-sexing/\" /> <link rel=\"alternate\" hreflang=\"en\" href=\"https://aviantestpro.com/the-complete-guide-to-bird-dna-sexing/\" /> <link rel=\"alternate\" hreflang=\"ar\" href=\"https://aviantestpro.com/ar/the-complete-guide-to-bird-dna-sexing/\" /> <link rel=\"alternate\" hreflang=\"ja\" href=\"https://aviantestpro.com/ja/the-complete-guide-to-bird-dna-sexing/\" /> <link rel=\"alternate\" hreflang=\"ko-KR\" href=\"https://aviantestpro.com/ko/the-complete-guide-to-bird-dna-sexing/\" /> <link rel=\"alternate\" hreflang=\"ko\" href=\"https://aviantestpro.com/ko/the-complete-guide-to-bird-dna-sexing/\" /> <link rel=\"alternate\" hreflang=\"es-ES\" href=\"https://aviantestpro.com/es/the-complete-guide-to-bird-dna-sexing/\" /> <link rel=\"alternate\" hreflang=\"es\" href=\"https://aviantestpro.com/es/the-complete-guide-to-bird-dna-sexing/\" /> <link rel=\"alternate\" hreflang=\"fr-FR\" href=\"https://aviantestpro.com/fr/the-complete-guide-to-bird-dna-sexing/\" /> <link rel=\"alternate\" hreflang=\"fr\" href=\"https://aviantestpro.com/fr/the-complete-guide-to-bird-dna-sexing/\" /> <link rel=\"alternate\" hreflang=\"de-DE\" href=\"https://aviantestpro.com/de/the-complete-guide-to-bird-dna-sexing/\" /> <link rel=\"alternate\" hreflang=\"de\" href=\"https://aviantestpro.com/de/the-complete-guide-to-bird-dna-sexing/\" /> <link rel=\"alternate\" hreflang=\"x-default\" href=\"https://aviantestpro.com/the-complete-guide-to-bird-dna-sexing/\" />";
 ---
-<BaseLayout title={page.title} description={page.description} canonical={page.canonical} ogType="article" lang="fr" dir="ltr" hreflang={hreflang} author={page.author}>
+<BaseLayout title={page.title} description={page.description} canonical={page.canonical} ogType="article" jsonLd={faqJsonLd} lang="fr" dir="ltr" hreflang={hreflang} author={page.author}>
   <article class="page-content">
     <h1 class="page-title">{page.h1}</h1>
     <div class="entry-meta">By SENO Testing Center <span>/ July 8, 2026</span></div>

@@ -9,9 +9,63 @@ const page = {
   author: "SENO Testing Center",
   date: "August 27, 2026",
 };
+const faqJsonLd = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "모세관 전기영동이 겔 전기영동보다 더 정확한가요?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "단편 크기 측정의 경우, 그렇습니다 — CE는 1–2 bp 차이를 분리하고 정량적 디지털 데이터를 출력합니다; 아가로스 겔은 더 거칠고 반정량적입니다. 최종 결과 정확도는 PCR 분석과 시료 품질에도 의존하지만, CE는 우수한 검출 플랫폼입니다."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "조류 DNA 성별 감별을 겔로 수행할 수 있나요?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "원칙적으로 가능합니다 — 원래 Griffiths et al. (1998) CHD 프로토콜은 겔을 사용했습니다. 그러나 600종 이상을 대상으로 하는 상업적 처리량에서는 CE의 분해능과 재현성이 표준 선택입니다."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "모세관 전기영동 시스템 비용은 얼마인가요?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "입문용 단일 모세관 시스템은 약 $30,000–$50,000부터 시작하며, 다중 모세관 유전자 분석기는 $60,000–$150,000 이상, 96모세관 플래그십은 $150,000를 초과합니다. 리퍼비시 장비는 비용을 30–60% 절감합니다."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "일렉트로페로그램이란 무엇인가요?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "CE가 생성하는 디지털 그래프입니다: 각 피크는 DNA 단편이고, 피크 위치 = 크기, 피크 높이 = 양입니다. 이는 분석의 추적 가능한 원시 데이터입니다."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "CE에서 오염 위험이 왜 더 낮은가요?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "CE는 밀폐 모세관과 자동 주입을 사용하며, 증폭 후 PCR 산물을 개방형 겔에서 수동으로 취급하지 않아 시료 간 전달이 줄어듭니다."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "CE와 아가로스 겔이 분리할 수 있는 크기 차이는 얼마인가요?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "CE는 약 1–2 bp를 분리하고, 표준 아가로스는 약 5–10 bp입니다. 이것이 CE가 아가로스가 흐릿하게 만들 수 있는 작은 CHD-Z/CHD-W 다형성을 명확히 분리하는 이유입니다. 주요 참고문헌 Griffiths, R., Double, M. C., Orr, K., & Dawson, R. J. G. (1998). A DNA test to sex most birds. Molecular Ecology, 7(8), 1071–1075. Fridolfsson, A.-K., & Ellegren, H. (1999). A simple and universal method for molecular sexing of non-ratite birds. Journal of Avian Biology, 30(1), 116–121. Butler, J. M. (2015). Advanced Topics in Forensic DNA Typing: Methodology. Academic Press. (모세관 전기영동 및 STR 분석 관련 장.) 결론 상업용 조류 DNA 검사 기관에게 모세관 전기영동은 PCR 반응을 방어 가능하고 재현 가능하며 확장 가능한 결과로 전환하는 핵심 기술입니다. 이는 종에 걸친 신뢰할 수 있는 CHD 기반 성별 감별에 필요한 1–2 bp 분해능, STR 친자 확인이 요구하는 서브 염기쌍 정밀도, 그리고 월 수천 개 시료 처리를 실현하는 자동화를 제공합니다. 겔 전기영동은 저예산, 저용량, 교육 환경에서 그 자리를 유지합니다. 그러나 제품이 상업적 규모에서 >99% 정확도의 성별 감별과 신뢰할 수 있는 친자 확인 증명서라면, 장비 로드맵은 CE를 가리킵니다. 관련 기사 : 조류 성별 감별 및 친자 확인에서 모세관 전기영동 분석의 작동 원리 · 모세관 전기영동 시스템 구매 가이드 · 조류 DNA 성별 감별 완전 가이드 · 조류 검사에서 RT-PCR과 전통적 PCR의 비교"
+      }
+    }
+  ]
+};
 const hreflang = "<link rel=\"alternate\" hreflang=\"en-US\" href=\"https://aviantestpro.com/capillary-electrophoresis-vs-traditional-gel-electrophoresis-which-should-your-bird-dna-lab-use/\" /> <link rel=\"alternate\" hreflang=\"en\" href=\"https://aviantestpro.com/capillary-electrophoresis-vs-traditional-gel-electrophoresis-which-should-your-bird-dna-lab-use/\" /> <link rel=\"alternate\" hreflang=\"ar\" href=\"https://aviantestpro.com/ar/capillary-electrophoresis-vs-traditional-gel-electrophoresis-which-should-your-bird-dna-lab-use/\" /> <link rel=\"alternate\" hreflang=\"ja\" href=\"https://aviantestpro.com/ja/capillary-electrophoresis-vs-traditional-gel-electrophoresis-which-should-your-bird-dna-lab-use/\" /> <link rel=\"alternate\" hreflang=\"ko-KR\" href=\"https://aviantestpro.com/ko/capillary-electrophoresis-vs-traditional-gel-electrophoresis-which-should-your-bird-dna-lab-use/\" /> <link rel=\"alternate\" hreflang=\"ko\" href=\"https://aviantestpro.com/ko/capillary-electrophoresis-vs-traditional-gel-electrophoresis-which-should-your-bird-dna-lab-use/\" /> <link rel=\"alternate\" hreflang=\"es-ES\" href=\"https://aviantestpro.com/es/capillary-electrophoresis-vs-traditional-gel-electrophoresis-which-should-your-bird-dna-lab-use/\" /> <link rel=\"alternate\" hreflang=\"es\" href=\"https://aviantestpro.com/es/capillary-electrophoresis-vs-traditional-gel-electrophoresis-which-should-your-bird-dna-lab-use/\" /> <link rel=\"alternate\" hreflang=\"fr-FR\" href=\"https://aviantestpro.com/fr/capillary-electrophoresis-vs-traditional-gel-electrophoresis-which-should-your-bird-dna-lab-use/\" /> <link rel=\"alternate\" hreflang=\"fr\" href=\"https://aviantestpro.com/fr/capillary-electrophoresis-vs-traditional-gel-electrophoresis-which-should-your-bird-dna-lab-use/\" /> <link rel=\"alternate\" hreflang=\"de-DE\" href=\"https://aviantestpro.com/de/capillary-electrophoresis-vs-traditional-gel-electrophoresis-which-should-your-bird-dna-lab-use/\" /> <link rel=\"alternate\" hreflang=\"de\" href=\"https://aviantestpro.com/de/capillary-electrophoresis-vs-traditional-gel-electrophoresis-which-should-your-bird-dna-lab-use/\" /> <link rel=\"alternate\" hreflang=\"x-default\" href=\"https://aviantestpro.com/capillary-electrophoresis-vs-traditional-gel-electrophoresis-which-should-your-bird-dna-lab-use/\" />";
 ---
-<BaseLayout title={page.title} description={page.description} canonical={page.canonical} ogType="article" lang="ko" dir="ltr" hreflang={hreflang} author={page.author}>
+<BaseLayout title={page.title} description={page.description} canonical={page.canonical} ogType="article" jsonLd={faqJsonLd} lang="ko" dir="ltr" hreflang={hreflang} author={page.author}>
   <article class="page-content">
     <h1 class="page-title">{page.h1}</h1>
     <div class="entry-meta">By SENO Testing Center <span>/ August 27, 2026</span></div>

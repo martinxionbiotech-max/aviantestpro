@@ -9,9 +9,63 @@ const page = {
   author: "SENO Testing Center",
   date: "July 8, 2026",
 };
+const faqJsonLd = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Wie lange dauert die DNA-Geschlechtsbestimmung bei Vögeln?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Die meisten Labore schließen die Testung innerhalb von 1–2 Arbeitstagen nach Probeneingang ab. Die Gesamtdurchlaufzeit inklusive internationalem Versand beträgt typischerweise 7–10 Tage."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Kann eine einzelne Feder für die DNA-Geschlechtsbestimmung verwendet werden?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Ja, eine einzelne frisch gerupfte Feder mit intaktem Follikel ist ausreichend. Es wird jedoch empfohlen, 2–3 Federn pro Vogel als Sicherheitsmaßnahme zu senden."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Ist die DNA-Geschlechtsbestimmung bei Vögeln schmerzhaft?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Nein. Das Rupfen von Federn verursacht kurzzeitiges leichtes Unbehagen, vergleichbar mit einem schnellen Kneifen. Es wird als nicht-invasives Verfahren eingestuft."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Kann man Babyvögel per DNA bestimmen?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Ja. Vögel können in jedem Alter per DNA bestimmt werden – vom Küken bis zum Erwachsenen. Die DNA ändert sich nicht mit dem Alter, daher ist ein einzelner Test ein Leben lang zuverlässig."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Wie genau sind Heim-DNA-Testkits?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Echte Heimverarbeitungskits können eine Genauigkeit von nur 70–85 % aufweisen, aufgrund unkontrollierter Bedingungen und Kontaminationsrisiko. Die meisten „Heimkits“ sind eigentlich Probenentnahmekits, die an ein Labor versendet werden."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Brauche ich einen Tierarzt für die DNA-Geschlechtsbestimmung bei Vögeln?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Nein. Die Federsammlung kann von Züchtern, Vogelhaltern oder Vogelbetreuern durchgeführt werden. Tierärztliche Beteiligung wird für Blutentnahme oder Krankheitstests empfohlen. Das Fazit Die DNA-Geschlechtsbestimmung bei Vögeln hat die Vogelzucht in den letzten zwei Jahrzehnten revolutioniert. Was einst invasive Chirurgie erforderte, kann heute aus ein paar Federn mit über 99 % Genauigkeit bestimmt werden. Drei Regeln für genaue Ergebnisse: 1. Frische, nicht abgeworfene Federn sammeln – Die Follikelqualität bestimmt die DNA-Qualität 2. Mehrere Proben zusammen versenden – Reduziert Kosten und verbessert die Effizienz 3. Ein Labor mit transparenter Qualitätskontrolle wählen – ~20 % Nachtestung ist ein Zeichen von Qualität Für spezifischere Themen finden Sie in unseren ausführlichen Artikeln zur DNA-Testung für Papageiengeschlecht, Kostenanalyse und dem vollständigen Leitfaden zur aviären Molekularbiologie."
+      }
+    }
+  ]
+};
 const hreflang = "<link rel=\"alternate\" hreflang=\"en-US\" href=\"https://aviantestpro.com/the-complete-guide-to-bird-dna-sexing/\" /> <link rel=\"alternate\" hreflang=\"en\" href=\"https://aviantestpro.com/the-complete-guide-to-bird-dna-sexing/\" /> <link rel=\"alternate\" hreflang=\"ar\" href=\"https://aviantestpro.com/ar/the-complete-guide-to-bird-dna-sexing/\" /> <link rel=\"alternate\" hreflang=\"ja\" href=\"https://aviantestpro.com/ja/the-complete-guide-to-bird-dna-sexing/\" /> <link rel=\"alternate\" hreflang=\"ko-KR\" href=\"https://aviantestpro.com/ko/the-complete-guide-to-bird-dna-sexing/\" /> <link rel=\"alternate\" hreflang=\"ko\" href=\"https://aviantestpro.com/ko/the-complete-guide-to-bird-dna-sexing/\" /> <link rel=\"alternate\" hreflang=\"es-ES\" href=\"https://aviantestpro.com/es/the-complete-guide-to-bird-dna-sexing/\" /> <link rel=\"alternate\" hreflang=\"es\" href=\"https://aviantestpro.com/es/the-complete-guide-to-bird-dna-sexing/\" /> <link rel=\"alternate\" hreflang=\"fr-FR\" href=\"https://aviantestpro.com/fr/the-complete-guide-to-bird-dna-sexing/\" /> <link rel=\"alternate\" hreflang=\"fr\" href=\"https://aviantestpro.com/fr/the-complete-guide-to-bird-dna-sexing/\" /> <link rel=\"alternate\" hreflang=\"de-DE\" href=\"https://aviantestpro.com/de/the-complete-guide-to-bird-dna-sexing/\" /> <link rel=\"alternate\" hreflang=\"de\" href=\"https://aviantestpro.com/de/the-complete-guide-to-bird-dna-sexing/\" /> <link rel=\"alternate\" hreflang=\"x-default\" href=\"https://aviantestpro.com/the-complete-guide-to-bird-dna-sexing/\" />";
 ---
-<BaseLayout title={page.title} description={page.description} canonical={page.canonical} ogType="article" lang="de" dir="ltr" hreflang={hreflang} author={page.author}>
+<BaseLayout title={page.title} description={page.description} canonical={page.canonical} ogType="article" jsonLd={faqJsonLd} lang="de" dir="ltr" hreflang={hreflang} author={page.author}>
   <article class="page-content">
     <h1 class="page-title">{page.h1}</h1>
     <div class="entry-meta">By SENO Testing Center <span>/ July 8, 2026</span></div>

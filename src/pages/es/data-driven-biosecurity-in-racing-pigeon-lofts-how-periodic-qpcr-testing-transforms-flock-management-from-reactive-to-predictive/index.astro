@@ -9,9 +9,55 @@ const page = {
   author: "SENO Testing Center",
   date: "June 8, 2026",
 };
+const faqJsonLd = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Q1: What is the most reliable method for early bird disease detection before symptoms show?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "A1: La PCR cuantitativa en tiempo real (qPCR) es el estándar de oro para la detección temprana de enfermedades aviares, permitiendo la identificación de patógenos virales, bacterianos y fúngicos de 7 a 14 días antes de que se manifiesten los síntomas clínicos. A diferencia de las pruebas rápidas de antígenos que requieren una alta carga viral, la qPCR detecta ácidos nucleicos de baja copia durante la fase de incubación subclínica, permitiendo a los criadores aislar aves infectadas antes de que ocurra la transmisión a gran escala en la bandada."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Q2: Why should racing pigeon lofts combine qPCR screening with ELISA antibody testing?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "A2: La combinación de pruebas qPCR y ELISA crea un marco de bioseguridad de ciclo completo para la bandada al rastrear simultáneamente infecciones activas e inmunidad activa. La qPCR identifica la excreción activa de patógenos y portadores asintomáticos dentro del palomar, mientras que el ELISA mide los títulos de anticuerpos post-vacunación y la fuerza de la respuesta inmune. Estos datos de doble acción aseguran la madurez de las palomas mensajeras, guían el aislamiento dirigido y previenen el uso excesivo ciego de medicamentos."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Q3: How often should a high-density racing pigeon loft undergo molecular diagnostics?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "A3: Los palomares de alta densidad de palomas mensajeras deben someterse a diagnósticos moleculares rutinarios mensual o estacionalmente, alineados con ciclos biológicos específicos de alto estrés. Las ventanas críticas de prueba incluyen la fase de entrada de aves jóvenes al palomar, los lanzamientos pre-carrera y los períodos activos de cría. El monitoreo ambiental continuo por lotes de los sistemas de suministro de agua y el polvo del palomar debe complementar estos intervalos para interceptar patógenos tempranamente."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Q4: Can a single multiplex qPCR panel detect mixed viral and bacterial infections in exotic birds?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "A4: Sí, los paneles avanzados de qPCR multiplex están diseñados para detectar y diferenciar con éxito múltiples patógenos virales, bacterianos, protozoarios y fúngicos distintos simultáneamente en un solo flujo de trabajo. Por ejemplo, el panel de detección de AvianTestPro puede co-amplificar objetivos como Paramyxovirus Tipo 1 de la Paloma (PPMV-1), Adenovirus (PiADV) y Chlamydia psittaci a partir de muestras de doble hisopo, mapeando rutas precisas de transmisión ambiental sin reactividad cruzada."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Q5: How do I properly collect and ship avian samples to ensure RNA and DNA stability?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "A5: Para virus de folículos de plumas como PBFDV o PiCV, arrancar de 2 a 3 plumas frescas en crecimiento activo con pulpa folicular visible en la base. Para patógenos respiratorios o gastrointestinales sistémicos, barrer firmemente la hendidura coanal y la pared cloacal usando hisopos estériles de nailon con punta de flocado, luego sumergirlos inmediatamente en un Tampón de Estabilización de Ácidos Nucleicos aprobado. Asegurar las muestras en contenedores aislados con paquetes de gel congelado si se envían durante condiciones climáticas extremas para prevenir la degradación térmica. 🔬 Declaración de Posición de Investigación de Laboratorio y Descargo de Responsabilidad AvianTestPro opera estrictamente como un laboratorio de diagnóstico molecular especializado en vigilancia de patógenos aviares por qPCR, perfiles inmunológicos ELISA y análisis de bioseguridad ambiental. Todos los resultados de diagnóstico, detecciones de secuencias y análisis de informes están destinados únicamente a la investigación científica, el monitoreo epidemiológico de poblaciones y la evaluación holística de riesgos de bioseguridad. Las métricas y hallazgos proporcionados aquí no constituyen, ni están destinados a reemplazar, diagnósticos clínicos veterinarios formales, orientación terapéutica legal o certificaciones oficiales de salud animal. Nuestro marco de laboratorio funciona exclusivamente para suministrar datos accionables de alta sensibilidad para cooperar con gestores de palomares, entrenadores y criadores de aves en el desarrollo conjunto de control biológico preventivo y estrategias de mitigación de riesgos."
+      }
+    }
+  ]
+};
 const hreflang = "<link rel=\"alternate\" hreflang=\"en-US\" href=\"https://aviantestpro.com/data-driven-biosecurity-in-racing-pigeon-lofts-how-periodic-qpcr-testing-transforms-flock-management-from-reactive-to-predictive/\" /> <link rel=\"alternate\" hreflang=\"en\" href=\"https://aviantestpro.com/data-driven-biosecurity-in-racing-pigeon-lofts-how-periodic-qpcr-testing-transforms-flock-management-from-reactive-to-predictive/\" /> <link rel=\"alternate\" hreflang=\"ar\" href=\"https://aviantestpro.com/ar/data-driven-biosecurity-in-racing-pigeon-lofts-how-periodic-qpcr-testing-transforms-flock-management-from-reactive-to-predictive/\" /> <link rel=\"alternate\" hreflang=\"ja\" href=\"https://aviantestpro.com/ja/data-driven-biosecurity-in-racing-pigeon-lofts-how-periodic-qpcr-testing-transforms-flock-management-from-reactive-to-predictive/\" /> <link rel=\"alternate\" hreflang=\"ko-KR\" href=\"https://aviantestpro.com/ko/data-driven-biosecurity-in-racing-pigeon-lofts-how-periodic-qpcr-testing-transforms-flock-management-from-reactive-to-predictive/\" /> <link rel=\"alternate\" hreflang=\"ko\" href=\"https://aviantestpro.com/ko/data-driven-biosecurity-in-racing-pigeon-lofts-how-periodic-qpcr-testing-transforms-flock-management-from-reactive-to-predictive/\" /> <link rel=\"alternate\" hreflang=\"es-ES\" href=\"https://aviantestpro.com/es/data-driven-biosecurity-in-racing-pigeon-lofts-how-periodic-qpcr-testing-transforms-flock-management-from-reactive-to-predictive/\" /> <link rel=\"alternate\" hreflang=\"es\" href=\"https://aviantestpro.com/es/data-driven-biosecurity-in-racing-pigeon-lofts-how-periodic-qpcr-testing-transforms-flock-management-from-reactive-to-predictive/\" /> <link rel=\"alternate\" hreflang=\"fr-FR\" href=\"https://aviantestpro.com/fr/data-driven-biosecurity-in-racing-pigeon-lofts-how-periodic-qpcr-testing-transforms-flock-management-from-reactive-to-predictive/\" /> <link rel=\"alternate\" hreflang=\"fr\" href=\"https://aviantestpro.com/fr/data-driven-biosecurity-in-racing-pigeon-lofts-how-periodic-qpcr-testing-transforms-flock-management-from-reactive-to-predictive/\" /> <link rel=\"alternate\" hreflang=\"de-DE\" href=\"https://aviantestpro.com/de/data-driven-biosecurity-in-racing-pigeon-lofts-how-periodic-qpcr-testing-transforms-flock-management-from-reactive-to-predictive/\" /> <link rel=\"alternate\" hreflang=\"de\" href=\"https://aviantestpro.com/de/data-driven-biosecurity-in-racing-pigeon-lofts-how-periodic-qpcr-testing-transforms-flock-management-from-reactive-to-predictive/\" /> <link rel=\"alternate\" hreflang=\"x-default\" href=\"https://aviantestpro.com/data-driven-biosecurity-in-racing-pigeon-lofts-how-periodic-qpcr-testing-transforms-flock-management-from-reactive-to-predictive/\" />";
 ---
-<BaseLayout title={page.title} description={page.description} canonical={page.canonical} ogType="article" lang="es" dir="ltr" hreflang={hreflang} author={page.author}>
+<BaseLayout title={page.title} description={page.description} canonical={page.canonical} ogType="article" jsonLd={faqJsonLd} lang="es" dir="ltr" hreflang={hreflang} author={page.author}>
   <article class="page-content">
     <h1 class="page-title">{page.h1}</h1>
     <div class="entry-meta">By SENO Testing Center <span>/ June 8, 2026</span></div>

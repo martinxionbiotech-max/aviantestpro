@@ -9,9 +9,55 @@ const page = {
   author: "",
   date: "",
 };
+const faqJsonLd = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "症状が現れる前の鳥の疾病早期検出に最も信頼性の高い方法は何ですか",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "リアルタイム定量PCR（qPCR）は、鳥の疾病早期検出におけるゴールドスタンダードであり、臨床症状が発現する 7〜14日前にウイルス性、細菌性、真菌性病原体の特定を可能にします 。高ウイルス量を必要とする迅速抗原検査とは異なり、qPCRは不顕性潜伏期間中に低コピー数の核酸を検出するため、ブリーダーは全群伝播が起こる前に感染鳥を隔離できます。"
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "レース鳩舎がqPCRスクリーニングとELISA抗体検査を組み合わせるべき理由は何ですか",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "qPCRとELISA検査の組み合わせは、活動性感染と活動性免疫を同時に追跡することで、全サイクルの群バイオセキュリティフレームワークを構築します。 qPCRは鳩舎内の活動性病原体排出と無症状キャリアを特定し 、一方 ELISAはワクチン接種後の抗体価と免疫応答強度を測定します 。この二重作用データにより、レース鳩の成熟度が保証され、標的を絞った隔離が導かれ、盲目的な投薬過剰使用が防止されます。"
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "高密度レース鳩舎はどのくらいの頻度で分子診断を受けるべきですか",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "高密度レース鳩舎は、特定の高ストレス生物学的サイクルに合わせて 毎月または季節ごとに定期的な分子診断を受けるべきです 。重要な検査ウィンドウには、幼鳥の鳩舎入舎段階、レース前の放鳩、および活動的な繁殖期間が含まれます。給水システムと鳩舎粉塵の継続的な環境バッチモニタリングは、病原体を早期に遮断するためにこれらの間隔を補完する必要があります。"
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "単一のマルチプレックスqPCRパネルでエキゾチックバードの混合ウイルス・細菌感染を検出できますか",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "はい、高度なマルチプレックスqPCRパネルは、単一のワークフローで複数の異なるウイルス性、細菌性、原虫性、真菌性病原体を同時に検出・識別できるよう設計されています。例えば、AvianTestProパネルスクリーニングは、デュアルスワブサンプルから ハトパラミクソウイルス1型（PPMV-1） 、 アデノウイルス（PiADV） 、および クラミジア・シッタシ などのターゲットを同時増幅し、交差反応なしに正確な環境伝播経路をマッピングできます。"
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "RNAとDNAの安定性を確保するために、鳥類サンプルを適切に採取・輸送するにはどうすればよいですか",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "PBFDVやPiCVなどの羽毛毛包ウイルスの場合は、基部に目に見える毛包髄質がある 新鮮で成長中の羽毛を2〜3枚抜き取ります 。全身性の呼吸器または胃腸病原体の場合は、 滅菌ナイロンフロックスワブ で口蓋裂と総排泄腔壁をしっかりと拭き取り、直ちに承認済みの核酸安定化バッファーに浸します。極端な気象条件での輸送時は、熱劣化を防ぐためにゲルアイスパックを入れた断熱容器にサンプルを固定してください。"
+      }
+    }
+  ]
+};
 const hreflang = "<link rel=\"alternate\" hreflang=\"en-US\" href=\"https://aviantestpro.com/avian-virus-rt-pcr-test/\" /> <link rel=\"alternate\" hreflang=\"en\" href=\"https://aviantestpro.com/avian-virus-rt-pcr-test/\" /> <link rel=\"alternate\" hreflang=\"ar\" href=\"https://aviantestpro.com/ar/اختبار-فيروسات-الطيور/\" /> <link rel=\"alternate\" hreflang=\"ja\" href=\"https://aviantestpro.com/ja/鳥ウイルスrt-pcr検査/\" /> <link rel=\"alternate\" hreflang=\"ko-KR\" href=\"https://aviantestpro.com/ko/조류-바이러스-rt-pcr-검사/\" /> <link rel=\"alternate\" hreflang=\"ko\" href=\"https://aviantestpro.com/ko/조류-바이러스-rt-pcr-검사/\" /> <link rel=\"alternate\" hreflang=\"es-ES\" href=\"https://aviantestpro.com/es/prueba-rt-pcr-del-virus-aviar/\" /> <link rel=\"alternate\" hreflang=\"es\" href=\"https://aviantestpro.com/es/prueba-rt-pcr-del-virus-aviar/\" /> <link rel=\"alternate\" hreflang=\"fr-FR\" href=\"https://aviantestpro.com/fr/virus-aviaire-rt-pcr-test/\" /> <link rel=\"alternate\" hreflang=\"fr\" href=\"https://aviantestpro.com/fr/virus-aviaire-rt-pcr-test/\" /> <link rel=\"alternate\" hreflang=\"de-DE\" href=\"https://aviantestpro.com/de/aviarer-virus-rt-pcr-test/\" /> <link rel=\"alternate\" hreflang=\"de\" href=\"https://aviantestpro.com/de/aviarer-virus-rt-pcr-test/\" /> <link rel=\"alternate\" hreflang=\"x-default\" href=\"https://aviantestpro.com/avian-virus-rt-pcr-test/\" />";
 ---
-<BaseLayout title={page.title} description={page.description} canonical={page.canonical} ogType="article" lang="ja" dir="ltr" hreflang={hreflang}>
+<BaseLayout title={page.title} description={page.description} canonical={page.canonical} ogType="article" jsonLd={faqJsonLd} lang="ja" dir="ltr" hreflang={hreflang}>
   <article class="page-content">
     <h1 class="page-title">{page.h1}</h1>
     <div class="entry-content" set:html={`<div class=\"wp-block-columns is-layout-flex wp-container-core-columns-is-layout-7387b849 wp-block-columns-is-layout-flex\"><div class=\"wp-block-column is-layout-flow wp-block-column-is-layout-flow\"><div class=\"wp-block-cover alignwide\" style=\"border-top-left-radius:24px;border-top-right-radius:24px;border-bottom-left-radius:24px;border-bottom-right-radius:24px;min-height:348px;aspect-ratio:unset;\">

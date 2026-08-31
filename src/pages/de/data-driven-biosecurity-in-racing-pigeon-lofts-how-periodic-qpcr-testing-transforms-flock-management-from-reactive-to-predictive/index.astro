@@ -9,9 +9,55 @@ const page = {
   author: "SENO Testing Center",
   date: "June 8, 2026",
 };
+const faqJsonLd = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Q1: What is the most reliable method for early bird disease detection before symptoms show?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "A1: Die Echtzeit-quantitative PCR (qPCR) ist der Goldstandard für die frühe Krankheitserkennung bei Vögeln und ermöglicht die Identifizierung viraler, bakterieller und pilzlicher Krankheitserreger 7 bis 14 Tage vor dem Auftreten klinischer Symptome. Im Gegensatz zu schnellen Antigentests, die eine hohe Viruslast erfordern, erkennt qPCR Nukleinsäuren mit niedriger Kopienzahl während der subklinischen Inkubationsphase, sodass Züchter infizierte Vögel isolieren können, bevor eine vollständige Bestandsübertragung erfolgt."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Q2: Why should racing pigeon lofts combine qPCR screening with ELISA antibody testing?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "A2: Die Kombination von qPCR- und ELISA-Tests schafft einen vollständigen Biosicherheitsrahmen für den Bestand, indem gleichzeitig aktive Infektionen und aktive Immunität verfolgt werden. qPCR identifiziert aktive Pathogenausscheidung und asymptomatische Träger im Schlag, während ELISA Antikörpertiter nach der Impfung und die Stärke der Immunantwort misst. Diese dualen Daten gewährleisten die Reife der Brieftauben, leiten gezielte Isolierung an und verhindern blinde Medikamentenüberdosierung."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Q3: How often should a high-density racing pigeon loft undergo molecular diagnostics?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "A3: Hochverdichtete Brieftaubenschläge sollten monatlich oder saisonal einer routinemäßigen molekularen Diagnostik unterzogen werden, abgestimmt auf spezifische biologische Hochstress-Zyklen. Kritische Testfenster umfassen die Eintrittsphase junger Tauben in den Schlag, Vorsaison-Wurftraining und aktive Brutperioden. Kontinuierliche Umwelt-Chargenüberwachung von Wasserversorgungssystemen und Schlagstaub sollte diese Intervalle ergänzen, um Krankheitserreger früh abzufangen."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Q4: Can a single multiplex qPCR panel detect mixed viral and bacterial infections in exotic birds?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "A4: Ja, fortschrittliche Multiplex-qPCR-Panels sind so konstruiert, dass sie mehrere verschiedene virale, bakterielle, protozoische und pilzliche Krankheitserreger gleichzeitig in einem einzigen Arbeitsablauf erfolgreich nachweisen und unterscheiden können. Beispielsweise kann das AvianTestPro-Panel-Screening Ziele wie Tauben-Paramyxovirus Typ 1 (PPMV-1), Adenovirus (PiADV) und Chlamydia psittaci aus Doppel-Tupfer-Proben koamplifizieren und dabei genaue Umweltübertragungswege ohne Kreuzreaktivität kartieren."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Q5: How do I properly collect and ship avian samples to ensure RNA and DNA stability?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "A5: Für Federfollikel-Viren wie PBFDV oder PiCV 2 bis 3 frische, aktiv wachsende Federn mit sichtbarer Follikelpulpa an der Basis auszupfen. Für systemische respiratorische oder gastrointestinale Krankheitserreger die Choanenspalte und Kloakenwand fest mit sterilen Nylon-Flockentupfern abstreichen und sofort in einen zugelassenen Nukleinsäure-Stabilisierungspuffer eintauchen. Bei extremen Wetterbedingungen Proben in isolierten Behältern mit Gel-Kühlakkus versenden, um thermischen Abbau zu verhindern. 🔬 Laborforschungspositionserklärung & Haftungsausschluss AvianTestPro arbeitet streng als molekulardiagnostisches Labor, das auf aviare qPCR-Pathogenüberwachung, ELISA-Immunprofilierung und Umwelt-Biosicherheitsanalyse spezialisiert ist. Alle diagnostischen Ergebnisse, Sequenznachweise und Berichtsanalysen dienen ausschließlich der wissenschaftlichen Forschung, der epidemiologischen Populationsüberwachung und der ganzheitlichen Biosicherheitsrisikobewertung. Die hierin bereitgestellten Kennzahlen und Befunde stellen keine formelle veterinärmedizinische klinische Diagnose, rechtliche Therapieanleitung oder offizielle Tiergesundheitszertifizierung dar und sind nicht als solche gedacht. Unser Laborrahmen dient ausschließlich der Bereitstellung umsetzbarer, hochsensibler Daten, um mit Schlagmanagern, Trainern und Vogelzüchtern bei der gemeinsamen Entwicklung präventiver biologischer Kontroll- und Risikominderungsstrategien zusammenzuarbeiten."
+      }
+    }
+  ]
+};
 const hreflang = "<link rel=\"alternate\" hreflang=\"en-US\" href=\"https://aviantestpro.com/data-driven-biosecurity-in-racing-pigeon-lofts-how-periodic-qpcr-testing-transforms-flock-management-from-reactive-to-predictive/\" /> <link rel=\"alternate\" hreflang=\"en\" href=\"https://aviantestpro.com/data-driven-biosecurity-in-racing-pigeon-lofts-how-periodic-qpcr-testing-transforms-flock-management-from-reactive-to-predictive/\" /> <link rel=\"alternate\" hreflang=\"ar\" href=\"https://aviantestpro.com/ar/data-driven-biosecurity-in-racing-pigeon-lofts-how-periodic-qpcr-testing-transforms-flock-management-from-reactive-to-predictive/\" /> <link rel=\"alternate\" hreflang=\"ja\" href=\"https://aviantestpro.com/ja/data-driven-biosecurity-in-racing-pigeon-lofts-how-periodic-qpcr-testing-transforms-flock-management-from-reactive-to-predictive/\" /> <link rel=\"alternate\" hreflang=\"ko-KR\" href=\"https://aviantestpro.com/ko/data-driven-biosecurity-in-racing-pigeon-lofts-how-periodic-qpcr-testing-transforms-flock-management-from-reactive-to-predictive/\" /> <link rel=\"alternate\" hreflang=\"ko\" href=\"https://aviantestpro.com/ko/data-driven-biosecurity-in-racing-pigeon-lofts-how-periodic-qpcr-testing-transforms-flock-management-from-reactive-to-predictive/\" /> <link rel=\"alternate\" hreflang=\"es-ES\" href=\"https://aviantestpro.com/es/data-driven-biosecurity-in-racing-pigeon-lofts-how-periodic-qpcr-testing-transforms-flock-management-from-reactive-to-predictive/\" /> <link rel=\"alternate\" hreflang=\"es\" href=\"https://aviantestpro.com/es/data-driven-biosecurity-in-racing-pigeon-lofts-how-periodic-qpcr-testing-transforms-flock-management-from-reactive-to-predictive/\" /> <link rel=\"alternate\" hreflang=\"fr-FR\" href=\"https://aviantestpro.com/fr/data-driven-biosecurity-in-racing-pigeon-lofts-how-periodic-qpcr-testing-transforms-flock-management-from-reactive-to-predictive/\" /> <link rel=\"alternate\" hreflang=\"fr\" href=\"https://aviantestpro.com/fr/data-driven-biosecurity-in-racing-pigeon-lofts-how-periodic-qpcr-testing-transforms-flock-management-from-reactive-to-predictive/\" /> <link rel=\"alternate\" hreflang=\"de-DE\" href=\"https://aviantestpro.com/de/data-driven-biosecurity-in-racing-pigeon-lofts-how-periodic-qpcr-testing-transforms-flock-management-from-reactive-to-predictive/\" /> <link rel=\"alternate\" hreflang=\"de\" href=\"https://aviantestpro.com/de/data-driven-biosecurity-in-racing-pigeon-lofts-how-periodic-qpcr-testing-transforms-flock-management-from-reactive-to-predictive/\" /> <link rel=\"alternate\" hreflang=\"x-default\" href=\"https://aviantestpro.com/data-driven-biosecurity-in-racing-pigeon-lofts-how-periodic-qpcr-testing-transforms-flock-management-from-reactive-to-predictive/\" />";
 ---
-<BaseLayout title={page.title} description={page.description} canonical={page.canonical} ogType="article" lang="de" dir="ltr" hreflang={hreflang} author={page.author}>
+<BaseLayout title={page.title} description={page.description} canonical={page.canonical} ogType="article" jsonLd={faqJsonLd} lang="de" dir="ltr" hreflang={hreflang} author={page.author}>
   <article class="page-content">
     <h1 class="page-title">{page.h1}</h1>
     <div class="entry-meta">By SENO Testing Center <span>/ June 8, 2026</span></div>

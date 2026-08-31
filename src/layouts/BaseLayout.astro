@@ -158,7 +158,7 @@ const breadcrumbJsonLd = {
     <meta name="description" content={description} />
     <link rel="canonical" href={canonicalUrl} />
     {hreflang && <Fragment set:html={hreflang} />}
-    <meta name="robots" content={noindex ? "noindex" : "max-image-preview:large"} />
+    <meta name="robots" content={noindex ? "noindex, nofollow" : "index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1"} />
     {author && <meta name="author" content={author} />}
 
     <meta property="og:site_name" content={BRAND} />

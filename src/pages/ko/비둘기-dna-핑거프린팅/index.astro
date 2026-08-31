@@ -9,9 +9,87 @@ const page = {
   author: "",
   date: "",
 };
+const faqJsonLd = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "비둘기 DNA 지문 분석이란 무엇인가요?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "비둘기 DNA 지문 분석은 SNP 분석을 사용하여 비둘기의 고유한 DNA 동일성 프로필을 생성하는 유전자 식별 방법입니다."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "SNP는 무엇을 의미하나요?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "SNP는 단일염기다형성(Single Nucleotide Polymorphism)의 약자로, 개체 간의 작은 DNA 서열 변이를 의미합니다."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "왜 57개의 SNP 유전자좌를 사용하나요?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "여러 SNP 유전자좌를 사용하면 식별 정확도가 높아지고 친자 검증 신뢰성이 향상됩니다."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "DNA 지문 분석으로 비둘기의 친자를 증명할 수 있나요?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "네. SNP는 엄격한 멘델 유전 법칙(각 부모로부터 하나의 사본을 유전받음)을 따르기 때문에, 자손의 SNP 프로필을 추정 부모와 비교함으로써 본 연구소는 절대적인 과학적 확실성으로 생물학적 친자 관계를 검증할 수 있습니다."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "경주 비둘기에서 DNA 지문 분석이 왜 중요한가요?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "DNA 지문 분석은 사기를 방지하고, 혈통을 검증하며, 신원을 확인하고, 귀중한 번식 혈통을 보호하는 데 도움이 됩니다."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "어떤 샘플을 사용할 수 있나요?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "일반적인 샘플 유형에는 깃털 모낭, 혈액 샘플 및 조직 샘플이 포함됩니다."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "DNA 프로필은 영구적인가요?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "네. 비둘기의 SNP 프로필은 평생 동안 안정적으로 유지됩니다."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "두 비둘기가 동일한 SNP 프로필을 공유할 수 있나요?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "수학적으로 그 확률은 사실상 불가능합니다. 당사의 고급 57-유전자좌 SNP 프로파일링 패널을 활용하면, 각 개별 비둘기가 진정으로 고유한 유전자 시그니처를 보유하도록 보장할 만큼 충분히 높은 식별력을 제공합니다 (드문 일란성 쌍둥이 제외)."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "염기서열 분석 기반 SNP 검사가 왜 신뢰할 수 있나요?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "염기서열 분석은 유전자 뉴클레오티드 변이를 직접 분석하여 고도로 재현 가능하고 정밀한 분자 데이터를 제공합니다. 과학적 참고 문헌 Vignal, A., Milan, D., SanCristobal, M., & Eggen, A. (2002). A review on SNP and other types of molecular markers and their use in animal genetics. Genetics Selection Evolution , 34(3), 275–305. DOI: https://doi.org/10.1186/1297-9686-34-3-275 Morin, P. A., Luikart, G., & Wayne, R. K. (2004). SNPs in ecology, evolution and conservation. Trends in Ecology & Evolution , 19(4), 208–216. DOI: https://doi.org/10.1016/j.tree.2004.01.009 Brumfield, R. T., Beerli, P., Nickerson, D. A., & Edwards, S. V. (2003). The utility of single nucleotide polymorphisms in inferences of population history. Trends in Ecology & Evolution , 18(5), 249–256. DOI: https://doi.org/10.1016/S0169-5347(03)00018-1 Butler, J. M. (2015). The future of forensic DNA analysis. Philosophical Transactions of the Royal Society B , 370(1674). DOI: https://doi.org/10.1098/rstb.2014.0252"
+      }
+    }
+  ]
+};
 const hreflang = "<link rel=\"alternate\" hreflang=\"en-US\" href=\"https://aviantestpro.com/pigeon-dna-fingerprinting/\" /> <link rel=\"alternate\" hreflang=\"en\" href=\"https://aviantestpro.com/pigeon-dna-fingerprinting/\" /> <link rel=\"alternate\" hreflang=\"ar\" href=\"https://aviantestpro.com/ar/بصمات-الحمض-النووي-للحمام/\" /> <link rel=\"alternate\" hreflang=\"ja\" href=\"https://aviantestpro.com/ja/ハトのdna指紋/\" /> <link rel=\"alternate\" hreflang=\"ko-KR\" href=\"https://aviantestpro.com/ko/비둘기-dna-핑거프린팅/\" /> <link rel=\"alternate\" hreflang=\"ko\" href=\"https://aviantestpro.com/ko/비둘기-dna-핑거프린팅/\" /> <link rel=\"alternate\" hreflang=\"es-ES\" href=\"https://aviantestpro.com/es/huellas-de-adn-de-palomas/\" /> <link rel=\"alternate\" hreflang=\"es\" href=\"https://aviantestpro.com/es/huellas-de-adn-de-palomas/\" /> <link rel=\"alternate\" hreflang=\"fr-FR\" href=\"https://aviantestpro.com/fr/empreinte-genetique-des-pigeons/\" /> <link rel=\"alternate\" hreflang=\"fr\" href=\"https://aviantestpro.com/fr/empreinte-genetique-des-pigeons/\" /> <link rel=\"alternate\" hreflang=\"de-DE\" href=\"https://aviantestpro.com/de/tauben-dna-fingerprinting/\" /> <link rel=\"alternate\" hreflang=\"de\" href=\"https://aviantestpro.com/de/tauben-dna-fingerprinting/\" /> <link rel=\"alternate\" hreflang=\"x-default\" href=\"https://aviantestpro.com/pigeon-dna-fingerprinting/\" />";
 ---
-<BaseLayout title={page.title} description={page.description} canonical={page.canonical} ogType="article" lang="ko" dir="ltr" hreflang={hreflang}>
+<BaseLayout title={page.title} description={page.description} canonical={page.canonical} ogType="article" jsonLd={faqJsonLd} lang="ko" dir="ltr" hreflang={hreflang}>
   <article class="page-content">
     <h1 class="page-title">{page.h1}</h1>
     <div class="entry-content" set:html={`<div class=\"wp-block-columns is-layout-flex wp-container-core-columns-is-layout-7387b849 wp-block-columns-is-layout-flex\"><div class=\"wp-block-column is-layout-flow wp-block-column-is-layout-flow\"><h2>전문 비둘기 DNA 지문 분석 연구소</h2><p>비둘기 DNA 지문 분석은 고급 분자 유전자 검사 서비스로, 고처리량 SNP(단일염기다형성) 분석을 통해 경주 비둘기의 영구적인 유전자 동일성 프로필을 확립하는 데 사용됩니다.</p><p>본 연구소는 DNA 염기서열 분석 기술을 사용하여 비둘기 DNA 샘플에서 57개의 유전자 SNP 유전자좌를 분석하고 각 개체 비둘기에 대한 고유한 유전자 지문 프로필을 생성합니다.</p><p>이 유전자 식별 시스템은 경주 비둘기 산업에서 다음과 같은 용도로 널리 사용됩니다:</p><ul><li>비둘기 신원 확인</li><li>사기 방지 보호</li><li>혈통 검증</li><li>친자 확인 검사</li><li>번식 관리</li><li>경주 비둘기 인증</li><li>소유권 확인</li><li>비둘기 간 유전자 비교</li><li>OLR 우승자 신원 확인</li><li>DNA 인증 비둘기 경매</li></ul><p>각 비둘기는 SNP 마커 조합에 기반한 고유한 DNA 동일성 프로필을 받게 되며, 이는 생물학적 유전자 신분증과 유사합니다.</p></div></div><div class=\"wp-block-columns has-ast-global-color-4-color has-ast-global-color-1-background-color has-text-color has-background has-link-color wp-elements-1 is-layout-flex wp-container-core-columns-is-layout-7387b849 wp-block-columns-is-layout-flex\" style=\"border-top-left-radius:15px;border-top-right-radius:15px;border-bottom-left-radius:15px;border-bottom-right-radius:15px\"><div class=\"wp-block-column is-layout-flow wp-block-column-is-layout-flow\"><h3>Consultant: Martin.W</h3><p><strong>이메일:</strong> <a href=\"mailto:martin@senobiocorp.com\">martin@senobiocorp.com</a></p></div><div class=\"wp-block-column is-layout-flow wp-block-column-is-layout-flow\"><div class=\"nta_wa_button\" data-id=\"255\" data-info=\"{&quot;name&quot;:&quot;Martin.W&quot;,&quot;info&quot;:{&quot;number&quot;:&quot;+8613323237275&quot;,&quot;title&quot;:&quot;Martin.Wong&quot;,&quot;predefinedText&quot;:&quot;&quot;,&quot;willBeBackText&quot;:&quot;I will be back in [njwa_time_work]&quot;,&quot;dayOffsText&quot;:&quot;I will be back soon&quot;,&quot;isAlwaysAvailable&quot;:&quot;ON&quot;,&quot;daysOfWeekWorking&quot;:{&quot;sunday&quot;:{&quot;isWorkingOnDay&quot;:&quot;OFF&quot;,&quot;workHours&quot;:[{&quot;startTime&quot;:&quot;08:00&quot;,&quot;endTime&quot;:&quot;17:30&quot;}]},&quot;monday&quot;:{&quot;isWorkingOnDay&quot;:&quot;OFF&quot;,&quot;workHours&quot;:[{&quot;startTime&quot;:&quot;08:00&quot;,&quot;endTime&quot;:&quot;17:30&quot;}]},&quot;tuesday&quot;:{&quot;isWorkingOnDay&quot;:&quot;OFF&quot;,&quot;workHours&quot;:[{&quot;startTime&quot;:&quot;08:00&quot;,&quot;endTime&quot;:&quot;17:30&quot;}]},&quot;wednesday&quot;:{&quot;isWorkingOnDay&quot;:&quot;OFF&quot;,&quot;workHours&quot;:[{&quot;startTime&quot;:&quot;08:00&quot;,&quot;endTime&quot;:&quot;17:30&quot;}]},&quot;thursday&quot;:{&quot;isWorkingOnDay&quot;:&quot;OFF&quot;,&quot;workHours&quot;:[{&quot;startTime&quot;:&quot;08:00&quot;,&quot;endTime&quot;:&quot;17:30&quot;}]},&quot;friday&quot;:{&quot;isWorkingOnDay&quot;:&quot;OFF&quot;,&quot;workHours&quot;:[{&quot;startTime&quot;:&quot;08:00&quot;,&quot;endTime&quot;:&quot;17:30&quot;}]},&quot;saturday&quot;:{&quot;isWorkingOnDay&quot;:&quot;OFF&quot;,&quot;workHours&quot;:[{&quot;startTime&quot;:&quot;08:00&quot;,&quot;endTime&quot;:&quot;17:30&quot;}]}}},&quot;styles&quot;:{&quot;type&quot;:&quot;round&quot;,&quot;backgroundColor&quot;:&quot;#2DB742&quot;,&quot;textColor&quot;:&quot;#fff&quot;,&quot;label&quot;:&quot;Chat with Me Online Now&quot;,&quot;width&quot;:300,&quot;height&quot;:64},&quot;avatar&quot;:false,&quot;options&quot;:{&quot;display&quot;:{&quot;displayCondition&quot;:&quot;showAllPage&quot;,&quot;includePages&quot;:[],&quot;excludePages&quot;:[],&quot;includePosts&quot;:[],&quot;showOnDesktop&quot;:&quot;ON&quot;,&quot;showOnMobile&quot;:&quot;ON&quot;,&quot;time_symbols&quot;:&quot;h:m&quot;},&quot;styles&quot;:{&quot;title&quot;:&quot;Start a Conversation&quot;,&quot;responseText&quot;:&quot;The team typically replies in a few minutes.&quot;,&quot;description&quot;:&quot;Hi! Click one of our member below to chat on &lt;strong&gt;WhatsApp&lt;\\\\/strong&gt;&quot;,&quot;backgroundColor&quot;:&quot;#2db742&quot;,&quot;textColor&quot;:&quot;#fff&quot;,&quot;titleSize&quot;:18,&quot;accountNameSize&quot;:14,&quot;descriptionTextSize&quot;:12,&quot;regularTextSize&quot;:11,&quot;scrollHeight&quot;:500,&quot;isShowScroll&quot;:&quot;OFF&quot;,&quot;isShowResponseText&quot;:&quot;ON&quot;,&quot;btnLabel&quot;:&quot;Need Help? &lt;strong&gt;Chat with us&lt;\\\\/strong&gt;&quot;,&quot;btnLabelWidth&quot;:156,&quot;btnPosition&quot;:&quot;right&quot;,&quot;btnLeftDistance&quot;:30,&quot;btnRightDistance&quot;:30,&quot;btnBottomDistance&quot;:30,&quot;isShowBtnLabel&quot;:&quot;ON&quot;,&quot;isShowGDPR&quot;:&quot;OFF&quot;,&quot;gdprContent&quot;:&quot;Please accept our &lt;a href=\\\\&quot;https:\\\\/\\\\/ninjateam.org\\\\/privacy-policy\\\\/\\\\&quot;&gt;privacy policy&lt;\\\\/a&gt; first to start a conversation.&quot;},&quot;analytics&quot;:{&quot;enabledGoogle&quot;:&quot;OFF&quot;,&quot;enabledFacebook&quot;:&quot;OFF&quot;,&quot;enabledGoogleGA4&quot;:&quot;OFF&quot;}},&quot;gdprStatus&quot;:false,&quot;defaultAvatar&quot;:&quot;https:\\\\/\\\\/aviantestpro.com\\\\/wp-content\\\\/plugins\\\\/wp-whatsapp\\\\/assets\\\\/img\\\\/whatsapp_logo.svg&quot;}\"></div></div></div><div style=\"height:18px\" aria-hidden=\"true\" class=\"wp-block-spacer\"></div><div class=\"wp-block-columns has-ast-global-color-1-background-color has-background is-layout-flex wp-container-core-columns-is-layout-7387b849 wp-block-columns-is-layout-flex\" style=\"border-top-left-radius:15px;border-top-right-radius:15px;border-bottom-left-radius:15px;border-bottom-right-radius:15px\"><div class=\"wp-block-column is-layout-flow wp-block-column-is-layout-flow\"><h3>Consultant: Aaron.W</h3><p><strong>이메일:</strong> <a href=\"mailto:aaron@senobiocorp.com\">aaron@senobiocorp.com</a></p></div><div class=\"wp-block-column is-layout-flow wp-block-column-is-layout-flow\"><div class=\"nta_wa_button\" data-id=\"256\" data-info=\"{&quot;name&quot;:&quot;Aaron.W&quot;,&quot;info&quot;:{&quot;number&quot;:&quot;+8613313137465&quot;,&quot;title&quot;:&quot;Aaron.Wong&quot;,&quot;predefinedText&quot;:&quot;&quot;,&quot;willBeBackText&quot;:&quot;I will be back in [njwa_time_work]&quot;,&quot;dayOffsText&quot;:&quot;I will be back soon&quot;,&quot;isAlwaysAvailable&quot;:&quot;ON&quot;,&quot;daysOfWeekWorking&quot;:{&quot;sunday&quot;:{&quot;isWorkingOnDay&quot;:&quot;OFF&quot;,&quot;workHours&quot;:[{&quot;startTime&quot;:&quot;08:00&quot;,&quot;endTime&quot;:&quot;17:30&quot;}]},&quot;monday&quot;:{&quot;isWorkingOnDay&quot;:&quot;OFF&quot;,&quot;workHours&quot;:[{&quot;startTime&quot;:&quot;08:00&quot;,&quot;endTime&quot;:&quot;17:30&quot;}]},&quot;tuesday&quot;:{&quot;isWorkingOnDay&quot;:&quot;OFF&quot;,&quot;workHours&quot;:[{&quot;startTime&quot;:&quot;08:00&quot;,&quot;endTime&quot;:&quot;17:30&quot;}]},&quot;wednesday&quot;:{&quot;isWorkingOnDay&quot;:&quot;OFF&quot;,&quot;workHours&quot;:[{&quot;startTime&quot;:&quot;08:00&quot;,&quot;endTime&quot;:&quot;17:30&quot;}]},&quot;thursday&quot;:{&quot;isWorkingOnDay&quot;:&quot;OFF&quot;,&quot;workHours&quot;:[{&quot;startTime&quot;:&quot;08:00&quot;,&quot;endTime&quot;:&quot;17:30&quot;}]},&quot;friday&quot;:{&quot;isWorkingOnDay&quot;:&quot;OFF&quot;,&quot;workHours&quot;:[{&quot;startTime&quot;:&quot;08:00&quot;,&quot;endTime&quot;:&quot;17:30&quot;}]},&quot;saturday&quot;:{&quot;isWorkingOnDay&quot;:&quot;OFF&quot;,&quot;workHours&quot;:[{&quot;startTime&quot;:&quot;08:00&quot;,&quot;endTime&quot;:&quot;17:30&quot;}]}}},&quot;styles&quot;:{&quot;type&quot;:&quot;round&quot;,&quot;backgroundColor&quot;:&quot;#2DB742&quot;,&quot;textColor&quot;:&quot;#fff&quot;,&quot;label&quot;:&quot;Chat with Me Online Now&quot;,&quot;width&quot;:300,&quot;height&quot;:64},&quot;avatar&quot;:false,&quot;options&quot;:{&quot;display&quot;:{&quot;displayCondition&quot;:&quot;showAllPage&quot;,&quot;includePages&quot;:[],&quot;excludePages&quot;:[],&quot;includePosts&quot;:[],&quot;showOnDesktop&quot;:&quot;ON&quot;,&quot;showOnMobile&quot;:&quot;ON&quot;,&quot;time_symbols&quot;:&quot;h:m&quot;},&quot;styles&quot;:{&quot;title&quot;:&quot;Start a Conversation&quot;,&quot;responseText&quot;:&quot;The team typically replies in a few minutes.&quot;,&quot;description&quot;:&quot;Hi! Click one of our member below to chat on &lt;strong&gt;WhatsApp&lt;\\\\/strong&gt;&quot;,&quot;backgroundColor&quot;:&quot;#2db742&quot;,&quot;textColor&quot;:&quot;#fff&quot;,&quot;titleSize&quot;:18,&quot;accountNameSize&quot;:14,&quot;descriptionTextSize&quot;:12,&quot;regularTextSize&quot;:11,&quot;scrollHeight&quot;:500,&quot;isShowScroll&quot;:&quot;OFF&quot;,&quot;isShowResponseText&quot;:&quot;ON&quot;,&quot;btnLabel&quot;:&quot;Need Help? &lt;strong&gt;Chat with us&lt;\\\\/strong&gt;&quot;,&quot;btnLabelWidth&quot;:156,&quot;btnPosition&quot;:&quot;right&quot;,&quot;btnLeftDistance&quot;:30,&quot;btnRightDistance&quot;:30,&quot;btnBottomDistance&quot;:30,&quot;isShowBtnLabel&quot;:&quot;ON&quot;,&quot;isShowGDPR&quot;:&quot;OFF&quot;,&quot;gdprContent&quot;:&quot;Please accept our &lt;a href=\\\\&quot;https:\\\\/\\\\/ninjateam.org\\\\/privacy-policy\\\\/\\\\&quot;&gt;privacy policy&lt;\\\\/a&gt; first to start a conversation.&quot;},&quot;analytics&quot;:{&quot;enabledGoogle&quot;:&quot;OFF&quot;,&quot;enabledFacebook&quot;:&quot;OFF&quot;,&quot;enabledGoogleGA4&quot;:&quot;OFF&quot;}},&quot;gdprStatus&quot;:false,&quot;defaultAvatar&quot;:&quot;https:\\\\/\\\\/aviantestpro.com\\\\/wp-content\\\\/plugins\\\\/wp-whatsapp\\\\/assets\\\\/img\\\\/whatsapp_logo.svg&quot;}\"></div></div></div><div class=\"wp-block-columns is-layout-flex wp-container-core-columns-is-layout-7387b849 wp-block-columns-is-layout-flex\"><div class=\"wp-block-column is-layout-flow wp-block-column-is-layout-flow\"><h2>비둘기 DNA 지문 분석 인증서 (샘플)</h2></div></div><div class=\"wp-block-columns is-layout-flex wp-container-core-columns-is-layout-7387b849 wp-block-columns-is-layout-flex\"><div class=\"wp-block-column is-layout-flow wp-block-column-is-layout-flow\"><figure class=\"wp-block-image aligncenter\">

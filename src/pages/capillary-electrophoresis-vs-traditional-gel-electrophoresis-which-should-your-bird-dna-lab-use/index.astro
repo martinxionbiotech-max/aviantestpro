@@ -9,9 +9,63 @@ const page = {
   author: "SENO Testing Center",
   date: "August 27, 2026",
 };
+const faqJsonLd = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Is capillary electrophoresis more accurate than gel electrophoresis?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "For fragment sizing, yes — CE resolves 1–2 bp differences and outputs quantitative digital data; agarose gel is coarser and semi-quantitative. Final result accuracy also depends on the PCR assay and sample quality, but CE is the superior detection platform."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Can bird DNA sexing be done on a gel?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes, in principle — the original Griffiths et al. (1998) CHD protocol used gels. But for commercial volume across 600+ species, CE’s resolution and reproducibility make it the standard choice."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How much does a capillary electrophoresis system cost?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Entry single-capillary systems start ~$30k–$50k; multi-capillary genetic analyzers range $60k–$150k+; 96-capillary flagships exceed $150k. Refurbished units cut cost 30–60%."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What is an electropherogram?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "The digital graph CE produces: each peak is a DNA fragment, peak position = size, peak height = quantity. It is the traceable raw data of a run."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Why is contamination risk lower with CE?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "CE uses a closed capillary and automated injection; PCR product is never manually handled on an open gel after amplification, reducing cross-sample transfer."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What size difference can CE resolve vs agarose gel?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "CE resolves ~1–2 bp; standard agarose ~5–10 bp. This is why CE cleanly separates the small CHD-Z/CHD-W polymorphism that agarose may smear. Key References Griffiths, R., Double, M. C., Orr, K., & Dawson, R. J. G. (1998). A DNA test to sex most birds. Molecular Ecology, 7(8), 1071–1075. Fridolfsson, A.-K., & Ellegren, H. (1999). A simple and universal method for molecular sexing of non-ratite birds. Journal of Avian Biology, 30(1), 116–121. Butler, J. M. (2015). Advanced Topics in Forensic DNA Typing: Methodology. Academic Press. (Chapters on capillary electrophoresis and STR analysis.) The Bottom Line For a commercial bird DNA lab, capillary electrophoresis is the enabling technology that turns a PCR reaction into a defensible, reproducible, scalable result. It delivers the 1–2 bp resolution required for reliable CHD-based sexing across species, the sub-base-pair precision STR parentage demands, and the automation that makes thousands of samples per month practical. Gel electrophoresis keeps its place in low-budget, low-volume, and educational settings. But if your product is >99%-accurate sexing and trustworthy parentage certificates at commercial scale, your equipment roadmap points to CE. Related articles : How Capillary Electrophoresis Analysis Works in Bird Sexing and Parentage · Capillary Electrophoresis Systems: A Buying Guide · The Complete Guide to Bird DNA Sexing · RT-PCR vs Traditional PCR in Bird Testing"
+      }
+    }
+  ]
+};
 const hreflang = "<link rel=\"alternate\" hreflang=\"en-US\" href=\"https://aviantestpro.com/capillary-electrophoresis-vs-traditional-gel-electrophoresis-which-should-your-bird-dna-lab-use/\" /> <link rel=\"alternate\" hreflang=\"en\" href=\"https://aviantestpro.com/capillary-electrophoresis-vs-traditional-gel-electrophoresis-which-should-your-bird-dna-lab-use/\" /> <link rel=\"alternate\" hreflang=\"ar\" href=\"https://aviantestpro.com/ar/capillary-electrophoresis-vs-traditional-gel-electrophoresis-which-should-your-bird-dna-lab-use/\" /> <link rel=\"alternate\" hreflang=\"ja\" href=\"https://aviantestpro.com/ja/capillary-electrophoresis-vs-traditional-gel-electrophoresis-which-should-your-bird-dna-lab-use/\" /> <link rel=\"alternate\" hreflang=\"ko-KR\" href=\"https://aviantestpro.com/ko/capillary-electrophoresis-vs-traditional-gel-electrophoresis-which-should-your-bird-dna-lab-use/\" /> <link rel=\"alternate\" hreflang=\"ko\" href=\"https://aviantestpro.com/ko/capillary-electrophoresis-vs-traditional-gel-electrophoresis-which-should-your-bird-dna-lab-use/\" /> <link rel=\"alternate\" hreflang=\"es-ES\" href=\"https://aviantestpro.com/es/capillary-electrophoresis-vs-traditional-gel-electrophoresis-which-should-your-bird-dna-lab-use/\" /> <link rel=\"alternate\" hreflang=\"es\" href=\"https://aviantestpro.com/es/capillary-electrophoresis-vs-traditional-gel-electrophoresis-which-should-your-bird-dna-lab-use/\" /> <link rel=\"alternate\" hreflang=\"fr-FR\" href=\"https://aviantestpro.com/fr/capillary-electrophoresis-vs-traditional-gel-electrophoresis-which-should-your-bird-dna-lab-use/\" /> <link rel=\"alternate\" hreflang=\"fr\" href=\"https://aviantestpro.com/fr/capillary-electrophoresis-vs-traditional-gel-electrophoresis-which-should-your-bird-dna-lab-use/\" /> <link rel=\"alternate\" hreflang=\"de-DE\" href=\"https://aviantestpro.com/de/capillary-electrophoresis-vs-traditional-gel-electrophoresis-which-should-your-bird-dna-lab-use/\" /> <link rel=\"alternate\" hreflang=\"de\" href=\"https://aviantestpro.com/de/capillary-electrophoresis-vs-traditional-gel-electrophoresis-which-should-your-bird-dna-lab-use/\" /> <link rel=\"alternate\" hreflang=\"x-default\" href=\"https://aviantestpro.com/capillary-electrophoresis-vs-traditional-gel-electrophoresis-which-should-your-bird-dna-lab-use/\" />";
 ---
-<BaseLayout title={page.title} hreflang={hreflang} description={page.description} canonical={page.canonical} ogType="article" author={page.author} datePublished="2026-08-27" dateModified="2026-08-27">
+<BaseLayout title={page.title} hreflang={hreflang} description={page.description} canonical={page.canonical} ogType="article" jsonLd={faqJsonLd} author={page.author} datePublished="2026-08-27" dateModified="2026-08-27">
   <article class="page-content">
     <h1 class="page-title">{page.h1}</h1>
     <div class="entry-meta">By SENO Testing Center <span>/ August 27, 2026</span></div>

@@ -9,9 +9,55 @@ const page = {
   author: "SENO Testing Center",
   date: "June 8, 2026",
 };
+const faqJsonLd = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Q1: What is the most reliable method for early bird disease detection before symptoms show?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "A1: 실시간 정량 PCR(qPCR)은 조기 조류 질병 검출의 금본위로, 임상 증상이 나타나기 7~14일 전에 바이러스, 세균 및 진균 병원체를 식별할 수 있습니다. 높은 바이러스 부하를 요구하는 신속 항원 검사와 달리, qPCR은 무증상 잠복기 동안 저복제 핵산을 검출하여 사육자가 전체 무리 전파 전에 감염된 새를 격리할 수 있게 합니다."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Q2: Why should racing pigeon lofts combine qPCR screening with ELISA antibody testing?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "A2: qPCR과 ELISA 검사를 결합하면 능동 감염과 능동 면역을 동시에 추적하여 전체 주기 무리 생물안전 프레임워크를 생성합니다. qPCR은 비둘기장 내 능동 병원체 배출과 무증상 보균자를 식별하는 반면, ELISA는 백신 접종 후 항체 역가와 면역 반응 강도를 측정합니다. 이 이중 작용 데이터는 레이싱 비둘기의 성숙도를 보장하고, 표적 격리를 안내하며, 맹목적인 약물 과용을 방지합니다."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Q3: How often should a high-density racing pigeon loft undergo molecular diagnostics?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "A3: 고밀도 레이싱 비둘기장은 특정 고스트레스 생물학적 주기에 맞춰 월간 또는 계절별로 일상적인 분자 진단을 받아야 합니다. 중요한 검사 창에는 어린 새 비둘기장 입장 단계, 경주 전 방송 훈련, 활동적 번식 기간이 포함됩니다. 급수 시스템과 비둘기장 먼지의 지속적인 환경 배치 모니터링은 병원체를 조기에 차단하기 위해 이러한 간격을 보완해야 합니다."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Q4: Can a single multiplex qPCR panel detect mixed viral and bacterial infections in exotic birds?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "A4: 예, 고급 멀티플렉스 qPCR 패널은 단일 워크플로우에서 여러 개별 바이러스, 세균, 원충 및 진균 병원체를 동시에 검출하고 구별하도록 설계되었습니다. 예를 들어, AvianTestPro 패널 스크린은 이중 면봉 시료에서 비둘기 파라믹소바이러스 1형(PPMV-1), 아데노바이러스(PiADV), 클라미디아 프시타시와 같은 타겟을 공동 증폭하여 교차 반응 없이 정확한 환경 전파 경로를 매핑할 수 있습니다."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Q5: How do I properly collect and ship avian samples to ensure RNA and DNA stability?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "A5: PBFDV 또는 PiCV와 같은 깃털 모낭 바이러스의 경우, 기저부에 육안으로 보이는 모낭 수질이 있는 갓 자란 활발한 깃털 2~3개를 뽑습니다. 전신성 호흡기 또는 위장관 병원체의 경우, 멸균 나일론 플록 면봉으로 구개열과 배설강 벽을 단단히 쓸어낸 후 승인된 핵산 안정화 완충액에 즉시 담급니다. 극한 기후에서 배송 시 열 변성을 방지하기 위해 젤 아이스팩이 있는 단열 용기에 시료를 안전하게 보관하십시오. 🔬 실험실 연구 입장 성명 및 면책 조항 AvianTestPro는 조류 qPCR 병원체 감시, ELISA 면역 프로파일링 및 환경 생물안전 분석을 전문으로 하는 분자 진단 실험실로 엄격히 운영됩니다. 모든 진단 출력, 서열 검출 및 보고 분석은 과학적 연구, 개체군 역학 모니터링 및 전체론적 생물안전 위험 평가를 위한 목적으로만 제공됩니다. 본 문서에 포함된 지표와 결과는 공식 수의학 임상 진단, 법적 치료 지침 또는 공식 동물 건강 인증을 구성하지 않으며 이를 대체하기 위한 것이 아닙니다. 당사 실험실 프레임워크는 비둘기장 관리자, 코치 및 조류 사육자와 협력하여 예방적 생물학적 통제 및 위험 완화 전략을 공동 개발하기 위해 실행 가능한 고감도 데이터를 공급하는 기능만을 수행합니다."
+      }
+    }
+  ]
+};
 const hreflang = "<link rel=\"alternate\" hreflang=\"en-US\" href=\"https://aviantestpro.com/data-driven-biosecurity-in-racing-pigeon-lofts-how-periodic-qpcr-testing-transforms-flock-management-from-reactive-to-predictive/\" /> <link rel=\"alternate\" hreflang=\"en\" href=\"https://aviantestpro.com/data-driven-biosecurity-in-racing-pigeon-lofts-how-periodic-qpcr-testing-transforms-flock-management-from-reactive-to-predictive/\" /> <link rel=\"alternate\" hreflang=\"ar\" href=\"https://aviantestpro.com/ar/data-driven-biosecurity-in-racing-pigeon-lofts-how-periodic-qpcr-testing-transforms-flock-management-from-reactive-to-predictive/\" /> <link rel=\"alternate\" hreflang=\"ja\" href=\"https://aviantestpro.com/ja/data-driven-biosecurity-in-racing-pigeon-lofts-how-periodic-qpcr-testing-transforms-flock-management-from-reactive-to-predictive/\" /> <link rel=\"alternate\" hreflang=\"ko-KR\" href=\"https://aviantestpro.com/ko/data-driven-biosecurity-in-racing-pigeon-lofts-how-periodic-qpcr-testing-transforms-flock-management-from-reactive-to-predictive/\" /> <link rel=\"alternate\" hreflang=\"ko\" href=\"https://aviantestpro.com/ko/data-driven-biosecurity-in-racing-pigeon-lofts-how-periodic-qpcr-testing-transforms-flock-management-from-reactive-to-predictive/\" /> <link rel=\"alternate\" hreflang=\"es-ES\" href=\"https://aviantestpro.com/es/data-driven-biosecurity-in-racing-pigeon-lofts-how-periodic-qpcr-testing-transforms-flock-management-from-reactive-to-predictive/\" /> <link rel=\"alternate\" hreflang=\"es\" href=\"https://aviantestpro.com/es/data-driven-biosecurity-in-racing-pigeon-lofts-how-periodic-qpcr-testing-transforms-flock-management-from-reactive-to-predictive/\" /> <link rel=\"alternate\" hreflang=\"fr-FR\" href=\"https://aviantestpro.com/fr/data-driven-biosecurity-in-racing-pigeon-lofts-how-periodic-qpcr-testing-transforms-flock-management-from-reactive-to-predictive/\" /> <link rel=\"alternate\" hreflang=\"fr\" href=\"https://aviantestpro.com/fr/data-driven-biosecurity-in-racing-pigeon-lofts-how-periodic-qpcr-testing-transforms-flock-management-from-reactive-to-predictive/\" /> <link rel=\"alternate\" hreflang=\"de-DE\" href=\"https://aviantestpro.com/de/data-driven-biosecurity-in-racing-pigeon-lofts-how-periodic-qpcr-testing-transforms-flock-management-from-reactive-to-predictive/\" /> <link rel=\"alternate\" hreflang=\"de\" href=\"https://aviantestpro.com/de/data-driven-biosecurity-in-racing-pigeon-lofts-how-periodic-qpcr-testing-transforms-flock-management-from-reactive-to-predictive/\" /> <link rel=\"alternate\" hreflang=\"x-default\" href=\"https://aviantestpro.com/data-driven-biosecurity-in-racing-pigeon-lofts-how-periodic-qpcr-testing-transforms-flock-management-from-reactive-to-predictive/\" />";
 ---
-<BaseLayout title={page.title} description={page.description} canonical={page.canonical} ogType="article" lang="ko" dir="ltr" hreflang={hreflang} author={page.author}>
+<BaseLayout title={page.title} description={page.description} canonical={page.canonical} ogType="article" jsonLd={faqJsonLd} lang="ko" dir="ltr" hreflang={hreflang} author={page.author}>
   <article class="page-content">
     <h1 class="page-title">{page.h1}</h1>
     <div class="entry-meta">By SENO Testing Center <span>/ June 8, 2026</span></div>

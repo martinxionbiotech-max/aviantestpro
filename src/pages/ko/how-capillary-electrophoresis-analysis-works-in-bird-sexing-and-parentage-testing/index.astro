@@ -9,9 +9,63 @@ const page = {
   author: "SENO Testing Center",
   date: "August 27, 2026",
 };
+const faqJsonLd = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "전기영동도란 무엇인가요?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "CE가 생성하는 디지털 그래프에서: 피크는 DNA 단편을 나타내며, 피크 위치는 크기를, 피크 높이는 양을 나타냅니다. 이는 성별 판별 또는 친자 관계 판정 결과의 근거가 되는 추적 가능한 원시 데이터입니다."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "CE는 수컷과 암컷 새를 어떻게 구별하나요?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "CE 크기에 따라 CHD 단편이 증폭되었다. 수컷(ZZ)에서는 하나의 단편 크기(하나의 피크)가 나타나는 반면, 암컷(ZW)에서는 CHD-Z와 CHD-W의 인트론 차이가 미미하기 때문에 두 가지 크기(두 개의 피크)가 나타난다."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "새의 성별 판별에 있어 CE가 젤보다 더 나은 이유는 무엇인가요?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "CE는 1~2 염기쌍의 분해능을 갖춰, 간격이 불과 몇 염기쌍에 불과한 경우에도 CHD-Z와 CHD-W 간의 미세한 차이를 명확하게 구분해 냅니다. 또한 워크플로를 자동화하여 오염과 인적 오류를 줄여줍니다."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "친자 확인 검사에서 CE는 어떻게 사용되나요?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "CE는 대립유전자 래더를 기준으로 형광 STR 마커의 크기를 측정하여, 친자 관계를 확인하거나 배제하는 데 사용되는 정확한 수치 프로파일을 생성합니다."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "CE를 이용한 조류 DNA 검사의 정확도는 어느 정도인가요?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "전문 검사실에서는 CE를 검증된 분석법과 양질의 검체와 결합하고, 내부 품질 관리 및 정기적인 재검사를 통해 99% 이상의 정확도를 달성합니다."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "CE 분석에는 얼마나 걸리나요?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "분리 과정은 일반적으로 30~60분이 소요되며, 다중 모세관 시스템은 여러 시료를 자동으로 병렬 처리하여 분석합니다. 주요 참고 문헌 Griffiths, R., Double, M. C., Orr, K., & Dawson, R. J. G. (1998). 대부분의 새의 성별을 판별하는 DNA 검사. Molecular Ecology, 7(8), 1071–1075. Fridolfsson, A.-K., & Ellegren, H. (1999). 비비둘기목 조류의 분자적 성별 판별을 위한 간단하고 보편적인 방법. 『조류 생물학 저널』, 30(1), 116–121. Butler, J. M. (2015). 법의학 DNA 타입 분석의 심화 주제: 방법론. 아카데믹 프레스. 결론 CE 분석은 조류 DNA 검사의 결과를 확정적으로 만들어 주는 판독 단계입니다. 이 분석은 형광 단편을 1~2bp의 분해능으로 분리하고 크기를 측정한 다음, 이를 전기영동도로 변환합니다. 이 전기영동도의 피크는 생물학적 결과로 직접 해석되는데, 수컷은 하나의 피크, 암컷은 두 개의 피크가 나타나며, 친자 관계 및 신원 확인을 위한 정확한 프로파일을 제공합니다. 이 같은 판독 방식은 조류 DNA 연구소의 두 가지 핵심 서비스를 모두 뒷받침하고 있으며, 이것이 바로 CE가 조류 분자 진단 분야의 보편적인 플랫폼으로 자리 잡은 이유입니다. 이 방식이 어떻게 작동하는지, 그리고 피크를 어떻게 해석해야 하는지를 이해하는 것이 결과를 신뢰할 수 있는 핵심입니다. 관련 기사 : CE 대 기존 젤 전기영동 · 모세관 전기영동 시스템: 구매 가이드 · 조류 DNA 성별 판별에 관한 완전 가이드"
+      }
+    }
+  ]
+};
 const hreflang = "<link rel=\"alternate\" hreflang=\"en-US\" href=\"https://aviantestpro.com/how-capillary-electrophoresis-analysis-works-in-bird-sexing-and-parentage-testing/\" /> <link rel=\"alternate\" hreflang=\"en\" href=\"https://aviantestpro.com/how-capillary-electrophoresis-analysis-works-in-bird-sexing-and-parentage-testing/\" /> <link rel=\"alternate\" hreflang=\"ar\" href=\"https://aviantestpro.com/ar/how-capillary-electrophoresis-analysis-works-in-bird-sexing-and-parentage-testing/\" /> <link rel=\"alternate\" hreflang=\"ja\" href=\"https://aviantestpro.com/ja/how-capillary-electrophoresis-analysis-works-in-bird-sexing-and-parentage-testing/\" /> <link rel=\"alternate\" hreflang=\"ko-KR\" href=\"https://aviantestpro.com/ko/how-capillary-electrophoresis-analysis-works-in-bird-sexing-and-parentage-testing/\" /> <link rel=\"alternate\" hreflang=\"ko\" href=\"https://aviantestpro.com/ko/how-capillary-electrophoresis-analysis-works-in-bird-sexing-and-parentage-testing/\" /> <link rel=\"alternate\" hreflang=\"es-ES\" href=\"https://aviantestpro.com/es/how-capillary-electrophoresis-analysis-works-in-bird-sexing-and-parentage-testing/\" /> <link rel=\"alternate\" hreflang=\"es\" href=\"https://aviantestpro.com/es/how-capillary-electrophoresis-analysis-works-in-bird-sexing-and-parentage-testing/\" /> <link rel=\"alternate\" hreflang=\"fr-FR\" href=\"https://aviantestpro.com/fr/how-capillary-electrophoresis-analysis-works-in-bird-sexing-and-parentage-testing/\" /> <link rel=\"alternate\" hreflang=\"fr\" href=\"https://aviantestpro.com/fr/how-capillary-electrophoresis-analysis-works-in-bird-sexing-and-parentage-testing/\" /> <link rel=\"alternate\" hreflang=\"de-DE\" href=\"https://aviantestpro.com/de/how-capillary-electrophoresis-analysis-works-in-bird-sexing-and-parentage-testing/\" /> <link rel=\"alternate\" hreflang=\"de\" href=\"https://aviantestpro.com/de/how-capillary-electrophoresis-analysis-works-in-bird-sexing-and-parentage-testing/\" /> <link rel=\"alternate\" hreflang=\"x-default\" href=\"https://aviantestpro.com/how-capillary-electrophoresis-analysis-works-in-bird-sexing-and-parentage-testing/\" />";
 ---
-<BaseLayout title={page.title} description={page.description} canonical={page.canonical} ogType="article" lang="ko" dir="ltr" hreflang={hreflang} author={page.author} datePublished="2026-08-27" dateModified="2026-08-27">
+<BaseLayout title={page.title} description={page.description} canonical={page.canonical} ogType="article" jsonLd={faqJsonLd} lang="ko" dir="ltr" hreflang={hreflang} author={page.author} datePublished="2026-08-27" dateModified="2026-08-27">
   <article class="page-content">
     <h1 class="page-title">{page.h1}</h1>
     <div class="entry-meta">By SENO Testing Center <span>/ August 27, 2026</span></div>

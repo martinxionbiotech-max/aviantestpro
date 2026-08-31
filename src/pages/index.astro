@@ -9,9 +9,127 @@ const page = {
   author: "",
   date: "",
 };
+const faqJsonLd = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "How accurate is your bird DNA testing?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Our avian DNA testing achieves up to 99% accuracy using validated PCR-based molecular methods. Each testing batch includes internal quality controls and partial sample retesting to reduce the risk of false identification. Compared with visual sexing methods, bird DNA testing provides significantly more reliable gender identification for parrots, pigeons, and other avian species."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Can feathers be used for bird DNA testing?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes. Freshly plucked feathers with visible follicle tissue are commonly used for bird DNA testing and are suitable for most parrot, pigeon, and ornamental bird species. Blood samples are also accepted for certain species or advanced genetic analysis."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What samples can be used for avian DNA testing?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "We commonly test feather samples, blood samples, and eggshell membrane samples (for some species). Feather DNA testing is the most popular option because it is simple, safe, and convenient for international shipping."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What PCR method do you use for bird DNA testing?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Our laboratory uses PCR (Polymerase Chain Reaction) molecular testing methods to amplify and analyze bird DNA markers associated with gender identification. PCR-based avian DNA testing is widely recognized for its high sensitivity and suitability for international laboratory testing services."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Why is bird DNA testing more accurate than visual sexing?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Many bird species are visually monomorphic. DNA testing analyzes genetic markers directly, making it one of the most accurate methods for avian gender identification."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What types of birds can you test?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "We test a wide range of avian species, including parrots, racing pigeons, pet pigeons, canaries, finches, ornamental birds, and exotic birds. If you are unsure whether your bird species can be tested, please contact us before shipping samples."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How long does bird DNA testing take?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Most laboratory testing is completed within 1–2 working days after sample arrival. Total international turnaround time usually ranges from 7–10 days."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Do you accept international bird DNA samples?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes. We regularly receive international bird DNA samples from breeders, bird owners, pet shops, veterinary partners, and distributors worldwide."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How do I send bird DNA samples to your laboratory?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Please contact us before shipping samples so we can provide the latest sample collection and shipping instructions."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Is international shipping for feather samples safe?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Based on our long-term international shipping experience, feather sample transportation is generally stable and low risk when properly packaged. Sending multiple samples together is recommended to reduce shipping costs."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Do you offer bulk bird DNA testing services?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes. We provide bulk avian DNA testing services for bird breeders, pigeon clubs, pet shops, veterinary clinics, and international distributors."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Do you offer distributor or agent cooperation?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes. We work with international partners and regional distributors in multiple countries. Cooperation options include reseller partnerships, local sample collection support, and long-term laboratory collaboration."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Do you provide English test reports?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes. All laboratory reports and customer communication can be provided in English."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Why choose AviantestPro for avian DNA testing?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "AviantestPro provides professional PCR-based bird DNA testing services focused on international clients, breeders, and distributors. We emphasize testing accuracy, stable international sample handling, fast laboratory turnaround, and long-term cooperation support."
+      }
+    }
+  ]
+};
 const hreflang = "<link rel=\"alternate\" hreflang=\"en-US\" href=\"https://aviantestpro.com/\" /> <link rel=\"alternate\" hreflang=\"en\" href=\"https://aviantestpro.com/\" /> <link rel=\"alternate\" hreflang=\"ar\" href=\"https://aviantestpro.com/ar/\" /> <link rel=\"alternate\" hreflang=\"ja\" href=\"https://aviantestpro.com/ja/\" /> <link rel=\"alternate\" hreflang=\"ko-KR\" href=\"https://aviantestpro.com/ko/\" /> <link rel=\"alternate\" hreflang=\"ko\" href=\"https://aviantestpro.com/ko/\" /> <link rel=\"alternate\" hreflang=\"es-ES\" href=\"https://aviantestpro.com/es/\" /> <link rel=\"alternate\" hreflang=\"es\" href=\"https://aviantestpro.com/es/\" /> <link rel=\"alternate\" hreflang=\"fr-FR\" href=\"https://aviantestpro.com/fr/\" /> <link rel=\"alternate\" hreflang=\"fr\" href=\"https://aviantestpro.com/fr/\" /> <link rel=\"alternate\" hreflang=\"de-DE\" href=\"https://aviantestpro.com/de/\" /> <link rel=\"alternate\" hreflang=\"de\" href=\"https://aviantestpro.com/de/\" /> <link rel=\"alternate\" hreflang=\"x-default\" href=\"https://aviantestpro.com/\" />";
 ---
-<BaseLayout title={page.title} hreflang={hreflang} description={page.description} canonical={page.canonical} ogType="article">
+<BaseLayout title={page.title} hreflang={hreflang} description={page.description} canonical={page.canonical} ogType="website" jsonLd={faqJsonLd}>
   <article class="page-content">
     <section class="hero hero-bg">
       <div class="hero-overlay"></div>

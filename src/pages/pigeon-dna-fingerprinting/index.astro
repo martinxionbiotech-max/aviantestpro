@@ -9,9 +9,87 @@ const page = {
   author: "",
   date: "",
 };
+const faqJsonLd = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "What is pigeon DNA fingerprinting?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Pigeon DNA fingerprinting is a genetic identification method that uses SNP analysis to create a unique DNA identity profile for a pigeon."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What does SNP mean?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "SNP stands for Single Nucleotide Polymorphism, which refers to small DNA sequence variations between individuals."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Why are 57 SNP loci used?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Using multiple SNP loci increases identification accuracy and improves parentage verification reliability."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Can DNA fingerprinting prove pigeon parentage?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes. Because SNPs follow strict Mendelian inheritance patterns (inheriting one copy from each parent), comparing the SNP profile of an offspring against its alleged sire and dam allows our laboratory to verify biological parentage with absolute scientific certainty."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Why is DNA fingerprinting important in racing pigeons?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "DNA fingerprinting helps prevent fraud, verify pedigrees, confirm identity, and protect valuable breeding bloodlines."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What samples can be used?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Common sample types include feather follicles, blood samples, and tissue samples."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Is the DNA profile permanent?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes. A pigeon’s SNP profile remains stable throughout its lifetime."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Can two pigeons share the same SNP profile?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "The mathematical probability is virtually impossible. Utilizing our advanced 57-loci SNP profiling panel, the discrimination power is high enough to ensure each individual pigeon possesses a truly unique genetic signature (except for rare identical twins)."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Why is sequencing-based SNP testing reliable?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Sequencing directly analyzes genetic nucleotide variations, providing highly reproducible and precise molecular data. Scientific References Vignal, A., Milan, D., SanCristobal, M., & Eggen, A. (2002). A review on SNP and other types of molecular markers and their use in animal genetics. Genetics Selection Evolution , 34(3), 275–305. DOI: https://doi.org/10.1186/1297-9686-34-3-275 Morin, P. A., Luikart, G., & Wayne, R. K. (2004). SNPs in ecology, evolution and conservation. Trends in Ecology & Evolution , 19(4), 208–216. DOI: https://doi.org/10.1016/j.tree.2004.01.009 Brumfield, R. T., Beerli, P., Nickerson, D. A., & Edwards, S. V. (2003). The utility of single nucleotide polymorphisms in inferences of population history. Trends in Ecology & Evolution , 18(5), 249–256. DOI: https://doi.org/10.1016/S0169-5347(03)00018-1 Butler, J. M. (2015). The future of forensic DNA analysis. Philosophical Transactions of the Royal Society B , 370(1674). DOI: https://doi.org/10.1098/rstb.2014.0252"
+      }
+    }
+  ]
+};
 const hreflang = "<link rel=\"alternate\" hreflang=\"en-US\" href=\"https://aviantestpro.com/pigeon-dna-fingerprinting/\" /> <link rel=\"alternate\" hreflang=\"en\" href=\"https://aviantestpro.com/pigeon-dna-fingerprinting/\" /> <link rel=\"alternate\" hreflang=\"ar\" href=\"https://aviantestpro.com/ar/بصمات-الحمض-النووي-للحمام/\" /> <link rel=\"alternate\" hreflang=\"ja\" href=\"https://aviantestpro.com/ja/ハトのdna指紋/\" /> <link rel=\"alternate\" hreflang=\"ko-KR\" href=\"https://aviantestpro.com/ko/비둘기-dna-핑거프린팅/\" /> <link rel=\"alternate\" hreflang=\"ko\" href=\"https://aviantestpro.com/ko/비둘기-dna-핑거프린팅/\" /> <link rel=\"alternate\" hreflang=\"es-ES\" href=\"https://aviantestpro.com/es/huellas-de-adn-de-palomas/\" /> <link rel=\"alternate\" hreflang=\"es\" href=\"https://aviantestpro.com/es/huellas-de-adn-de-palomas/\" /> <link rel=\"alternate\" hreflang=\"fr-FR\" href=\"https://aviantestpro.com/fr/empreinte-genetique-des-pigeons/\" /> <link rel=\"alternate\" hreflang=\"fr\" href=\"https://aviantestpro.com/fr/empreinte-genetique-des-pigeons/\" /> <link rel=\"alternate\" hreflang=\"de-DE\" href=\"https://aviantestpro.com/de/tauben-dna-fingerprinting/\" /> <link rel=\"alternate\" hreflang=\"de\" href=\"https://aviantestpro.com/de/tauben-dna-fingerprinting/\" /> <link rel=\"alternate\" hreflang=\"x-default\" href=\"https://aviantestpro.com/pigeon-dna-fingerprinting/\" />";
 ---
-<BaseLayout title={page.title} hreflang={hreflang} description={page.description} canonical={page.canonical} ogType="article">
+<BaseLayout title={page.title} hreflang={hreflang} description={page.description} canonical={page.canonical} ogType="article" jsonLd={faqJsonLd}>
   <article class="page-content">
     <h1 class="page-title">{page.h1}</h1>
     

@@ -9,9 +9,55 @@ const page = {
   author: "",
   date: "",
 };
+const faqJsonLd = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "What is the most reliable method for early bird disease detection before symptoms show",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Real-time quantitative PCR (qPCR) is the gold standard for early bird disease detection, enabling the identification of viral, bacterial, and fungal pathogens 7 to 14 days before clinical symptoms manifest . Unlike rapid antigen tests that require a high viral load, qPCR detects low-copy nucleic acids during the subclinical incubation phase, allowing breeders to isolate infected birds before full-scale flock transmission occurs."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Why should racing pigeon lofts combine qPCR screening with ELISA antibody testing",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Combining qPCR and ELISA testing creates a full-cycle flock biosecurity framework by simultaneously tracking active infections and active immunity. qPCR identifies active pathogen shedding and asymptomatic carriers within the loft, while ELISA measures post-vaccination antibody titers and immune response strength . This dual-action data ensures racing pigeon maturity, guides targeted isolation, and prevents blind medication overuses."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How often should a high-density racing pigeon loft undergo molecular diagnostics",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "High-density racing pigeon lofts should undergo routine molecular diagnostics on a monthly or seasonal basis, aligned with specific high-stress biological cycles . Critical testing windows include the young bird loft entry phase, pre-race tosses, and active breeding periods. Continuous environmental batch monitoring of water supply systems and loft dust should complement these intervals to intercept pathogens early."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Can a single multiplex qPCR panel detect mixed viral and bacterial infections in exotic birds",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes, advanced multiplex qPCR panels are engineered to successfully detect and differentiate multiple distinct viral, bacterial, protozoal, and fungal pathogens simultaneously in a single workflow. For example, the AvianTestPro panel screen can co-amplify targets like Pigeon Paramyxovirus Type 1 (PPMV-1) , Adenovirus (PiADV) , and Chlamydia psittaci from dual-swab samples, mapping accurate environmental transmission pathways without cross-reactivity."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How do I properly collect and ship avian samples to ensure RNA and DNA stability",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "For feather-follicle viruses like PBFDV or PiCV, pluck 2 to 3 fresh, actively growing feathers with visible follicular pulp at the base. For systemic respiratory or gastrointestinal pathogens, firmly sweep the choanal cleft and cloacal wall using sterile nylon flocked swabs , then submerge them immediately in an approved Nucleic Acid Stabilization Buffer. Secure samples in insulated containers with gel ice packs if shipping during extreme weather to prevent thermal degradation."
+      }
+    }
+  ]
+};
 const hreflang = "<link rel=\"alternate\" hreflang=\"en-US\" href=\"https://aviantestpro.com/avian-virus-rt-pcr-test/\" /> <link rel=\"alternate\" hreflang=\"en\" href=\"https://aviantestpro.com/avian-virus-rt-pcr-test/\" /> <link rel=\"alternate\" hreflang=\"ar\" href=\"https://aviantestpro.com/ar/اختبار-فيروسات-الطيور/\" /> <link rel=\"alternate\" hreflang=\"ja\" href=\"https://aviantestpro.com/ja/鳥ウイルスrt-pcr検査/\" /> <link rel=\"alternate\" hreflang=\"ko-KR\" href=\"https://aviantestpro.com/ko/조류-바이러스-rt-pcr-검사/\" /> <link rel=\"alternate\" hreflang=\"ko\" href=\"https://aviantestpro.com/ko/조류-바이러스-rt-pcr-검사/\" /> <link rel=\"alternate\" hreflang=\"es-ES\" href=\"https://aviantestpro.com/es/prueba-rt-pcr-del-virus-aviar/\" /> <link rel=\"alternate\" hreflang=\"es\" href=\"https://aviantestpro.com/es/prueba-rt-pcr-del-virus-aviar/\" /> <link rel=\"alternate\" hreflang=\"fr-FR\" href=\"https://aviantestpro.com/fr/virus-aviaire-rt-pcr-test/\" /> <link rel=\"alternate\" hreflang=\"fr\" href=\"https://aviantestpro.com/fr/virus-aviaire-rt-pcr-test/\" /> <link rel=\"alternate\" hreflang=\"de-DE\" href=\"https://aviantestpro.com/de/aviarer-virus-rt-pcr-test/\" /> <link rel=\"alternate\" hreflang=\"de\" href=\"https://aviantestpro.com/de/aviarer-virus-rt-pcr-test/\" /> <link rel=\"alternate\" hreflang=\"x-default\" href=\"https://aviantestpro.com/avian-virus-rt-pcr-test/\" />";
 ---
-<BaseLayout title={page.title} hreflang={hreflang} description={page.description} canonical={page.canonical} ogType="article">
+<BaseLayout title={page.title} hreflang={hreflang} description={page.description} canonical={page.canonical} ogType="article" jsonLd={faqJsonLd}>
   <article class="page-content">
     <h1 class="page-title">{page.h1}</h1>
     

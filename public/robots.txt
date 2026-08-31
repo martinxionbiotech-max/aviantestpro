@@ -11,4 +11,4 @@ Allow: /
 User-agent: Google-Extended
 Allow: /
 
-Sitemap: https://aviantestpro.com/sitemap.xml
+Sitemap: https://aviantestpro.com/sitemap-index.xml

@@ -9,9 +9,63 @@ const page = {
   author: "SENO Testing Center",
   date: "August 27, 2026",
 };
+const faqJsonLd = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "¿Qué es un electroferograma?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "El gráfico digital que genera CE: los picos son fragmentos de ADN; la posición del pico equivale al tamaño, y la altura del pico, a la cantidad. Se trata de los datos brutos trazables que subyacen a un resultado de determinación del sexo o de parentesco."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "¿Cómo distingue CE a un pájaro macho de uno hembra?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Los tamaños CE amplifican los fragmentos de CHD. Los machos (ZZ) presentan un solo tamaño de fragmento (un pico); las hembras (ZW) presentan dos tamaños (dos picos) debido a la pequeña diferencia entre los intrones CHD-Z y CHD-W."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "¿Por qué el CE es mejor que el gel para determinar el sexo de las aves?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "El CE ofrece una resolución de 1-2 pb, lo que permite separar claramente la pequeña diferencia entre CHD-Z y CHD-W, incluso cuando la diferencia es de solo unos pocos pares de bases; además, automatiza el flujo de trabajo, reduciendo así la contaminación y los errores humanos."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "¿Cómo se utiliza el CE en las pruebas de filiación?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "CE compara los marcadores STR fluorescentes con una escalera alélica, lo que genera un perfil digital preciso que se utiliza para confirmar o descartar la filiación."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "¿Qué grado de precisión tienen las pruebas de ADN de aves basadas en el CE?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Los laboratorios profesionales alcanzan una precisión superior al 99% cuando el CE se combina con ensayos validados y muestras de calidad, con el respaldo de un control de calidad interno y la repetición rutinaria de los análisis."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "¿Cuánto tiempo dura el análisis de CE?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "La duración de la separación suele ser de entre 30 y 60 minutos; los sistemas multicapilares analizan muchas muestras en paralelo de forma automática. Referencias clave Griffiths, R., Double, M. C., Orr, K. y Dawson, R. J. G. (1998). Una prueba de ADN para determinar el sexo de la mayoría de las aves. Molecular Ecology, 7(8), 1071-1075. Fridolfsson, A.-K., y Ellegren, H. (1999). Un método sencillo y universal para la determinación molecular del sexo en aves no ratítidas. Revista de Biología Aviar, 30(1), 116-121. Butler, J. M. (2015). Temas avanzados sobre el análisis forense del ADN: metodología. Academic Press. Conclusión El análisis CE es la etapa de lectura que confiere carácter definitivo a las pruebas de ADN de aves. Separa y mide fragmentos fluorescentes con una resolución de 1 a 2 pb, para luego convertirlos en un electroferograma cuyos picos se traducen directamente en respuestas biológicas: un pico para un macho, dos para una hembra y un perfil preciso para determinar la filiación y la identidad. Esa misma lectura es la base de los dos servicios principales de un laboratorio de ADN aviar, razón por la cual la CE se ha convertido en la plataforma universal para el diagnóstico molecular aviar. Comprender cómo funciona —y cómo interpretar los picos— es la clave para confiar en los resultados. Artículos relacionados : Electroforesis por CE frente a la electroforesis en gel tradicional · Sistemas de electroforesis capilar: guía de compra · Guía completa sobre la determinación del sexo de las aves mediante el ADN"
+      }
+    }
+  ]
+};
 const hreflang = "<link rel=\"alternate\" hreflang=\"en-US\" href=\"https://aviantestpro.com/how-capillary-electrophoresis-analysis-works-in-bird-sexing-and-parentage-testing/\" /> <link rel=\"alternate\" hreflang=\"en\" href=\"https://aviantestpro.com/how-capillary-electrophoresis-analysis-works-in-bird-sexing-and-parentage-testing/\" /> <link rel=\"alternate\" hreflang=\"ar\" href=\"https://aviantestpro.com/ar/how-capillary-electrophoresis-analysis-works-in-bird-sexing-and-parentage-testing/\" /> <link rel=\"alternate\" hreflang=\"ja\" href=\"https://aviantestpro.com/ja/how-capillary-electrophoresis-analysis-works-in-bird-sexing-and-parentage-testing/\" /> <link rel=\"alternate\" hreflang=\"ko-KR\" href=\"https://aviantestpro.com/ko/how-capillary-electrophoresis-analysis-works-in-bird-sexing-and-parentage-testing/\" /> <link rel=\"alternate\" hreflang=\"ko\" href=\"https://aviantestpro.com/ko/how-capillary-electrophoresis-analysis-works-in-bird-sexing-and-parentage-testing/\" /> <link rel=\"alternate\" hreflang=\"es-ES\" href=\"https://aviantestpro.com/es/how-capillary-electrophoresis-analysis-works-in-bird-sexing-and-parentage-testing/\" /> <link rel=\"alternate\" hreflang=\"es\" href=\"https://aviantestpro.com/es/how-capillary-electrophoresis-analysis-works-in-bird-sexing-and-parentage-testing/\" /> <link rel=\"alternate\" hreflang=\"fr-FR\" href=\"https://aviantestpro.com/fr/how-capillary-electrophoresis-analysis-works-in-bird-sexing-and-parentage-testing/\" /> <link rel=\"alternate\" hreflang=\"fr\" href=\"https://aviantestpro.com/fr/how-capillary-electrophoresis-analysis-works-in-bird-sexing-and-parentage-testing/\" /> <link rel=\"alternate\" hreflang=\"de-DE\" href=\"https://aviantestpro.com/de/how-capillary-electrophoresis-analysis-works-in-bird-sexing-and-parentage-testing/\" /> <link rel=\"alternate\" hreflang=\"de\" href=\"https://aviantestpro.com/de/how-capillary-electrophoresis-analysis-works-in-bird-sexing-and-parentage-testing/\" /> <link rel=\"alternate\" hreflang=\"x-default\" href=\"https://aviantestpro.com/how-capillary-electrophoresis-analysis-works-in-bird-sexing-and-parentage-testing/\" />";
 ---
-<BaseLayout title={page.title} description={page.description} canonical={page.canonical} ogType="article" lang="es" dir="ltr" hreflang={hreflang} author={page.author} datePublished="2026-08-27" dateModified="2026-08-27">
+<BaseLayout title={page.title} description={page.description} canonical={page.canonical} ogType="article" jsonLd={faqJsonLd} lang="es" dir="ltr" hreflang={hreflang} author={page.author} datePublished="2026-08-27" dateModified="2026-08-27">
   <article class="page-content">
     <h1 class="page-title">{page.h1}</h1>
     <div class="entry-meta">By SENO Testing Center <span>/ August 27, 2026</span></div>

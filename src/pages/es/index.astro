@@ -9,9 +9,127 @@ const page = {
   author: "",
   date: "",
 };
+const faqJsonLd = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "1. ¿Qué tan precisa es su prueba de ADN para aves?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Nuestras pruebas de ADN aviar logran hasta un 99% de precisión utilizando métodos moleculares basados en PCR validados. Cada lote de pruebas incluye controles de calidad internos y reanálisis parcial de muestras para reducir el riesgo de identificación errónea. En comparación con los métodos de sexado visual, las pruebas de ADN para aves proporcionan una identificación de género significativamente más fiable para loros, palomas y otras especies aviares."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "2. ¿Se pueden usar plumas para las pruebas de ADN de aves?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Sí. Las plumas recién arrancadas con tejido folicular visible se usan comúnmente para las pruebas de ADN de aves y son adecuadas para la mayoría de las especies de loros, palomas y aves ornamentales. También se aceptan muestras de sangre para ciertas especies o análisis genéticos avanzados. La recolección adecuada de muestras es importante para garantizar la calidad del ADN y resultados precisos de PCR."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "3. ¿Qué muestras se pueden usar para las pruebas de ADN aviar?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Comúnmente analizamos: Muestras de plumas Muestras de sangre Muestras de membrana de cáscara de huevo (para algunas especies) La prueba de ADN de plumas es la opción más popular porque es simple, segura y conveniente para el envío internacional."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "4. ¿Qué método de PCR utilizan para las pruebas de ADN de aves?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Nuestro laboratorio utiliza métodos de pruebas moleculares PCR (Reacción en Cadena de la Polimerasa) para amplificar y analizar marcadores de ADN aviar asociados con la identificación de género. Las pruebas de ADN aviar basadas en PCR son ampliamente reconocidas por su alta sensibilidad, fiabilidad e idoneidad para servicios de pruebas de laboratorio internacionales."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "5. ¿Por qué la prueba de ADN para aves es más precisa que el sexado visual?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Muchas especies de aves son monomórficas visualmente, lo que significa que machos y hembras se ven casi idénticos. La identificación visual basada en el tamaño corporal, el color de las plumas o el comportamiento a menudo no es fiable, especialmente en aves jóvenes. La prueba de ADN analiza directamente los marcadores genéticos, lo que la convierte en uno de los métodos más precisos para la identificación de género aviar."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "6. ¿Qué tipos de aves pueden analizar?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Analizamos una amplia gama de especies aviares, incluyendo: Loros Palomas de competición Palomas mascota Canarios Pinzones Aves ornamentales Aves exóticas Si no está seguro de si su especie de ave puede ser analizada, contáctenos antes de enviar las muestras."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "7. ¿Cuánto tiempo tarda la prueba de ADN para aves?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "La mayoría de las pruebas de laboratorio se completan dentro de 1–2 días laborables después de la llegada de la muestra. El tiempo de entrega internacional total generalmente varía de 7 a 10 días dependiendo de las condiciones de envío, el procesamiento aduanero y el país de destino."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "8. ¿Aceptan muestras internacionales de ADN de aves?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Sí. Recibimos regularmente muestras internacionales de ADN de aves de criadores, propietarios de aves, tiendas de mascotas, socios veterinarios y distribuidores en todo el mundo. Nuestro proceso de manejo de muestras internacionales es estable y ampliamente utilizado para servicios de pruebas de ADN aviar transfronterizas."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "9. ¿Cómo envío muestras de ADN de aves a su laboratorio?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Contáctenos antes de enviar las muestras para que podamos proporcionarle las instrucciones más recientes de recolección y envío. Las muestras de plumas generalmente se empaquetan en sobres de papel o bolsas limpias y se envían a través de servicios de mensajería internacional."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "10. ¿Es seguro el envío internacional de muestras de plumas?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Según nuestra experiencia a largo plazo en envíos internacionales, el transporte de muestras de plumas es generalmente estable y de bajo riesgo cuando se empaqueta adecuadamente. Se recomienda enviar múltiples muestras juntas para reducir los costos de envío y mejorar la eficiencia del procesamiento."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "11. ¿Ofrecen servicios de pruebas de ADN para aves al por mayor?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Sí. Proporcionamos servicios de pruebas de ADN aviar al por mayor para criadores de aves, clubes de palomas, tiendas de mascotas, clínicas veterinarias y distribuidores internacionales. Las pruebas al por mayor ayudan a reducir los costos por muestra y mejoran la eficiencia operativa para proyectos de pruebas a gran escala."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "12. ¿Ofrecen cooperación con distribuidores o agentes?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Sí. Trabajamos con socios internacionales y distribuidores regionales en múltiples países. Las opciones de cooperación incluyen asociaciones de reventa, apoyo local para la recolección de muestras y colaboración de laboratorio a largo plazo para servicios de pruebas de ADN de aves."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "13. ¿Proporcionan informes de prueba en inglés?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Sí. Todos los informes de laboratorio y la comunicación con el cliente se pueden proporcionar en inglés, lo que hace que nuestros servicios sean adecuados para clientes internacionales y cooperación comercial en el extranjero."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "14. ¿Por qué elegir AviantestPro para pruebas de ADN aviar?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "AviantestPro proporciona servicios profesionales de pruebas de ADN para aves basados en PCR, enfocados en clientes internacionales, criadores y distribuidores. Enfatizamos la precisión de las pruebas, el manejo estable de muestras internacionales, la rápida respuesta del laboratorio y el apoyo a la cooperación a largo plazo para proyectos globales de pruebas de ADN aviar. Comience Sus Pruebas Contáctenos hoy para recibir: Instrucciones de envío de muestras, Detalles de precios y Estimación del tiempo de entrega."
+      }
+    }
+  ]
+};
 const hreflang = "<link rel=\"alternate\" hreflang=\"en-US\" href=\"https://aviantestpro.com/\" /> <link rel=\"alternate\" hreflang=\"en\" href=\"https://aviantestpro.com/\" /> <link rel=\"alternate\" hreflang=\"ar\" href=\"https://aviantestpro.com/ar/\" /> <link rel=\"alternate\" hreflang=\"ja\" href=\"https://aviantestpro.com/ja/\" /> <link rel=\"alternate\" hreflang=\"ko-KR\" href=\"https://aviantestpro.com/ko/\" /> <link rel=\"alternate\" hreflang=\"ko\" href=\"https://aviantestpro.com/ko/\" /> <link rel=\"alternate\" hreflang=\"es-ES\" href=\"https://aviantestpro.com/es/\" /> <link rel=\"alternate\" hreflang=\"es\" href=\"https://aviantestpro.com/es/\" /> <link rel=\"alternate\" hreflang=\"fr-FR\" href=\"https://aviantestpro.com/fr/\" /> <link rel=\"alternate\" hreflang=\"fr\" href=\"https://aviantestpro.com/fr/\" /> <link rel=\"alternate\" hreflang=\"de-DE\" href=\"https://aviantestpro.com/de/\" /> <link rel=\"alternate\" hreflang=\"de\" href=\"https://aviantestpro.com/de/\" /> <link rel=\"alternate\" hreflang=\"x-default\" href=\"https://aviantestpro.com/\" />";
 ---
-<BaseLayout title={page.title} description={page.description} canonical={page.canonical} ogType="article" lang="es" dir="ltr" hreflang={hreflang}>
+<BaseLayout title={page.title} description={page.description} canonical={page.canonical} ogType="article" jsonLd={faqJsonLd} lang="es" dir="ltr" hreflang={hreflang}>
   <article class="page-content">
     <h1 class="page-title">{page.h1}</h1>
     <div class="entry-content" set:html={`<div class=\"wp-block-columns is-layout-flex wp-container-core-columns-is-layout-7387b849 wp-block-columns-is-layout-flex\"><div class=\"wp-block-column is-layout-flow wp-block-column-is-layout-flow\"><div class=\"wp-block-cover\" style=\"border-top-left-radius:15px;border-top-right-radius:15px;border-bottom-left-radius:15px;border-bottom-right-radius:15px;min-height:600px;aspect-ratio:unset;\">

@@ -9,9 +9,63 @@ const page = {
   author: "SENO Testing Center",
   date: "August 27, 2026",
 };
+const faqJsonLd = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "L'électrophorèse capillaire est-elle plus précise que l'électrophorèse sur gel ?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Pour le dimensionnement de fragments, oui — la CE résout des différences de 1–2 pb et produit des données numériques quantitatives ; le gel d'agarose est plus grossier et semi-quantitatif. La précision finale des résultats dépend aussi de l'analyse PCR et de la qualité de l'échantillon, mais la CE est la plateforme de détection supérieure."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Le sexage ADN des oiseaux peut-il être réalisé sur gel ?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Oui, en principe — le protocole CHD original de Griffiths et al. (1998) utilisait des gels. Mais pour un volume commercial sur plus de 600 espèces, la résolution et la reproductibilité de la CE en font le choix standard."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Combien coûte un système d'électrophorèse capillaire ?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Les systèmes d'entrée à capillaire unique commencent à ~30 000 $ – 50 000 $ ; les analyseurs génétiques multi-capillaires vont de 60 000 $ à 150 000 $ et plus ; les modèles phares à 96 capillaires dépassent 150 000 $. Les unités reconditionnées réduisent le coût de 30 à 60 %."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Qu'est-ce qu'un électrophérogramme ?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Le graphique numérique produit par la CE : chaque pic est un fragment d'ADN, la position du pic = taille, la hauteur du pic = quantité. C'est la donnée brute traçable d'une analyse."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Pourquoi le risque de contamination est-il plus faible avec la CE ?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "La CE utilise un capillaire fermé et une injection automatisée ; le produit PCR n'est jamais manipulé manuellement sur un gel ouvert après amplification, réduisant le transfert croisé entre échantillons."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Quelle différence de taille la CE peut-elle résoudre par rapport au gel d'agarose ?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "La CE résout ~1–2 pb ; l'agarose standard ~5–10 pb. C'est pourquoi la CE sépare proprement le petit polymorphisme CHD-Z/CHD-W que l'agarose peut estomper. Références clés Griffiths, R., Double, M. C., Orr, K., & Dawson, R. J. G. (1998). A DNA test to sex most birds. Molecular Ecology, 7(8), 1071–1075. Fridolfsson, A.-K., & Ellegren, H. (1999). A simple and universal method for molecular sexing of non-ratite birds. Journal of Avian Biology, 30(1), 116–121. Butler, J. M. (2015). Advanced Topics in Forensic DNA Typing: Methodology. Academic Press. (Chapitres sur l'électrophorèse capillaire et l'analyse STR.) L'essentiel Pour un laboratoire commercial de tests ADN aviaires, l'électrophorèse capillaire est la technologie habilitante qui transforme une réaction PCR en un résultat défendable, reproductible et évolutif. Elle offre la résolution de 1–2 pb requise pour un sexage fiable basé sur CHD à travers les espèces, la précision sub-paire de bases exigée par la parenté STR, et l'automatisation qui rend le traitement de milliers d'échantillons par mois pratique. L'électrophorèse sur gel conserve sa place dans les contextes à faible budget, faible volume et pédagogiques. Mais si votre produit est un sexage précis à >99 % et des certificats de parenté fiables à l'échelle commerciale, votre feuille de route d'équipement pointe vers la CE. Articles connexes : Comment fonctionne l'analyse par électrophorèse capillaire dans le sexage et la parenté des oiseaux · Systèmes d'électrophorèse capillaire : un guide d'achat · Le guide complet du sexage ADN des oiseaux · RT-PCR vs PCR traditionnelle dans les tests aviaires"
+      }
+    }
+  ]
+};
 const hreflang = "<link rel=\"alternate\" hreflang=\"en-US\" href=\"https://aviantestpro.com/capillary-electrophoresis-vs-traditional-gel-electrophoresis-which-should-your-bird-dna-lab-use/\" /> <link rel=\"alternate\" hreflang=\"en\" href=\"https://aviantestpro.com/capillary-electrophoresis-vs-traditional-gel-electrophoresis-which-should-your-bird-dna-lab-use/\" /> <link rel=\"alternate\" hreflang=\"ar\" href=\"https://aviantestpro.com/ar/capillary-electrophoresis-vs-traditional-gel-electrophoresis-which-should-your-bird-dna-lab-use/\" /> <link rel=\"alternate\" hreflang=\"ja\" href=\"https://aviantestpro.com/ja/capillary-electrophoresis-vs-traditional-gel-electrophoresis-which-should-your-bird-dna-lab-use/\" /> <link rel=\"alternate\" hreflang=\"ko-KR\" href=\"https://aviantestpro.com/ko/capillary-electrophoresis-vs-traditional-gel-electrophoresis-which-should-your-bird-dna-lab-use/\" /> <link rel=\"alternate\" hreflang=\"ko\" href=\"https://aviantestpro.com/ko/capillary-electrophoresis-vs-traditional-gel-electrophoresis-which-should-your-bird-dna-lab-use/\" /> <link rel=\"alternate\" hreflang=\"es-ES\" href=\"https://aviantestpro.com/es/capillary-electrophoresis-vs-traditional-gel-electrophoresis-which-should-your-bird-dna-lab-use/\" /> <link rel=\"alternate\" hreflang=\"es\" href=\"https://aviantestpro.com/es/capillary-electrophoresis-vs-traditional-gel-electrophoresis-which-should-your-bird-dna-lab-use/\" /> <link rel=\"alternate\" hreflang=\"fr-FR\" href=\"https://aviantestpro.com/fr/capillary-electrophoresis-vs-traditional-gel-electrophoresis-which-should-your-bird-dna-lab-use/\" /> <link rel=\"alternate\" hreflang=\"fr\" href=\"https://aviantestpro.com/fr/capillary-electrophoresis-vs-traditional-gel-electrophoresis-which-should-your-bird-dna-lab-use/\" /> <link rel=\"alternate\" hreflang=\"de-DE\" href=\"https://aviantestpro.com/de/capillary-electrophoresis-vs-traditional-gel-electrophoresis-which-should-your-bird-dna-lab-use/\" /> <link rel=\"alternate\" hreflang=\"de\" href=\"https://aviantestpro.com/de/capillary-electrophoresis-vs-traditional-gel-electrophoresis-which-should-your-bird-dna-lab-use/\" /> <link rel=\"alternate\" hreflang=\"x-default\" href=\"https://aviantestpro.com/capillary-electrophoresis-vs-traditional-gel-electrophoresis-which-should-your-bird-dna-lab-use/\" />";
 ---
-<BaseLayout title={page.title} description={page.description} canonical={page.canonical} ogType="article" lang="fr" dir="ltr" hreflang={hreflang} author={page.author}>
+<BaseLayout title={page.title} description={page.description} canonical={page.canonical} ogType="article" jsonLd={faqJsonLd} lang="fr" dir="ltr" hreflang={hreflang} author={page.author}>
   <article class="page-content">
     <h1 class="page-title">{page.h1}</h1>
     <div class="entry-meta">By SENO Testing Center <span>/ August 27, 2026</span></div>

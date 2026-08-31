@@ -9,9 +9,63 @@ const page = {
   author: "SENO Testing Center",
   date: "August 27, 2026",
 };
+const faqJsonLd = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "ما هو مخطط الكهربائي؟",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "الرسم البياني الرقمي الذي ينتجه جهاز CE: القمم تمثل شظايا الحمض النووي، وموضع القمة = الحجم، وارتفاع القمة = الكمية. وهي البيانات الأولية القابلة للتتبع التي تشكل أساس نتيجة تحديد الجنس أو النسب."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "كيف يميز «سي إي» بين الطيور الذكور والإناث؟",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "أظهرت تحليلات CE تضخيم أحجام شظايا جين CHD. حيث تُظهر الذكور (ZZ) حجمًا واحدًا للشظايا (قمة واحدة)؛ بينما تُظهر الإناث (ZW) حجمين (قمتين) بسبب الاختلاف الطفيف في إنترون CHD-Z/CHD-W."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "لماذا يُعد CE أفضل من الجل في تحديد جنس الطيور؟",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "تتميز تقنية CE بدقة تبلغ 1–2 زوج قاعدة، حيث تفصل بوضوح الاختلاف الطفيف بين CHD-Z وCHD-W حتى عندما لا تتجاوز الفجوة سوى بضعة أزواج قاعدة؛ كما أنها تعمل على أتمتة سير العمل، مما يقلل من التلوث والأخطاء البشرية."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "كيف تُستخدم تقنية CE في اختبار النسب؟",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "تقوم CE بمقارنة أحجام علامات STR الفلورية مع سلم الأليلات، مما ينتج عنه ملف تعريفي رقمي دقيق يُستخدم لتأكيد أو استبعاد النسب."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "ما مدى دقة اختبار الحمض النووي للطيور القائم على تقنية CE؟",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "تحقق المختبرات المتخصصة دقة تزيد عن 99% عندما يُستخدم CE جنبًا إلى جنب مع الاختبارات المعتمدة والعينات عالية الجودة، مدعومةً بنظام مراقبة الجودة الداخلي وإعادة الاختبار الروتينية."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "كم من الوقت يستغرق تحليل CE؟",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "تستغرق عملية الفصل عادةً ما بين 30 و60 دقيقة؛ حيث تقوم الأنظمة متعددة الأنابيب الشعرية بتحليل العديد من العينات بشكل متوازٍ وتلقائي. المراجع الرئيسية غريفيثز، ر.، ودابل، م. سي.، وأور، ك.، وداوسون، ر. ج. ج. (1998). اختبار الحمض النووي لتحديد جنس معظم الطيور. مجلة «علم البيئة الجزيئي»، 7(8)، 1071–1075. فريدولفسون، أ.-ك.، وإيليغرين، هـ. (1999). طريقة بسيطة وشاملة لتحديد جنس الطيور غير الجاروية على المستوى الجزيئي. مجلة بيولوجيا الطيور، 30(1)، 116–121. بتلر، ج. م. (2015). موضوعات متقدمة في تحديد أنماط الحمض النووي الجنائي: المنهجية. أكاديميك برس. خلاصة القول يُعد تحليل CE (الكهربائي) خطوة القراءة التي تجعل اختبار الحمض النووي للطيور نهائيًا. فهو يقوم بفصل الأجزاء الفلورية وتحديد أحجامها بدقة تتراوح بين 1 و2 قاعدة نوكليوتيدية، ثم يحولها إلى مخطط كهربائي تُترجم قممه مباشرةً إلى نتائج بيولوجية — قمة واحدة للذكر، وقمتان للأنثى، وملف تعريفي دقيق لتحديد النسب والهوية. وتُستخدم نفس القراءات في كلتا الخدمتين الأساسيتين لمختبر الحمض النووي للطيور، ولهذا السبب أصبحت تقنية CE المنصة الشاملة للتشخيص الجزيئي للطيور. إن فهم كيفية عملها — وكيفية قراءة القمم — هو المفتاح لثقة النتائج. مقالات ذات صلة : الكهربائي المركزي مقابل الكهربائي التقليدي بالهلام · أنظمة الرحلان الكهربائي الشعري: دليل الشراء · الدليل الشامل لتحديد جنس الطيور عن طريق الحمض النووي"
+      }
+    }
+  ]
+};
 const hreflang = "<link rel=\"alternate\" hreflang=\"en-US\" href=\"https://aviantestpro.com/how-capillary-electrophoresis-analysis-works-in-bird-sexing-and-parentage-testing/\" /> <link rel=\"alternate\" hreflang=\"en\" href=\"https://aviantestpro.com/how-capillary-electrophoresis-analysis-works-in-bird-sexing-and-parentage-testing/\" /> <link rel=\"alternate\" hreflang=\"ar\" href=\"https://aviantestpro.com/ar/how-capillary-electrophoresis-analysis-works-in-bird-sexing-and-parentage-testing/\" /> <link rel=\"alternate\" hreflang=\"ja\" href=\"https://aviantestpro.com/ja/how-capillary-electrophoresis-analysis-works-in-bird-sexing-and-parentage-testing/\" /> <link rel=\"alternate\" hreflang=\"ko-KR\" href=\"https://aviantestpro.com/ko/how-capillary-electrophoresis-analysis-works-in-bird-sexing-and-parentage-testing/\" /> <link rel=\"alternate\" hreflang=\"ko\" href=\"https://aviantestpro.com/ko/how-capillary-electrophoresis-analysis-works-in-bird-sexing-and-parentage-testing/\" /> <link rel=\"alternate\" hreflang=\"es-ES\" href=\"https://aviantestpro.com/es/how-capillary-electrophoresis-analysis-works-in-bird-sexing-and-parentage-testing/\" /> <link rel=\"alternate\" hreflang=\"es\" href=\"https://aviantestpro.com/es/how-capillary-electrophoresis-analysis-works-in-bird-sexing-and-parentage-testing/\" /> <link rel=\"alternate\" hreflang=\"fr-FR\" href=\"https://aviantestpro.com/fr/how-capillary-electrophoresis-analysis-works-in-bird-sexing-and-parentage-testing/\" /> <link rel=\"alternate\" hreflang=\"fr\" href=\"https://aviantestpro.com/fr/how-capillary-electrophoresis-analysis-works-in-bird-sexing-and-parentage-testing/\" /> <link rel=\"alternate\" hreflang=\"de-DE\" href=\"https://aviantestpro.com/de/how-capillary-electrophoresis-analysis-works-in-bird-sexing-and-parentage-testing/\" /> <link rel=\"alternate\" hreflang=\"de\" href=\"https://aviantestpro.com/de/how-capillary-electrophoresis-analysis-works-in-bird-sexing-and-parentage-testing/\" /> <link rel=\"alternate\" hreflang=\"x-default\" href=\"https://aviantestpro.com/how-capillary-electrophoresis-analysis-works-in-bird-sexing-and-parentage-testing/\" />";
 ---
-<BaseLayout title={page.title} description={page.description} canonical={page.canonical} ogType="article" lang="ar" dir="rtl" hreflang={hreflang} author={page.author} datePublished="2026-08-27" dateModified="2026-08-27">
+<BaseLayout title={page.title} description={page.description} canonical={page.canonical} ogType="article" jsonLd={faqJsonLd} lang="ar" dir="rtl" hreflang={hreflang} author={page.author} datePublished="2026-08-27" dateModified="2026-08-27">
   <article class="page-content">
     <h1 class="page-title">{page.h1}</h1>
     <div class="entry-meta">By SENO Testing Center <span>/ August 27, 2026</span></div>

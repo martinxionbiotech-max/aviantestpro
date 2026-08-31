@@ -9,9 +9,127 @@ const page = {
   author: "",
   date: "",
 };
+const faqJsonLd = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "1. Quelle est la précision de vos tests ADN aviaires ?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Nos tests ADN aviaires atteignent jusqu'à 99 % de précision en utilisant des méthodes moléculaires validées basées sur la PCR. Chaque lot de tests comprend des contrôles qualité internes et un re-test partiel des échantillons pour réduire le risque de fausse identification. Comparés aux méthodes visuelles de détermination du sexe, les tests ADN aviaires fournissent une identification du sexe nettement plus fiable pour les perroquets, les pigeons et d'autres espèces aviaires."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "2. Les plumes peuvent-elles être utilisées pour les tests ADN aviaires ?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Oui. Les plumes fraîchement arrachées avec du tissu folliculaire visible sont couramment utilisées pour les tests ADN aviaires et conviennent à la plupart des espèces de perroquets, de pigeons et d'oiseaux d'ornement. Les échantillons de sang sont également acceptés pour certaines espèces ou pour des analyses génétiques avancées. Une collecte appropriée des échantillons est importante pour garantir la qualité de l'ADN et des résultats PCR précis."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "3. Quels échantillons peuvent être utilisés pour les tests ADN aviaires ?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Nous testons couramment : Échantillons de plumes Échantillons de sang Échantillons de membrane de coquille d'œuf (pour certaines espèces) Le test ADN sur plumes est l'option la plus populaire car il est simple, sûr et pratique pour l'expédition internationale."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "4. Quelle méthode PCR utilisez-vous pour les tests ADN aviaires ?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Notre laboratoire utilise des méthodes de test moléculaire PCR (réaction en chaîne par polymérase) pour amplifier et analyser les marqueurs ADN aviaires associés à l'identification du sexe. Les tests ADN aviaires basés sur la PCR sont largement reconnus pour leur haute sensibilité, leur fiabilité et leur adaptabilité aux services de tests en laboratoire internationaux."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "5. Pourquoi les tests ADN aviaires sont-ils plus précis que la détermination visuelle du sexe ?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "De nombreuses espèces d'oiseaux sont visuellement monomorphes, ce qui signifie que les mâles et les femelles se ressemblent presque. L'identification visuelle basée sur la taille du corps, la couleur des plumes ou le comportement est souvent peu fiable, en particulier chez les jeunes oiseaux. Les tests ADN analysent directement les marqueurs génétiques, ce qui en fait l'une des méthodes les plus précises pour l'identification du sexe aviaire."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "6. Quels types d'oiseaux pouvez-vous tester ?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Nous testons une large gamme d'espèces aviaires, y compris : Perroquets Pigeons voyageurs Pigeons de compagnie Canaris Pinsons Oiseaux d'ornement Oiseaux exotiques Si vous n'êtes pas sûr que votre espèce d'oiseau puisse être testée, veuillez nous contacter avant d'expédier les échantillons."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "7. Combien de temps prend un test ADN aviaire ?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "La plupart des tests en laboratoire sont réalisés en 1 à 2 jours ouvrables après l'arrivée des échantillons. Le délai international total varie généralement de 7 à 10 jours selon les conditions d'expédition, le traitement douanier et le pays de destination."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "8. Acceptez-vous les échantillons ADN aviaires internationaux ?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Oui. Nous recevons régulièrement des échantillons ADN aviaires internationaux de la part d'éleveurs, de propriétaires d'oiseaux, de magasins pour animaux, de partenaires vétérinaires et de distributeurs du monde entier. Notre processus de gestion des échantillons internationaux est stable et largement utilisé pour les services de tests ADN aviaires transfrontaliers."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "9. Comment envoyer des échantillons ADN aviaires à votre laboratoire ?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Veuillez nous contacter avant d'expédier les échantillons afin que nous puissions vous fournir les instructions les plus récentes de collecte et d'expédition. Les échantillons de plumes sont généralement emballés dans des enveloppes en papier ou des sacs propres et expédiés par des services de messagerie internationaux."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "10. L'expédition internationale des échantillons de plumes est-elle sûre ?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Sur la base de notre expérience à long terme en matière d'expédition internationale, le transport des échantillons de plumes est généralement stable et à faible risque lorsqu'il est correctement emballé. L'envoi de plusieurs échantillons ensemble est recommandé pour réduire les coûts d'expédition et améliorer l'efficacité du traitement."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "11. Proposez-vous des services de tests ADN aviaires en gros ?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Oui. Nous fournissons des services de tests ADN aviaires en gros pour les éleveurs d'oiseaux, les clubs de pigeons, les magasins pour animaux, les cliniques vétérinaires et les distributeurs internationaux. Les tests en gros aident à réduire les coûts par échantillon et améliorent l'efficacité opérationnelle pour les projets de tests à grande échelle."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "12. Proposez-vous une coopération avec des distributeurs ou des agents ?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Oui. Nous travaillons avec des partenaires internationaux et des distributeurs régionaux dans plusieurs pays. Les options de coopération incluent des partenariats de revente, un soutien local à la collecte d'échantillons et une collaboration à long terme en laboratoire pour les services de tests ADN aviaires."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "13. Fournissez-vous des rapports de test en anglais ?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Oui. Tous les rapports de laboratoire et la communication avec les clients peuvent être fournis en anglais, ce qui rend nos services adaptés aux clients internationaux et à la coopération commerciale à l'étranger."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "14. Pourquoi choisir AviantestPro pour les tests ADN aviaires ?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "AviantestPro fournit des services professionnels de tests ADN aviaires basés sur la PCR, axés sur les clients internationaux, les éleveurs et les distributeurs. Nous mettons l'accent sur la précision des tests, la gestion stable des échantillons internationaux, un délai de laboratoire rapide et un soutien à la coopération à long terme pour les projets mondiaux de tests ADN aviaires. Commencez vos tests Contactez-nous dès aujourd'hui pour recevoir : les instructions de soumission des échantillons, les détails des prix et une estimation du délai !"
+      }
+    }
+  ]
+};
 const hreflang = "<link rel=\"alternate\" hreflang=\"en-US\" href=\"https://aviantestpro.com/\" /> <link rel=\"alternate\" hreflang=\"en\" href=\"https://aviantestpro.com/\" /> <link rel=\"alternate\" hreflang=\"ar\" href=\"https://aviantestpro.com/ar/\" /> <link rel=\"alternate\" hreflang=\"ja\" href=\"https://aviantestpro.com/ja/\" /> <link rel=\"alternate\" hreflang=\"ko-KR\" href=\"https://aviantestpro.com/ko/\" /> <link rel=\"alternate\" hreflang=\"ko\" href=\"https://aviantestpro.com/ko/\" /> <link rel=\"alternate\" hreflang=\"es-ES\" href=\"https://aviantestpro.com/es/\" /> <link rel=\"alternate\" hreflang=\"es\" href=\"https://aviantestpro.com/es/\" /> <link rel=\"alternate\" hreflang=\"fr-FR\" href=\"https://aviantestpro.com/fr/\" /> <link rel=\"alternate\" hreflang=\"fr\" href=\"https://aviantestpro.com/fr/\" /> <link rel=\"alternate\" hreflang=\"de-DE\" href=\"https://aviantestpro.com/de/\" /> <link rel=\"alternate\" hreflang=\"de\" href=\"https://aviantestpro.com/de/\" /> <link rel=\"alternate\" hreflang=\"x-default\" href=\"https://aviantestpro.com/\" />";
 ---
-<BaseLayout title={page.title} description={page.description} canonical={page.canonical} ogType="article" lang="fr" dir="ltr" hreflang={hreflang}>
+<BaseLayout title={page.title} description={page.description} canonical={page.canonical} ogType="article" jsonLd={faqJsonLd} lang="fr" dir="ltr" hreflang={hreflang}>
   <article class="page-content">
     <h1 class="page-title">{page.h1}</h1>
     <div class="entry-content" set:html={`<div class=\"wp-block-columns is-layout-flex wp-container-core-columns-is-layout-7387b849 wp-block-columns-is-layout-flex\"><div class=\"wp-block-column is-layout-flow wp-block-column-is-layout-flow\"><div class=\"wp-block-cover\" style=\"border-top-left-radius:15px;border-top-right-radius:15px;border-bottom-left-radius:15px;border-bottom-right-radius:15px;min-height:600px;aspect-ratio:unset;\">

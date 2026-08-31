@@ -9,9 +9,63 @@ const page = {
   author: "SENO Testing Center",
   date: "August 27, 2026",
 };
+const faqJsonLd = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "キャピラリー電気泳動はゲル電気泳動より正確ですか？",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "断片サイズ測定に関しては、はい — CEは1〜2 bpの差を分解し、定量的なデジタルデータを出力します。アガロースゲルは粗く半定量的です。最終的な結果の正確性はPCRアッセイとサンプル品質にも依存しますが、CEは優れた検出プラットフォームです。"
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "鳥類DNA性別判定はゲルでできますか？",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "原理的には可能です — 元のGriffithsら（1998年）のCHDプロトコルはゲルを使用していました。しかし、600種以上を商業規模で扱う場合、CEの分解能と再現性が標準的な選択肢となっています。"
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "キャピラリー電気泳動システムの費用はいくらですか？",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "エントリー向けシングルキャピラリーシステムは約$30k〜$50kから。マルチキャピラリー遺伝子解析装置は$60k〜$150k以上。96キャピラリーフラッグシップは$150kを超えます。リファービッシュ品はコストを30〜60%削減できます。"
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "エレクトロフェログラムとは何ですか？",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "CEが生成するデジタルグラフです：各ピークはDNA断片、ピーク位置＝サイズ、ピーク高さ＝量を示します。これはラン実行のトレーサブルな生データです。"
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "なぜCEはコンタミネーションリスクが低いのですか？",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "CEは密閉キャピラリーと自動注入を使用します。増幅後のPCR産物が開放型ゲル上で手動操作されることがなく、サンプル間の移行リスクが低減されます。"
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "CEとアガロースゲルで分解できるサイズ差は？",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "CEは約1〜2 bp、標準アガロースは約5〜10 bpです。これが、アガロースではスメアになる可能性がある小さなCHD-Z/CHD-W多型をCEが明確に分離できる理由です。 主要参考文献 Griffiths, R., Double, M. C., Orr, K., & Dawson, R. J. G. (1998). A DNA test to sex most birds. Molecular Ecology, 7(8), 1071–1075. Fridolfsson, A.-K., & Ellegren, H. (1999). A simple and universal method for molecular sexing of non-ratite birds. Journal of Avian Biology, 30(1), 116–121. Butler, J. M. (2015). Advanced Topics in Forensic DNA Typing: Methodology. Academic Press.（キャピラリー電気泳動およびSTR解析に関する章） 結論 商業用の鳥類DNA検査ラボにとって、キャピラリー電気泳動はPCR反応を防御可能で再現性がありスケーラブルな結果に変える基盤技術です。種を超えた信頼性の高いCHDベースの性別判定に必要な1〜2 bp分解能、STR親子鑑定が要求するサブ塩基対精度、そして月間数千サンプルを処理可能にする自動化を提供します。 ゲル電気泳動は、低予算・低処理量・教育現場での役割を維持します。しかし、商業規模で>99%の正確な性別判定と信頼できる親子鑑定証明書を製品とするなら、機器ロードマップはCEを指します。 関連記事 ： 鳥類の性別判定と親子鑑定におけるキャピラリー電気泳動解析の仕組み · キャピラリー電気泳動システム：購入ガイド · 鳥類DNA性別判定の完全ガイド · 鳥類検査におけるRT-PCRと従来PCRの比較"
+      }
+    }
+  ]
+};
 const hreflang = "<link rel=\"alternate\" hreflang=\"en-US\" href=\"https://aviantestpro.com/capillary-electrophoresis-vs-traditional-gel-electrophoresis-which-should-your-bird-dna-lab-use/\" /> <link rel=\"alternate\" hreflang=\"en\" href=\"https://aviantestpro.com/capillary-electrophoresis-vs-traditional-gel-electrophoresis-which-should-your-bird-dna-lab-use/\" /> <link rel=\"alternate\" hreflang=\"ar\" href=\"https://aviantestpro.com/ar/capillary-electrophoresis-vs-traditional-gel-electrophoresis-which-should-your-bird-dna-lab-use/\" /> <link rel=\"alternate\" hreflang=\"ja\" href=\"https://aviantestpro.com/ja/capillary-electrophoresis-vs-traditional-gel-electrophoresis-which-should-your-bird-dna-lab-use/\" /> <link rel=\"alternate\" hreflang=\"ko-KR\" href=\"https://aviantestpro.com/ko/capillary-electrophoresis-vs-traditional-gel-electrophoresis-which-should-your-bird-dna-lab-use/\" /> <link rel=\"alternate\" hreflang=\"ko\" href=\"https://aviantestpro.com/ko/capillary-electrophoresis-vs-traditional-gel-electrophoresis-which-should-your-bird-dna-lab-use/\" /> <link rel=\"alternate\" hreflang=\"es-ES\" href=\"https://aviantestpro.com/es/capillary-electrophoresis-vs-traditional-gel-electrophoresis-which-should-your-bird-dna-lab-use/\" /> <link rel=\"alternate\" hreflang=\"es\" href=\"https://aviantestpro.com/es/capillary-electrophoresis-vs-traditional-gel-electrophoresis-which-should-your-bird-dna-lab-use/\" /> <link rel=\"alternate\" hreflang=\"fr-FR\" href=\"https://aviantestpro.com/fr/capillary-electrophoresis-vs-traditional-gel-electrophoresis-which-should-your-bird-dna-lab-use/\" /> <link rel=\"alternate\" hreflang=\"fr\" href=\"https://aviantestpro.com/fr/capillary-electrophoresis-vs-traditional-gel-electrophoresis-which-should-your-bird-dna-lab-use/\" /> <link rel=\"alternate\" hreflang=\"de-DE\" href=\"https://aviantestpro.com/de/capillary-electrophoresis-vs-traditional-gel-electrophoresis-which-should-your-bird-dna-lab-use/\" /> <link rel=\"alternate\" hreflang=\"de\" href=\"https://aviantestpro.com/de/capillary-electrophoresis-vs-traditional-gel-electrophoresis-which-should-your-bird-dna-lab-use/\" /> <link rel=\"alternate\" hreflang=\"x-default\" href=\"https://aviantestpro.com/capillary-electrophoresis-vs-traditional-gel-electrophoresis-which-should-your-bird-dna-lab-use/\" />";
 ---
-<BaseLayout title={page.title} description={page.description} canonical={page.canonical} ogType="article" lang="ja" dir="ltr" hreflang={hreflang} author={page.author}>
+<BaseLayout title={page.title} description={page.description} canonical={page.canonical} ogType="article" jsonLd={faqJsonLd} lang="ja" dir="ltr" hreflang={hreflang} author={page.author}>
   <article class="page-content">
     <h1 class="page-title">{page.h1}</h1>
     <div class="entry-meta">By SENO Testing Center <span>/ August 27, 2026</span></div>

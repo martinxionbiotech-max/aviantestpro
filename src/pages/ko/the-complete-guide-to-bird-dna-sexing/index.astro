@@ -9,9 +9,63 @@ const page = {
   author: "SENO Testing Center",
   date: "July 8, 2026",
 };
+const faqJsonLd = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "조류 DNA 성별 감별은 얼마나 걸리나요?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "대부분의 실험실은 샘플 도착 후 1~2영업일 내에 검사를 완료합니다. 국제 배송을 포함한 총 처리 기간은 일반적으로 7~10일입니다."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "깃털 하나로 DNA 성별 감별이 가능한가요?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "네, 모낭이 온전한 갓 뽑은 깃털 하나로 충분합니다. 그러나 안전을 위해 새당 깃털 2~3개를 보내는 것이 권장됩니다."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "조류 DNA 성별 감별은 고통스러운가요?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "아니요. 깃털 뽑기는 빠른 꼬집음에 비할 수 있는 일시적인 가벼운 불편함을 유발합니다. 비침습적 절차로 분류됩니다."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "어린 새의 DNA 성별 감별이 가능한가요?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "네. 새는 부화 직후부터 성체까지 모든 연령에서 DNA 성별 감별이 가능합니다. DNA는 나이에 따라 변하지 않으므로 단 한 번의 검사로 평생 신뢰할 수 있습니다."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "가정용 DNA 성별 감별 키트의 정확도는?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "실제 가정용 처리 키트는 통제되지 않은 조건과 오염 위험으로 인해 정확도가 70~85%까지 낮을 수 있습니다. 대부분의 '홈 키트'는 실제로 실험실로 배송되는 샘플 수집 키트입니다."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "조류 DNA 성별 감별을 위해 수의사가 필요한가요?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "아니요. 깃털 샘플 수집은 브리더, 애완동물 소유주 또는 조류 취급자가 할 수 있습니다. 혈액 수집이나 질병 검사의 경우 수의사의 참여가 권장됩니다. 결론 조류 DNA 성별 감별은 지난 20년 동안 조류 번식을 혁신했습니다. 한때 침습적 수술이 필요했던 것이 이제 몇 개의 깃털로 99% 이상의 정확도로 결정될 수 있습니다. 정확한 결과를 위한 세 가지 규칙: 1. 빠진 깃털이 아닌 새 깃털을 수집하십시오 — 모낭 품질이 DNA 품질을 결정합니다 2. 여러 샘플을 함께 배송하십시오 — 비용을 줄이고 효율성을 높입니다 3. 투명한 QC를 갖춘 실험실을 선택하십시오 — 약 20% 재검사는 품질의 신호입니다 더 구체적인 주제는 앵무새 성별 DNA 검사, 비용 분석 및 완전한 조류 분자생물학 가이드에 대한 자세한 기사를 참조하십시오."
+      }
+    }
+  ]
+};
 const hreflang = "<link rel=\"alternate\" hreflang=\"en-US\" href=\"https://aviantestpro.com/the-complete-guide-to-bird-dna-sexing/\" /> <link rel=\"alternate\" hreflang=\"en\" href=\"https://aviantestpro.com/the-complete-guide-to-bird-dna-sexing/\" /> <link rel=\"alternate\" hreflang=\"ar\" href=\"https://aviantestpro.com/ar/the-complete-guide-to-bird-dna-sexing/\" /> <link rel=\"alternate\" hreflang=\"ja\" href=\"https://aviantestpro.com/ja/the-complete-guide-to-bird-dna-sexing/\" /> <link rel=\"alternate\" hreflang=\"ko-KR\" href=\"https://aviantestpro.com/ko/the-complete-guide-to-bird-dna-sexing/\" /> <link rel=\"alternate\" hreflang=\"ko\" href=\"https://aviantestpro.com/ko/the-complete-guide-to-bird-dna-sexing/\" /> <link rel=\"alternate\" hreflang=\"es-ES\" href=\"https://aviantestpro.com/es/the-complete-guide-to-bird-dna-sexing/\" /> <link rel=\"alternate\" hreflang=\"es\" href=\"https://aviantestpro.com/es/the-complete-guide-to-bird-dna-sexing/\" /> <link rel=\"alternate\" hreflang=\"fr-FR\" href=\"https://aviantestpro.com/fr/the-complete-guide-to-bird-dna-sexing/\" /> <link rel=\"alternate\" hreflang=\"fr\" href=\"https://aviantestpro.com/fr/the-complete-guide-to-bird-dna-sexing/\" /> <link rel=\"alternate\" hreflang=\"de-DE\" href=\"https://aviantestpro.com/de/the-complete-guide-to-bird-dna-sexing/\" /> <link rel=\"alternate\" hreflang=\"de\" href=\"https://aviantestpro.com/de/the-complete-guide-to-bird-dna-sexing/\" /> <link rel=\"alternate\" hreflang=\"x-default\" href=\"https://aviantestpro.com/the-complete-guide-to-bird-dna-sexing/\" />";
 ---
-<BaseLayout title={page.title} description={page.description} canonical={page.canonical} ogType="article" lang="ko" dir="ltr" hreflang={hreflang} author={page.author}>
+<BaseLayout title={page.title} description={page.description} canonical={page.canonical} ogType="article" jsonLd={faqJsonLd} lang="ko" dir="ltr" hreflang={hreflang} author={page.author}>
   <article class="page-content">
     <h1 class="page-title">{page.h1}</h1>
     <div class="entry-meta">By SENO Testing Center <span>/ July 8, 2026</span></div>

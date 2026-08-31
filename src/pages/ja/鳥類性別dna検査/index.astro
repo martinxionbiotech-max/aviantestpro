@@ -9,9 +9,223 @@ const page = {
   author: "",
   date: "",
 };
+const faqJsonLd = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "鳥類DNA性別判定の精度はどのくらいですか？",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "当ラボのワークフローは、再検査手順、手動結果レビュー、高率品質管理再検査により、99%以上の検査精度を維持するように設計されています。"
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "鳥類DNA性別判定とは何ですか？",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "鳥類DNA性別判定は、PCR増幅によるCHD遺伝子などの遺伝子マーカーを解析して、鳥がオスかメスかを判定する分子生物学的方法です。"
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "DNA検査はなぜ目視による鳥類性別識別より正確なのですか？",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "多くの鳥類種は明確な外部性徴を示しません。DNA検査は遺伝情報を直接解析するため、目視観察や行動の推測よりも大幅に信頼性が高くなります。"
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "鳥類のCHD遺伝子とは何ですか？",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "CHD（クロモドメインヘリカーゼDNA結合）遺伝子は、鳥類のZおよびW性染色体間で異なるため、鳥類の性別判定に一般的に使用されます。"
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "鳥類DNA性別判定はどのように機能しますか？",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "検査プロセスには一般的に、羽毛毛包DNA抽出、PCR反応調製、蛍光qPCR増幅、増幅曲線解析、手動結果解釈、品質管理再検査、ラボレポート生成が含まれます。"
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "鳥類DNA検査にはどのようなサンプルが必要ですか？",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "完全な毛包を持つ新鮮に抜いた羽毛サンプルが、鳥類DNA検査に一般的に使用されます。"
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "何本の羽毛が必要ですか？",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "ほとんどの鳥類DNA検査では、目に見える毛包根部を持つ約4〜5本の新鮮に抜いた羽毛が必要です。"
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "なぜ羽毛毛包が重要なのですか？",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "毛包にはゲノムDNAを持つ生きた細胞が含まれています。完全な毛包のない羽毛には、信頼性の高い分析に十分なDNAが含まれていない可能性があります。"
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "自然に抜け落ちた羽毛を使用できますか？",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "自然に抜け落ちた羽毛や古い羽毛は、劣化した毛包に不十分または損傷したDNAが含まれている可能性があるため、一般的には推奨されません。"
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "なぜ羽毛を新鮮に抜く必要があるのですか？",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "新鮮な羽毛はDNA品質をより良く保ち、PCR検査中の増幅信頼性を向上させます。"
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "蛍光qPCRとは何ですか？",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "蛍光定量PCR（qPCR）は、蛍光シグナルを使用してDNA増幅をリアルタイムで監視する分子技術です。"
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "なぜ蛍光qPCRが先進的とされるのですか？",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "従来のPCR法と比較して、蛍光qPCRはより高い感度、より良い再現性、より速い処理、リアルタイム増幅モニタリング、より信頼性の高いデータ解析を提供します。"
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "増幅曲線とは何ですか？",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "増幅曲線は、PCRサイクリング中の蛍光増加を示すグラフ表示です。ラボ分析者が増幅品質と反応の信頼性を評価するのに役立ちます。"
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Ct値とはどういう意味ですか？",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Ct（サイクル閾値）値は、蛍光がバックグラウンドシグナルレベルを超えるPCRサイクル数を指します。DNA濃度と増幅品質の評価に役立ちます。"
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "なぜ当ラボはカラム精製ではなくダイレクトライシス抽出を使用するのですか？",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "ダイレクトライシス抽出は、CHDベースの蛍光qPCR解析に十分なDNA品質を提供しながら、検査効率を向上させ、コストを削減します。"
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "ダイレクトライシス抽出は精度を低下させますか？",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "いいえ。鳥類CHD性別判定において、最適化試薬ベースのダイレクトライシス抽出は、信頼性の高い蛍光qPCR解析に十分なDNA品質を提供します。"
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "なぜ一部のサンプルは再検査されるのですか？",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "弱い、境界線上の、または不明瞭な増幅シグナルを持つサンプルは、報告精度を確保し、誤解釈のリスクを低減するために再検査されます。"
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "なぜ当ラボは結果を手動でレビューするのですか？",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "手動レビューは、弱い増幅、異常な蛍光シグナル、非特異的反応、一貫性のないコントロール、潜在的な技術的問題を特定するのに役立ちます。"
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "ラボ品質管理（QC）とは何ですか？",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "品質管理とは、ワークフロー全体を通じて検査の一貫性、再現性、分析の信頼性を検証するために使用される手順を指します。"
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "なぜ当ラボはサンプルの15%〜20%を再検査するのですか？",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "高率QC再検査システムは、再現性の検証、ワークフローの一貫性の監視、分析変動の検出、長期的な検査安定性の維持に役立ちます。"
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "汚染は鳥類DNA検査に影響しますか？",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "はい。外部DNA汚染や混合サンプルはPCR分析に干渉する可能性があります。適切な採取と個別の包装が重要です。"
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "幼鳥を検査できますか？",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "はい。DNA検査は、目に見える性徴を欠くことが多い幼鳥に特に有用です。"
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "鳥類DNA検査は鳥にとって安全ですか？",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "はい。羽毛採取は低侵襲であり、通常は数本の羽毛のみが必要です。"
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "どの鳥類種を検査できますか？",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "鳥類DNA性別判定は、オウム、コカトゥー、コンゴウインコ、ヨウム、ラブバード、セキセイインコ、オカメインコ、ハト、レーシングハト、猛禽類、フィンチ、カナリア、および多くのエキゾチックバードに一般的に使用されています。"
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "ブリーダーにとってDNA検査が重要なのはなぜですか？",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "正確な性別識別は、ブリーダーがペアを構築し、繁殖管理を改善し、ペアリングの間違いを回避し、鳥類個体群を効率的に管理するのに役立ちます。"
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "PCRベースの鳥類性別判定は科学的に受け入れられていますか？",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "はい。PCRベースの鳥類性別判定は、世界中の分子生物学ラボ、獣医診断、繁殖プログラム、鳥類研究機関で広く使用されています。 ラボ情報と品質基準 鳥類DNA性別判定サービスは、 張家口SENO検査センター有限公司 によって提供されています。これは、鳥類遺伝子検査とPCRベースの診断ワークフローを専門とする分子診断ラボです。 ラボ所長 技術的なラボ運営と品質レビュー手順は、 Aaron Wong によって監督されています。 当ラボの実績（2025年通年の統計） 処理した鳥類サンプル総数： 350,000以上 ラボ検査精度： 99.9% 国際サンプル比率： 8.2% 主な国際サンプル提出地域： 中東、北米、オセアニア、ヨーロッパ 当ラボは、分析の信頼性と長期的な検査の一貫性を確保するために、厳格な内部SOP手順、再検証基準、高率品質管理再検査ワークフローを維持しています。 科学参考文献 Griffiths, R., Double, M. C., Orr, K., & Dawson, R. J. G. (1998). A DNA test to sex most birds. Molecular Ecology , 7(8), 1071–1075. DOI: 10.1046/j.1365-294x.1998.00389.x Dubiec, A., & Zagalska-Neubauer, M. (2006). Molecular techniques for sex identification in birds. Biological Letters , 43(1), 3–12. DOI: 10.2478/v10120-006-0001-0 Fridolfsson, A. K., & Ellegren, H. (1999). A simple and universal method for molecular sexing of non-ratite birds. Journal of Avian Biology , 30(1), 116–121. DOI: 10.2307/3677252 Morinha, F., Cabral, J. A., & Bastos, E. (2012). Molecular sexing of birds: A comparative review of polymerase chain reaction (PCR)-based methods. Theriogenology , 78(4), 703–714. DOI: 10.1016/j.theriogenology.2012.04.015 Heid, C. A., Stevens, J., Livak, K. J., & Williams, P. M. (1996). Real time quantitative PCR. Genome Research , 6(10), 986–994. DOI: 10.1101/gr.6.10.986 Kubista, M., Andrade, J. M., Bengtsson, M., et al. (2006). The real-time polymerase chain reaction. Molecular Aspects of Medicine , 27(2–3), 95–125. DOI: 10.1016/j.mam.2005.12.007 Bustin, S. A., Benes, V., Garson, J. A., et al. (2009). The MIQE guidelines: Minimum information for publication of quantitative real-time PCR experiments. Clinical Chemistry , 55(4), 611–622. DOI: 10.1373/clinchem.2008.112797"
+      }
+    }
+  ]
+};
 const hreflang = "<link rel=\"alternate\" hreflang=\"en-US\" href=\"https://aviantestpro.com/avian-gender-dna-test/\" /> <link rel=\"alternate\" hreflang=\"en\" href=\"https://aviantestpro.com/avian-gender-dna-test/\" /> <link rel=\"alternate\" hreflang=\"ar\" href=\"https://aviantestpro.com/ar/اختبار-الحمض-النووي-الصبغي-للطيور/\" /> <link rel=\"alternate\" hreflang=\"ja\" href=\"https://aviantestpro.com/ja/鳥類性別dna検査/\" /> <link rel=\"alternate\" hreflang=\"ko-KR\" href=\"https://aviantestpro.com/ko/조류-성별-dna-테스트/\" /> <link rel=\"alternate\" hreflang=\"ko\" href=\"https://aviantestpro.com/ko/조류-성별-dna-테스트/\" /> <link rel=\"alternate\" hreflang=\"es-ES\" href=\"https://aviantestpro.com/es/prueba-de-adn-de-genero-aviar/\" /> <link rel=\"alternate\" hreflang=\"es\" href=\"https://aviantestpro.com/es/prueba-de-adn-de-genero-aviar/\" /> <link rel=\"alternate\" hreflang=\"fr-FR\" href=\"https://aviantestpro.com/fr/test-dadn-sur-le-genre-aviaire/\" /> <link rel=\"alternate\" hreflang=\"fr\" href=\"https://aviantestpro.com/fr/test-dadn-sur-le-genre-aviaire/\" /> <link rel=\"alternate\" hreflang=\"de-DE\" href=\"https://aviantestpro.com/de/vogelgeschlechtlicher-dna-test/\" /> <link rel=\"alternate\" hreflang=\"de\" href=\"https://aviantestpro.com/de/vogelgeschlechtlicher-dna-test/\" /> <link rel=\"alternate\" hreflang=\"x-default\" href=\"https://aviantestpro.com/avian-gender-dna-test/\" />";
 ---
-<BaseLayout title={page.title} description={page.description} canonical={page.canonical} ogType="article" lang="ja" dir="ltr" hreflang={hreflang}>
+<BaseLayout title={page.title} description={page.description} canonical={page.canonical} ogType="article" jsonLd={faqJsonLd} lang="ja" dir="ltr" hreflang={hreflang}>
   <article class="page-content">
     <h1 class="page-title">{page.h1}</h1>
     <div class="entry-content" set:html={`<div class=\"wp-block-columns is-layout-flex wp-container-core-columns-is-layout-7387b849 wp-block-columns-is-layout-flex\"><div class=\"wp-block-column is-layout-flow wp-block-column-is-layout-flow\"><h2>プロフェッショナル鳥類DNA性別判定検査ラボ</h2><p>鳥類DNA性別判定は、鳥の性別を判定する最も正確な科学的手法の一つです。当ラボでは、先進的な蛍光qPCR（定量ポリメラーゼ連鎖反応）技術を用いて、羽毛毛包DNAサンプルからのCHD遺伝子解析により鳥類の性別を特定します。</p><p>従来の目視による性別識別方法とは異なり、DNAベースの鳥類性別判定は、オウム、ハト、フィンチ、猛禽類、家禽、エキゾチックバード、その他多くの鳥類種に対して信頼性が高く、高精度な結果を提供します。</p><p>当ラボは、99%以上の検査精度を確保するため、複数の品質管理チェックポイントを備えた厳格な分子検査ワークフローを採用しています。</p></div></div><div class=\"wp-block-columns is-layout-flex wp-container-core-columns-is-layout-7387b849 wp-block-columns-is-layout-flex\"><div class=\"wp-block-column is-layout-flow wp-block-column-is-layout-flow\" style=\"flex-basis:1000px\"><figure class=\"wp-block-embed is-type-video is-provider-youtube wp-block-embed-youtube wp-embed-aspect-16-9 wp-has-aspect-ratio\"><div class=\"wp-block-embed__wrapper\">
