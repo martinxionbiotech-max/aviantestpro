@@ -14,8 +14,33 @@ const hreflang = "<link rel=\"alternate\" hreflang=\"en-US\" href=\"https://avia
 <BaseLayout title={page.title} description={page.description} canonical={page.canonical} ogType="article" lang="es" dir="ltr" hreflang={hreflang}>
   <article class="page-content">
     <h1 class="page-title">{page.h1}</h1>
-    <div class="entry-content" set:html={`<div class=\"wp-block-columns is-layout-flex wp-container-core-columns-is-layout-7387b849 wp-block-columns-is-layout-flex\"><div class=\"wp-block-column is-layout-flow wp-block-column-is-layout-flow\"><div class=\"wp-block-cover\" style=\"border-top-left-radius:15px;border-top-right-radius:15px;border-bottom-left-radius:15px;border-bottom-right-radius:15px;min-height:600px;aspect-ratio:unset;\">
-<img src=\"/images/SENO-Biotech-office.jpg\" alt=\"Zhangjiakou Seno Testing Center | Global Avians Genetic Test Services\" width=\"1024\" height=\"529\" loading=\"lazy\" decoding=\"async\" />
-<span aria-hidden=\"true\" class=\"wp-block-cover__background has-background-dim-30 has-background-dim\"></span><div class=\"wp-block-cover__inner-container is-layout-flow wp-block-cover-is-layout-flow\"><p>Bienvenido a consultar sobre pruebas genéticas de aves, realizar pedidos y explorar alianzas de agencia.</p></div></div></div></div><div class=\"wp-block-columns is-layout-flex wp-container-core-columns-is-layout-7387b849 wp-block-columns-is-layout-flex\"><div class=\"wp-block-column is-vertically-aligned-center is-content-justification-right is-layout-constrained wp-container-core-column-is-layout-d2449722 wp-block-column-is-layout-constrained\"><h3 class=\"wp-block-heading has-ast-global-color-1-color has-text-color has-link-color wp-elements-3\" style=\"font-size:28px\">Consultant: <strong>Martin.W</strong></h3><p><strong>Correo electrónico:</strong> <a href=\"mailto:martin@senobiocorp.com\">martin@senobiocorp.com</a></p></div><div class=\"wp-block-column is-vertically-aligned-center is-content-justification-left is-layout-constrained wp-container-core-column-is-layout-ff1bb9a5 wp-block-column-is-layout-constrained\"><a class="wa-btn" href="https://wa.me/+8613323237275" target="_blank" rel="noopener">WhatsApp</a></div></div><hr class=\"wp-block-separator has-alpha-channel-opacity is-style-wide\"/><div class=\"wp-block-columns is-layout-flex wp-container-core-columns-is-layout-7387b849 wp-block-columns-is-layout-flex\"><div class=\"wp-block-column is-vertically-aligned-center is-content-justification-right is-layout-constrained wp-container-core-column-is-layout-d2449722 wp-block-column-is-layout-constrained\"><h3 class=\"wp-block-heading has-ast-global-color-1-color has-text-color has-link-color wp-elements-5\" style=\"font-size:28px\">Consultant: <strong>Aaron.W</strong></h3><p><strong>Correo electrónico:</strong> <a href=\"mailto:aaron@senobiocorp.com\">aaron@senobiocorp.com</a></p></div><div class=\"wp-block-column is-vertically-aligned-center is-content-justification-left is-layout-constrained wp-container-core-column-is-layout-ff1bb9a5 wp-block-column-is-layout-constrained\"><a class="wa-btn" href="https://wa.me/+8613313137465" target="_blank" rel="noopener">WhatsApp</a></div></div><div class=\"wp-block-columns has-ast-global-color-0-background-color has-background is-layout-flex wp-container-core-columns-is-layout-7387b849 wp-block-columns-is-layout-flex\" style=\"border-top-left-radius:15px;border-top-right-radius:15px;border-bottom-left-radius:15px;border-bottom-right-radius:15px\"><div class=\"wp-block-column is-layout-flow wp-block-column-is-layout-flow\" style=\"flex-basis:600px\"><p><strong>ZHANGJIAKOU SENO TESTING CENTER CO., LTD</strong></p><p><strong>Teléfono:</strong> 0086 13323237275</p><p><strong>Correo electrónico:</strong> <a href=\"mailto:info@senobiocorp.com\">info@senobiocorp.com</a></p><p><strong>Dirección:</strong> Piso 3, Edificio 3, Hebei Guokong Beifang Guigu High-Tech New Town, No.28, Zhanqian E. Street, Distrito Qiaodong, Zhangjiakou, Hebei, China</p></div></div></div>`} />
+        <div class="entry-content">
+      <div class="contact-hero">
+        <img src="/images/SENO-Biotech-office.jpg" alt="Zhangjiakou Seno Testing Center | Global Avians Genetic Test Services" width="1024" height="529" loading="lazy" decoding="async" />
+        <div class="contact-hero-overlay">
+          <p>Bienvenido a consultar sobre pruebas genéticas de aves, realizar pedidos y explorar alianzas de agencia.</p>
+        </div>
+      </div>
+
+      <div class="consultant-row">
+        <div class="consultant-card">
+          <h3>Consultant: <strong>Martin.W</strong></h3>
+          <p><strong>Correo electrónico:</strong> <a href="mailto:martin@senobiocorp.com">martin@senobiocorp.com</a></p>
+          <a class="wa-btn" href="https://wa.me/+8613323237275" target="_blank" rel="noopener">WhatsApp</a>
+        </div>
+        <div class="consultant-card">
+          <h3>Consultant: <strong>Aaron.W</strong></h3>
+          <p><strong>Correo electrónico:</strong> <a href="mailto:aaron@senobiocorp.com">aaron@senobiocorp.com</a></p>
+          <a class="wa-btn" href="https://wa.me/+8613313137465" target="_blank" rel="noopener">WhatsApp</a>
+        </div>
+      </div>
+
+      <div class="company-card">
+        <h3>ZHANGJIAKOU SENO TESTING CENTER CO., LTD</h3>
+        <p><strong>Teléfono:</strong> 0086 13323237275</p>
+        <p><strong>Correo electrónico:</strong> <a href="mailto:info@senobiocorp.com">info@senobiocorp.com</a></p>
+        <p><strong>Dirección:</strong> Piso 3, Edificio 3, Hebei Guokong Beifang Guigu High-Tech New Town, No.28, Zhanqian E. Street, Distrito Qiaodong, Zhangjiakou, Hebei, China</p>
+      </div>
+    </div>
   </article>
 </BaseLayout>

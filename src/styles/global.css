@@ -866,20 +866,82 @@ p a, li a, .entry-content a { text-decoration: underline; }
 }
 .consultant-card {
   border: 1px solid var(--border);
-  border-radius: 12px;
-  padding: 1.25rem 1.4rem;
+  border-radius: 14px;
+  padding: 1.5rem 1.6rem;
   background: #fff;
   box-shadow: var(--shadow-sm);
+  transition: box-shadow .2s ease, transform .2s ease;
 }
+.consultant-card:hover { box-shadow: var(--shadow-md); transform: translateY(-2px); }
 .consultant-card h3 {
-  margin: 0 0 .4rem;
-  font-size: 1.1rem;
+  margin: 0 0 .5rem;
+  font-size: 1.15rem;
+  font-weight: 600;
 }
+.consultant-card h3 strong { color: var(--primary); font-size: 1.25rem; }
 .consultant-card p {
-  margin: 0 0 .9rem;
+  margin: 0 0 1rem;
   color: var(--ink-soft);
+  font-size: .95rem;
 }
 .consultant-card a[href^="mailto"] { color: var(--primary); text-decoration: underline; }
+
+/* Contact hero (cover image + overlay) */
+.contact-hero {
+  position: relative;
+  border-radius: 15px;
+  overflow: hidden;
+  margin-bottom: 1.5rem;
+  box-shadow: var(--shadow-sm);
+}
+.contact-hero img {
+  width: 100%;
+  height: auto;
+  max-height: 420px;
+  object-fit: cover;
+  display: block;
+}
+.contact-hero-overlay {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 2rem;
+  background: rgba(0, 0, 0, 0.35);
+  color: #fff;
+}
+.contact-hero-overlay p {
+  margin: 0;
+  font-size: 1.25rem;
+  font-weight: 500;
+  line-height: 1.5;
+  max-width: 600px;
+  text-shadow: 0 1px 3px rgba(0,0,0,.4);
+}
+
+/* Company info card (contact page footer) */
+.company-card {
+  margin: 1.5rem 0 0;
+  padding: 1.6rem 1.8rem;
+  border-radius: 14px;
+  background: #f5f7fa;
+  border: 1px solid var(--border);
+}
+.company-card h3 {
+  margin: 0 0 .8rem;
+  font-size: 1.05rem;
+  font-weight: 700;
+  letter-spacing: .02em;
+}
+.company-card p {
+  margin: 0 0 .5rem;
+  color: var(--ink-soft);
+  font-size: .95rem;
+  line-height: 1.6;
+}
+.company-card a[href^="mailto"] { color: var(--primary); text-decoration: underline; }
 
 .wa-btn {
   display: inline-flex;
