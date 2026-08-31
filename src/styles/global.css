@@ -529,12 +529,12 @@ main#main {
 /* --- Spacer --- */
 .wp-block-spacer { display: block; }
 
-/* --- Embed (YouTube) --- */
+/* --- Embed (YouTube) — 4:3 比例 --- */
 .wp-block-embed {
   position: relative;
-  padding-bottom: 56.25%;
-  height: 0;
-  margin: 1.5rem 0;
+  aspect-ratio: 4 / 3;
+  height: auto;
+  margin: 1.5rem auto;
   overflow: hidden;
   border-radius: var(--radius);
 }
@@ -719,7 +719,7 @@ p a, li a, .entry-content a { text-decoration: underline; }
 .stats-compact { grid-template-columns: repeat(auto-fit, minmax(160px, 1fr)); }
 .stats-compact .stat-num { font-size: 1.6rem; }
 
-/* Cert gallery: uniform 3:4 portrait cards */
+/* Cert gallery: 竖版证书 3:4（完整显示，不裁切） */
 .cert-gallery { display: flex; flex-wrap: wrap; gap: 1rem; margin: 1.5rem 0; }
 .cert-gallery figure {
   flex: 1 1 200px;
@@ -734,9 +734,19 @@ p a, li a, .entry-content a { text-decoration: underline; }
 .cert-gallery img {
   width: 100%;
   aspect-ratio: 3 / 4;
-  object-fit: cover;
+  object-fit: contain;
   display: block;
   border-radius: 0;
+  padding: 0.75rem;
+  background: #fff;
+}
+/* 横版证书画廊：4:3，完整显示 */
+.cert-gallery-landscape img {
+  aspect-ratio: 4 / 3;
+  object-fit: contain;
+}
+.cert-gallery-landscape figure {
+  flex: 1 1 260px;
 }
 @media (max-width: 480px) {
   .cert-gallery figure { flex: 1 1 100%; }
