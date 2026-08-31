@@ -904,3 +904,30 @@ p a, li a, .entry-content a { text-decoration: underline; }
   background-position: center;
 }
 .wa-btn:hover { background: #1ebe5d; transform: translateY(-1px); }
+
+/* ============================================================
+   Articles listing page
+   ============================================================ */
+.article-list { margin-top: 2rem; }
+.article-list-item {
+  padding: 1.4rem 0;
+  border-bottom: 1px solid var(--border);
+}
+.article-list-item:first-child { padding-top: 0; }
+.article-list-title { font-size: 1.3rem; margin: 0 0 .4rem; }
+.article-list-title a { color: var(--ink); text-decoration: none; }
+.article-list-title a:hover { color: var(--primary); text-decoration: underline; }
+.article-list-excerpt {
+  margin: 0 0 .6rem;
+  color: var(--ink-soft);
+  line-height: 1.6;
+}
+.article-list-meta {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  font-size: .88rem;
+}
+.article-list-date { color: var(--ink-soft); }
+.article-list-more { font-weight: 600; color: var(--primary); text-decoration: none; }
+.article-list-more:hover { text-decoration: underline; }

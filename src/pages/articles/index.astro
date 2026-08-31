@@ -4,19 +4,56 @@ import BaseLayout from "../../layouts/BaseLayout.astro";
 const page = {
   title: "Articles",
   h1: "Articles",
-  description: "",
+  description: "Technical articles on bird DNA sexing, avian disease testing, and racing pigeon genetics from the SENO testing laboratory.",
   canonical: "/articles/",
   author: "SENO Testing Center",
   date: "August 27, 2026",
 };
+
+const posts = [
+  { slug: "how-capillary-electrophoresis-analysis-works-in-bird-sexing-and-parentage-testing", title: "How Capillary Electrophoresis Analysis Works in Bird Sexing and Parentage Testing", date: "August 27, 2026", excerpt: "Part of our Bird DNA Sexing technical series. Learn how capillary electrophoresis reads fluorescent DNA fragments to deliver reliable sexing and parentage results." },
+  { slug: "capillary-electrophoresis-vs-traditional-gel-electrophoresis-which-should-your-bird-dna-lab-use", title: "Capillary Electrophoresis vs Traditional Gel Electrophoresis: Which Should Your Bird DNA Lab Use?", date: "August 27, 2026", excerpt: "Capillary electrophoresis is the automated, laser-based method for reading fluorescent DNA fragments; here is how it compares with traditional gel electrophoresis for your bird DNA lab." },
+  { slug: "the-complete-guide-to-bird-dna-sexing", title: "The Complete Guide to Bird DNA Sexing", date: "July 8, 2026", excerpt: "How bird DNA sexing works, its accuracy, and cost — a complete technical guide for breeders and laboratories." },
+  { slug: "do-you-need-to-test-pmv-virus-in-pigeons-why-and-how", title: "PMV Virus Testing in Racing Pigeons", date: "June 16, 2026", excerpt: "Risk monitoring, vaccination limitations, and a real-world biosecurity strategy for PMV virus testing in racing pigeons." },
+  { slug: "what-racing-pigeon-laboratory-testing-can-you-do-performance-dna-testing", title: "What Racing Pigeon Laboratory Testing Can You Do - Performance DNA Testing.", date: "June 15, 2026", excerpt: "Performance DNA testing in racing pigeons is a laboratory-based tool that analyzes genetic markers linked to athletic traits." },
+  { slug: "what-is-an-avian-dna-lab-what-does-it-do", title: "What Is an Avian DNA Lab? What Does It Do?", date: "June 12, 2026", excerpt: "An avian DNA lab analyzes bird DNA to answer practical questions about sex, parentage, disease, and performance." },
+  { slug: "how-to-build-a-systematic-viral-monitoring-program-for-safe-loft-management-and-one-loft-race-operations", title: "How to Build a Systematic Viral Monitoring Program for Safe Loft Management and One Loft Race Operations", date: "June 12, 2026", excerpt: "A periodic virus testing program is like regularly servicing a race car instead of waiting for it to break down." },
+  { slug: "data-driven-biosecurity-in-racing-pigeon-lofts-how-periodic-qpcr-testing-transforms-flock-management-from-reactive-to-predictive", title: "Data-Driven Biosecurity in Racing Pigeon Lofts: How Periodic qPCR Testing Transforms Flock Management from Reactive to Predictive", date: "June 8, 2026", excerpt: "How periodic qPCR testing turns flock management from reactive disease control into predictive biosecurity." },
+  { slug: "how-to-tell-emu-gender", title: "How to Tell Emu Gender?", date: "May 31, 2026", excerpt: "As emu farming grows worldwide, reliable emu gender identification is becoming increasingly important." },
+  { slug: "how-do-we-test-the-birds-gender-using-rt-pcr-method", title: "How Do We Test The Birds Gender Using RT PCR Method (Complete Video)", date: "May 26, 2026", excerpt: "Watch the complete avian DNA sexing workflow used in modern laboratories — from sample to result." },
+  { slug: "rt-pcr-vs-traditional-pcr-in-a-bird-dna-testing-lab", title: "RT-PCR vs Traditional PCR in a Bird DNA Testing Lab", date: "May 25, 2026", excerpt: "One of the biggest technical decisions in a modern avian lab: RT-PCR versus traditional PCR." },
+  { slug: "how-feather-pcr-testing-works-for-pbfd-and-avian-polyomavirus", title: "How Feather PCR Testing Works for PBFD and Avian Polyomavirus", date: "May 22, 2026", excerpt: "How feather PCR testing detects PBFD and avian polyomavirus from a simple feather sample." },
+  { slug: "test-bird-dna-at-home-what-equipment-and-reagents-do-you-need", title: "Test Bird DNA at Home: What Equipment and Reagents Do You Need?", date: "May 21, 2026", excerpt: "Bird DNA testing is no longer limited to universities — here is the equipment and reagents you need." },
+  { slug: "what-is-ldha-gene-in-racing-pigeons", title: "What is LDHA Gene in Racing Pigeons", date: "May 20, 2026", excerpt: "The LDHA gene is one of the most discussed topics in modern racing pigeon genetics — here is why." },
+  { slug: "377-2", title: "What Is the Dopamine DRD4 Receptor Test for Pigeons?", date: "May 20, 2026", excerpt: "Racing pigeon genetics explained: what the dopamine DRD4 receptor test reveals." },
+  { slug: "can-you-do-a-dna-test-on-a-racing-pigeon", title: "Can You Do a DNA Test on a Racing Pigeon?", date: "May 18, 2026", excerpt: "Racing pigeons are high-value animals — here is what DNA testing can reveal." },
+  { slug: "dna-testing-for-parrot-gender-accurate-fast-and-scalable-solutions-from-seno-laboratory", title: "DNA Testing for Parrot Gender: Accurate, Fast, and Scalable Solutions from SENO Laboratory", date: "May 18, 2026", excerpt: "Accurate, fast, and scalable parrot gender testing solutions from SENO Laboratory." },
+  { slug: "how-much-does-it-cost-to-dna-test-a-bird", title: "How Much Does It Cost to DNA Test a Bird?", date: "May 15, 2026", excerpt: "A practical breakdown of bird DNA testing costs for parrot breeders, pigeon racers, and pet owners." },
+  { slug: "dna-testing-for-parrot-gender", title: "DNA Testing for Parrot Gender", date: "May 10, 2026", excerpt: "Parrot gender identification is one of the most common challenges faced by bird owners and breeders." },
+  { slug: "can-you-only-tell-a-birds-gender-with-a-dna-test", title: "Can You Only Tell a Bird’s Gender With a DNA Test?", date: "May 10, 2026", excerpt: "The short answer to whether a DNA test is the only reliable way to tell a bird's gender." },
+];
+
 const hreflang = "<link rel=\"alternate\" hreflang=\"en-US\" href=\"https://aviantestpro.com/articles/\" /> <link rel=\"alternate\" hreflang=\"en\" href=\"https://aviantestpro.com/articles/\" /> <link rel=\"alternate\" hreflang=\"ar\" href=\"https://aviantestpro.com/ar/المقالات/\" /> <link rel=\"alternate\" hreflang=\"ja\" href=\"https://aviantestpro.com/ja/記事/\" /> <link rel=\"alternate\" hreflang=\"ko-KR\" href=\"https://aviantestpro.com/ko/기사/\" /> <link rel=\"alternate\" hreflang=\"ko\" href=\"https://aviantestpro.com/ko/기사/\" /> <link rel=\"alternate\" hreflang=\"es-ES\" href=\"https://aviantestpro.com/es/articulos/\" /> <link rel=\"alternate\" hreflang=\"es\" href=\"https://aviantestpro.com/es/articulos/\" /> <link rel=\"alternate\" hreflang=\"fr-FR\" href=\"https://aviantestpro.com/fr/articles/\" /> <link rel=\"alternate\" hreflang=\"fr\" href=\"https://aviantestpro.com/fr/articles/\" /> <link rel=\"alternate\" hreflang=\"de-DE\" href=\"https://aviantestpro.com/de/artikel/\" /> <link rel=\"alternate\" hreflang=\"de\" href=\"https://aviantestpro.com/de/artikel/\" /> <link rel=\"alternate\" hreflang=\"x-default\" href=\"https://aviantestpro.com/articles/\" />";
 ---
-<BaseLayout title={page.title} hreflang={hreflang} description={page.description} canonical={page.canonical} ogType="article" author={page.author} datePublished="2026-08-27" dateModified="2026-08-27">
+<BaseLayout title={page.title} hreflang={hreflang} description={page.description} canonical={page.canonical} ogType="website" author={page.author} datePublished="2026-08-27" dateModified="2026-08-27">
   <article class="page-content">
     <h1 class="page-title">{page.h1}</h1>
-    <div class="entry-meta">By SENO Testing Center <span>/ August 27, 2026</span></div>
-    <div class="entry-content" set:html={`<div class="ast-post-format- blog-layout-5 ast-article-inner"><div class="ast-blog-featured-section post-thumb ast-width-md-6"><div class="post-thumb-img-content post-thumb"><a href="/capillary-electrophoresis-vs-traditional-gel-electrophoresis-which-should-your-bird-dna-lab-use/">
-<img src="/images/logo1.jpg" alt="Seno Biotech" width="300" height="300" loading="lazy" decoding="async" />
-</a></div></div><div class="post-content ast-width-md-6"><span class="ast-blog-single-element ast-taxonomy-container cat-links default"><a href="/articles/">SENO AVIAN TEST</a></span><h2 class="entry-title ast-blog-single-element" ><a href="/capillary-electrophoresis-vs-traditional-gel-electrophoresis-which-should-your-bird-dna-lab-use/">Capillary Electrophoresis vs Traditional Gel Electrophoresis: Which Should Your Bird DNA Lab Use?</a></h2><div class="ast-excerpt-container ast-blog-single-element"><p>Knowledge hub — This article is part of our Bird DNA Sexing technical series. It deep-dives the detection platform behind the sexing and parentage results explained in that guide. The Short Answer Capillary electrophoresis (CE) is the automated, laser-based method that separates and reads fluorescent DNA fragments inside a hair-thin capillary; traditional gel electrophoresis does [&hellip;]</p></div></div></div></div>`} />
+    <div class="entry-meta">By SENO Testing Center <span>/ {posts.length} articles</span></div>
+    <div class="article-list">
+      {
+        posts.map((p) => (
+          <article class="article-list-item">
+            <h2 class="article-list-title">
+              <a href={`/${p.slug}/`}>{p.title}</a>
+            </h2>
+            <p class="article-list-excerpt">{p.excerpt}</p>
+            <div class="article-list-meta">
+              <span class="article-list-date">{p.date}</span>
+              <a class="article-list-more" href={`/${p.slug}/`}>Read more →</a>
+            </div>
+          </article>
+        ))
+      }
+    </div>
   </article>
 </BaseLayout>
