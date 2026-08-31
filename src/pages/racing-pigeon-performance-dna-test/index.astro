@@ -9,6 +9,18 @@ const page = {
   author: "",
   date: "",
 };
+const serviceJsonLd = {
+  "@context": "https://schema.org",
+  "@type": "Service",
+  "name": "Racing Pigeon Performance DNA Testing",
+  "serviceType": "Pigeon Performance Genetics",
+  "description": "Genetic analysis of markers linked to endurance, muscle performance, recovery and breeding potential in racing pigeons.",
+  "provider": {
+    "@id": "https://aviantestpro.com/#organization"
+  },
+  "areaServed": "Worldwide",
+  "url": "https://aviantestpro.com/racing-pigeon-performance-dna-test/"
+};
 const faqJsonLd = {
   "@context": "https://schema.org",
   "@type": "FAQPage",
@@ -177,7 +189,7 @@ const faqJsonLd = {
 };
 const hreflang = "<link rel=\"alternate\" hreflang=\"en-US\" href=\"https://aviantestpro.com/racing-pigeon-performance-dna-test/\" /> <link rel=\"alternate\" hreflang=\"en\" href=\"https://aviantestpro.com/racing-pigeon-performance-dna-test/\" /> <link rel=\"alternate\" hreflang=\"ar\" href=\"https://aviantestpro.com/ar/اختبار-الحمض-النووي-لأداء-الحمام-الزا/\" /> <link rel=\"alternate\" hreflang=\"ja\" href=\"https://aviantestpro.com/ja/レース鳩パフォーマンスdna検査/\" /> <link rel=\"alternate\" hreflang=\"ko-KR\" href=\"https://aviantestpro.com/ko/레이싱-비둘기-성능-dna-테스트/\" /> <link rel=\"alternate\" hreflang=\"ko\" href=\"https://aviantestpro.com/ko/레이싱-비둘기-성능-dna-테스트/\" /> <link rel=\"alternate\" hreflang=\"es-ES\" href=\"https://aviantestpro.com/es/prueba-de-adn-del-rendimiento-de-las-palomas-de-carreras/\" /> <link rel=\"alternate\" hreflang=\"es\" href=\"https://aviantestpro.com/es/prueba-de-adn-del-rendimiento-de-las-palomas-de-carreras/\" /> <link rel=\"alternate\" hreflang=\"fr-FR\" href=\"https://aviantestpro.com/fr/test-dadn-pour-la-performance-des-pigeons-voyageurs/\" /> <link rel=\"alternate\" hreflang=\"fr\" href=\"https://aviantestpro.com/fr/test-dadn-pour-la-performance-des-pigeons-voyageurs/\" /> <link rel=\"alternate\" hreflang=\"de-DE\" href=\"https://aviantestpro.com/de/brieftauben-leistungs-dna-test/\" /> <link rel=\"alternate\" hreflang=\"de\" href=\"https://aviantestpro.com/de/brieftauben-leistungs-dna-test/\" /> <link rel=\"alternate\" hreflang=\"x-default\" href=\"https://aviantestpro.com/racing-pigeon-performance-dna-test/\" />";
 ---
-<BaseLayout title={page.title} hreflang={hreflang} description={page.description} canonical={page.canonical} ogType="article" jsonLd={faqJsonLd}>
+<BaseLayout title={page.title} hreflang={hreflang} description={page.description} canonical={page.canonical} ogType="website" jsonLd={[serviceJsonLd, faqJsonLd]}>
   <article class="page-content">
     <h1 class="page-title">{page.h1}</h1>
     

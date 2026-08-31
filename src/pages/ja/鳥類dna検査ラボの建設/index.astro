@@ -9,6 +9,18 @@ const page = {
   author: "",
   date: "",
 };
+const serviceJsonLd = {
+  "@context": "https://schema.org",
+  "@type": "Service",
+  "name": "鳥類DNA検査ラボを構築する",
+  "serviceType": "Avian DNA Laboratory Setup Service",
+  "provider": {
+    "@id": "https://aviantestpro.com/#organization"
+  },
+  "areaServed": "Worldwide",
+  "url": "https://aviantestpro.com/ja/鳥類dna検査ラボの建設/",
+  "description": "鳥類DNA検査ラボを構築する | PCR・qPCRセットアップガイド"
+};
 const faqJsonLd = {
   "@context": "https://schema.org",
   "@type": "FAQPage",
@@ -169,7 +181,7 @@ const faqJsonLd = {
 };
 const hreflang = "<link rel=\"alternate\" hreflang=\"en-US\" href=\"https://aviantestpro.com/build-avian-dna-test-lab/\" /> <link rel=\"alternate\" hreflang=\"en\" href=\"https://aviantestpro.com/build-avian-dna-test-lab/\" /> <link rel=\"alternate\" hreflang=\"ar\" href=\"https://aviantestpro.com/ar/بناء-معمل-اختبار-الحمض-النووي-للطيور/\" /> <link rel=\"alternate\" hreflang=\"ja\" href=\"https://aviantestpro.com/ja/鳥類dna検査ラボの建設/\" /> <link rel=\"alternate\" hreflang=\"ko-KR\" href=\"https://aviantestpro.com/ko/조류-dna-테스트-랩-구축/\" /> <link rel=\"alternate\" hreflang=\"ko\" href=\"https://aviantestpro.com/ko/조류-dna-테스트-랩-구축/\" /> <link rel=\"alternate\" hreflang=\"es-ES\" href=\"https://aviantestpro.com/es/construir-un-laboratorio-de-analisis-de-adn-aviar/\" /> <link rel=\"alternate\" hreflang=\"es\" href=\"https://aviantestpro.com/es/construir-un-laboratorio-de-analisis-de-adn-aviar/\" /> <link rel=\"alternate\" hreflang=\"fr-FR\" href=\"https://aviantestpro.com/fr/construction-dun-laboratoire-danalyse-de-ladn-aviaire/\" /> <link rel=\"alternate\" hreflang=\"fr\" href=\"https://aviantestpro.com/fr/construction-dun-laboratoire-danalyse-de-ladn-aviaire/\" /> <link rel=\"alternate\" hreflang=\"de-DE\" href=\"https://aviantestpro.com/de/bau-eines-labors-fur-vogel-dna-tests/\" /> <link rel=\"alternate\" hreflang=\"de\" href=\"https://aviantestpro.com/de/bau-eines-labors-fur-vogel-dna-tests/\" /> <link rel=\"alternate\" hreflang=\"x-default\" href=\"https://aviantestpro.com/build-avian-dna-test-lab/\" />";
 ---
-<BaseLayout title={page.title} description={page.description} canonical={page.canonical} ogType="article" jsonLd={faqJsonLd} lang="ja" dir="ltr" hreflang={hreflang}>
+<BaseLayout title={page.title} description={page.description} canonical={page.canonical} ogType="website" jsonLd={[serviceJsonLd, faqJsonLd]} lang="ja" dir="ltr" hreflang={hreflang}>
   <article class="page-content">
     <h1 class="page-title">{page.h1}</h1>
     <div class="entry-content" set:html={`<div class=\"wp-block-columns is-layout-flex wp-container-core-columns-is-layout-7387b849 wp-block-columns-is-layout-flex\"><div class=\"wp-block-column is-layout-flow wp-block-column-is-layout-flow\"><p><br><br>鳥類DNA検査ラボの構築 | PCR &amp; qPCRセットアップガイド</p><p><em>プロフェッショナル＆ブリーダーのための包括的PCR &amp; qPCRセットアップガイド</em></p><p>このガイドでは、鳥類のDNA検査および病原体検出のための小規模から中規模の鳥類分子診断ラボの設立方法について説明します。養鶏業者、鳩舎管理者、鳥類研究者、野生生物保護団体、ラボ起業家を対象としています。</p><p>焦点は、鳥類の遺伝子検査および感染症スクリーニングのためのPCRおよびリアルタイムPCR（qPCR）システムの実践的な導入に置かれています。</p><hr class=\"wp-block-separator has-alpha-channel-opacity\"/><h2>1. 鳥類分子ラボの用途概要</h2><p>機能的な鳥類DNAラボは、遺伝子解析と病原体検出の両方のワークフローをサポートできます。</p><ul><li>CHD遺伝子PCR解析による鳥の性別判定</li><li>鳥類ウイルススクリーニング（PBFD、PPMV-1、PiHV、APV）</li><li>鳥類集団における細菌および真菌の検出</li><li>原虫感染スクリーニング（例：トリコモナス）</li><li>育種および血統研究における遺伝子研究</li></ul><p>これらの用途は、PCRおよびRT-PCRを含む核酸検出技術に基づいています。</p><hr class=\"wp-block-separator has-alpha-channel-opacity\"/><h2>2. ラボレベルの検査方法</h2><figure class=\"wp-block-table\"><table><tbody><tr><th>方法</th><th>専門ラボ外での実現可能性</th><th>主な用途</th><th>備考</th></tr><tr><td>従来型PCR</td><td>可能</td><td>性別判定、基本的なウイルス検出</td><td>ゲル電気泳動システムが必要</td></tr><tr><td>リアルタイムPCR（qPCR）</td><td>部分的に可能</td><td>ウイルス定量、高感度検出</td><td>リアルタイムPCR装置が必要</td></tr><tr><td>サンガー／NGSシーケンシング</td><td>不可</td><td>変異解析、ゲノム研究</td><td>認定シーケンシングラボが必要</td></tr><tr><td>STR／SNP親子鑑定</td><td>不可</td><td>血統確認</td><td>法医学レベルのラボ向け</td></tr></tbody></table></figure><p>PCRおよびqPCRは、独立したラボ設立に適した中核技術です。</p><hr class=\"wp-block-separator has-alpha-channel-opacity\"/><h2>3. PCR vs qPCR 運用体制</h2><figure class=\"wp-block-table\"><table><tbody><tr><th>ステップ</th><th>従来型PCR</th><th>リアルタイムPCR（qPCR）</th></tr><tr><td>サンプル調製</td><td>DNA抽出が必要</td><td>DNA抽出が必要</td></tr><tr><td>反応系</td><td>DNA＋プライマー＋ポリメラーゼ＋バッファー</td><td>蛍光プローブまたは色素を加えた同様の系</td></tr><tr><td>増幅プラットフォーム</td><td>サーマルサイクラー</td><td>リアルタイム蛍光検出システム</td></tr><tr><td>検出方法</td><td>ゲル電気泳動による可視化</td><td>蛍光シグナル（Ct値解析）</td></tr><tr><td>出力タイプ</td><td>定性結果</td><td>定量または半定量結果</td></tr></tbody></table></figure><p>PCRはエンドポイント検出を提供し、qPCRはリアルタイムモニタリングとより高い感度を可能にします。</p><hr class=\"wp-block-separator has-alpha-channel-opacity\"/><figure class=\"wp-block-image aligncenter size-large is-resized has-custom-border\">

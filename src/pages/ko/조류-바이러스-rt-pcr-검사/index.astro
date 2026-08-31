@@ -9,6 +9,18 @@ const page = {
   author: "",
   date: "",
 };
+const serviceJsonLd = {
+  "@context": "https://schema.org",
+  "@type": "Service",
+  "name": "조류 바이러스 분자 검출 및 qPCR 분석 연구",
+  "serviceType": "Avian Virus Molecular Testing Service",
+  "provider": {
+    "@id": "https://aviantestpro.com/#organization"
+  },
+  "areaServed": "Worldwide",
+  "url": "https://aviantestpro.com/ko/조류-바이러스-rt-pcr-검사/",
+  "description": "AvianTestPro는 비둘기 및 앵무새 병원체에 대한 실시간 형광 정량 PCR(qPCR) 분자 분석의 연구 개발에 주력하고 있습니다. 독성 조류 바이러스의 전파 경로와 위험성을 파악하고, 고급 실험실 수준의 병원체 모니터링 및 예방적 스크리닝 워크플로우에 접근하세요. 조류 바이러스 검출, qPCR 분자 분석, 비둘기 파라믹소바이러스 PPMV-1, 앵무새"
+};
 const faqJsonLd = {
   "@context": "https://schema.org",
   "@type": "FAQPage",
@@ -57,7 +69,7 @@ const faqJsonLd = {
 };
 const hreflang = "<link rel=\"alternate\" hreflang=\"en-US\" href=\"https://aviantestpro.com/avian-virus-rt-pcr-test/\" /> <link rel=\"alternate\" hreflang=\"en\" href=\"https://aviantestpro.com/avian-virus-rt-pcr-test/\" /> <link rel=\"alternate\" hreflang=\"ar\" href=\"https://aviantestpro.com/ar/اختبار-فيروسات-الطيور/\" /> <link rel=\"alternate\" hreflang=\"ja\" href=\"https://aviantestpro.com/ja/鳥ウイルスrt-pcr検査/\" /> <link rel=\"alternate\" hreflang=\"ko-KR\" href=\"https://aviantestpro.com/ko/조류-바이러스-rt-pcr-검사/\" /> <link rel=\"alternate\" hreflang=\"ko\" href=\"https://aviantestpro.com/ko/조류-바이러스-rt-pcr-검사/\" /> <link rel=\"alternate\" hreflang=\"es-ES\" href=\"https://aviantestpro.com/es/prueba-rt-pcr-del-virus-aviar/\" /> <link rel=\"alternate\" hreflang=\"es\" href=\"https://aviantestpro.com/es/prueba-rt-pcr-del-virus-aviar/\" /> <link rel=\"alternate\" hreflang=\"fr-FR\" href=\"https://aviantestpro.com/fr/virus-aviaire-rt-pcr-test/\" /> <link rel=\"alternate\" hreflang=\"fr\" href=\"https://aviantestpro.com/fr/virus-aviaire-rt-pcr-test/\" /> <link rel=\"alternate\" hreflang=\"de-DE\" href=\"https://aviantestpro.com/de/aviarer-virus-rt-pcr-test/\" /> <link rel=\"alternate\" hreflang=\"de\" href=\"https://aviantestpro.com/de/aviarer-virus-rt-pcr-test/\" /> <link rel=\"alternate\" hreflang=\"x-default\" href=\"https://aviantestpro.com/avian-virus-rt-pcr-test/\" />";
 ---
-<BaseLayout title={page.title} description={page.description} canonical={page.canonical} ogType="article" jsonLd={faqJsonLd} lang="ko" dir="ltr" hreflang={hreflang}>
+<BaseLayout title={page.title} description={page.description} canonical={page.canonical} ogType="website" jsonLd={[serviceJsonLd, faqJsonLd]} lang="ko" dir="ltr" hreflang={hreflang}>
   <article class="page-content">
     <h1 class="page-title">{page.h1}</h1>
     <div class="entry-content" set:html={`<div class=\"wp-block-columns is-layout-flex wp-container-core-columns-is-layout-7387b849 wp-block-columns-is-layout-flex\"><div class=\"wp-block-column is-layout-flow wp-block-column-is-layout-flow\"><div class=\"wp-block-cover alignwide\" style=\"border-top-left-radius:24px;border-top-right-radius:24px;border-bottom-left-radius:24px;border-bottom-right-radius:24px;min-height:348px;aspect-ratio:unset;\">

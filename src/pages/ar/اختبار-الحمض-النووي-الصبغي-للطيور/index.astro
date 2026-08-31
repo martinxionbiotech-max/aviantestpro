@@ -9,9 +9,21 @@ const page = {
   author: "",
   date: "",
 };
+const serviceJsonLd = {
+  "@context": "https://schema.org",
+  "@type": "Service",
+  "name": "اختبار الحمض النووي لتحديد جنس الطيور",
+  "serviceType": "Bird DNA Sexing Service",
+  "provider": {
+    "@id": "https://aviantestpro.com/#organization"
+  },
+  "areaServed": "Worldwide",
+  "url": "https://aviantestpro.com/ar/اختبار-الحمض-النووي-الصبغي-للطيور/",
+  "description": "اختبار الحمض النووي لتحديد جنس الطيور هو أحد أكثر الطرق العلمية دقة لتحديد جنس الطيور. يستخدم مختبرنا تقنية qPCR الفلورية المتقدمة"
+};
 const hreflang = "<link rel=\"alternate\" hreflang=\"en-US\" href=\"https://aviantestpro.com/avian-gender-dna-test/\" /> <link rel=\"alternate\" hreflang=\"en\" href=\"https://aviantestpro.com/avian-gender-dna-test/\" /> <link rel=\"alternate\" hreflang=\"ar\" href=\"https://aviantestpro.com/ar/اختبار-الحمض-النووي-الصبغي-للطيور/\" /> <link rel=\"alternate\" hreflang=\"ja\" href=\"https://aviantestpro.com/ja/鳥類性別dna検査/\" /> <link rel=\"alternate\" hreflang=\"ko-KR\" href=\"https://aviantestpro.com/ko/조류-성별-dna-테스트/\" /> <link rel=\"alternate\" hreflang=\"ko\" href=\"https://aviantestpro.com/ko/조류-성별-dna-테스트/\" /> <link rel=\"alternate\" hreflang=\"es-ES\" href=\"https://aviantestpro.com/es/prueba-de-adn-de-genero-aviar/\" /> <link rel=\"alternate\" hreflang=\"es\" href=\"https://aviantestpro.com/es/prueba-de-adn-de-genero-aviar/\" /> <link rel=\"alternate\" hreflang=\"fr-FR\" href=\"https://aviantestpro.com/fr/test-dadn-sur-le-genre-aviaire/\" /> <link rel=\"alternate\" hreflang=\"fr\" href=\"https://aviantestpro.com/fr/test-dadn-sur-le-genre-aviaire/\" /> <link rel=\"alternate\" hreflang=\"de-DE\" href=\"https://aviantestpro.com/de/vogelgeschlechtlicher-dna-test/\" /> <link rel=\"alternate\" hreflang=\"de\" href=\"https://aviantestpro.com/de/vogelgeschlechtlicher-dna-test/\" /> <link rel=\"alternate\" hreflang=\"x-default\" href=\"https://aviantestpro.com/avian-gender-dna-test/\" />";
 ---
-<BaseLayout title={page.title} description={page.description} canonical={page.canonical} ogType="article" lang="ar" dir="rtl" hreflang={hreflang}>
+<BaseLayout title={page.title} description={page.description} canonical={page.canonical} ogType="website" jsonLd={serviceJsonLd} lang="ar" dir="rtl" hreflang={hreflang}>
   <article class="page-content">
     <h1 class="page-title">{page.h1}</h1>
     <div class="entry-content" set:html={`<div class=\"wp-block-columns is-layout-flex wp-container-core-columns-is-layout-7387b849 wp-block-columns-is-layout-flex\"><div class=\"wp-block-column is-layout-flow wp-block-column-is-layout-flow\"><h2>مختبر احترافي لفحص الحمض النووي لتحديد جنس الطيور</h2><p>يُعد فحص الحمض النووي لتحديد جنس الطيور من أكثر الطرق العلمية دقة لتحديد جنس الطيور. يستخدم مختبرنا تقنية qPCR الفلورية المتقدمة (تفاعل البوليميراز المتسلسل الكمي) لتحديد جنس الطيور من خلال تحليل جين CHD من عينات الحمض النووي المستخرجة من بصيلات الريش.</p><p>على عكس طرق التحديد البصري التقليدي للجنس، يوفر فحص الحمض النووي لتحديد جنس الطيور نتائج موثوقة وعالية الدقة للببغاوات والحمام والعصافير والطيور الجارحة والدواجن والطيور الغريبة والعديد من الأنواع الأخرى من الطيور.</p><p>يتبع مختبرنا سير عمل صارم للاختبارات الجزيئية مع نقاط مراقبة جودة متعددة لضمان دقة اختبار تتجاوز 99%.</p></div></div><div class=\"wp-block-columns is-layout-flex wp-container-core-columns-is-layout-7387b849 wp-block-columns-is-layout-flex\"><div class=\"wp-block-column is-layout-flow wp-block-column-is-layout-flow\" style=\"flex-basis:1000px\"><figure class=\"wp-block-embed is-type-video is-provider-youtube wp-block-embed-youtube wp-embed-aspect-16-9 wp-has-aspect-ratio\"><div class=\"wp-block-embed__wrapper\">
