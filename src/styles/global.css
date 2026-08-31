@@ -504,6 +504,17 @@ main#main {
   font-style: italic;
 }
 
+/* --- 图文并排区块的裸图片（WP 迁移，直接 <img> 在 column 内）--- */
+/* 统一圆角 + 柔和阴影 + 自适应宽度 */
+.wp-block-column > img {
+  display: block;
+  width: 100%;
+  height: auto;
+  border-radius: 0.75rem;
+  box-shadow: var(--shadow-md);
+  object-fit: cover;
+}
+
 /* --- Code --- */
 .wp-block-code {
   background: #f6f8fa;
@@ -533,6 +544,17 @@ main#main {
   width: 100%;
   height: 100%;
   border: 0;
+}
+/* 居中的视频（about-us 等页面的 aligncenter 嵌入）*/
+.wp-block-embed.aligncenter,
+.wp-block-embed.is-type-video {
+  max-width: 800px;
+  margin-left: auto;
+  margin-right: auto;
+}
+/* 视频所在的单列占满父容器，使 aligncenter 视频真正在内容区居中 */
+.wp-block-column:has(.wp-block-embed) {
+  flex-basis: 100% !important;
 }
 
 /* --- Gallery --- */
