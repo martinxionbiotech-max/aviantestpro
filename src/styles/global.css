@@ -737,7 +737,7 @@ p a, li a, .entry-content a { text-decoration: underline; }
   opacity: .7;
 }
 .nav-drop > summary:hover { color: var(--primary); }
-.nav-drop[open] > summary { color: var(--primary); }
+.nav-drop:hover > summary { color: var(--primary); }
 
 .nav-drop-menu {
   position: absolute;
@@ -750,6 +750,12 @@ p a, li a, .entry-content a { text-decoration: underline; }
   min-width: 260px;
   padding: .4rem;
   z-index: 300;
+  /* 桌面端：默认隐藏，hover 展开、离开自动收起 */
+  display: none;
+}
+.nav-drop:hover .nav-drop-menu,
+.nav-drop:focus-within .nav-drop-menu {
+  display: block;
 }
 .nav-drop-menu a {
   display: block;
@@ -762,7 +768,9 @@ p a, li a, .entry-content a { text-decoration: underline; }
 }
 .nav-drop-menu a:hover { background: var(--bg-alt); color: var(--primary); }
 
-/* 移动端：下拉展开为内联列表 */
+/* 桌面端：点击 summary 不再让菜单常开（由 hover 控制），去掉 details 原生展开视觉 */
+
+/* 移动端：下拉展开为内联列表（点击 summary 控制） */
 @media (max-width: 900px) {
   .nav-drop { width: 100%; }
   .nav-drop > summary { padding: .7rem .5rem; width: 100%; }
@@ -774,7 +782,9 @@ p a, li a, .entry-content a { text-decoration: underline; }
     margin: 0 0 0 .5rem;
     padding: .2rem 0 .2rem .75rem;
     min-width: 0;
+    display: none;
   }
+  .nav-drop[open] .nav-drop-menu { display: block; }
 }
 
 /* ============================================================
