@@ -674,3 +674,32 @@ p a, li a, .entry-content a { text-decoration: underline; }
   }
   .header-inner { flex-wrap: wrap; }
 }
+
+/* ============================================================
+   Premium P4: about-us stats + cert gallery
+   ============================================================ */
+.stats-compact { grid-template-columns: repeat(auto-fit, minmax(160px, 1fr)); }
+.stats-compact .stat-num { font-size: 1.6rem; }
+
+/* Cert gallery: uniform 3:4 portrait cards */
+.cert-gallery { display: flex; flex-wrap: wrap; gap: 1rem; margin: 1.5rem 0; }
+.cert-gallery figure {
+  flex: 1 1 200px;
+  margin: 0;
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  overflow: hidden;
+  box-shadow: var(--shadow-sm);
+  background: #fff;
+}
+.cert-gallery .wp-block-image { margin: 0; }
+.cert-gallery img {
+  width: 100%;
+  aspect-ratio: 3 / 4;
+  object-fit: cover;
+  display: block;
+  border-radius: 0;
+}
+@media (max-width: 480px) {
+  .cert-gallery figure { flex: 1 1 100%; }
+}
