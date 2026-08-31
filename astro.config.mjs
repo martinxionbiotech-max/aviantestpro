@@ -6,8 +6,6 @@ export default defineConfig({
   output: 'static',
   build: { format: 'directory' },
   integrations: [
-    sitemap({
-      filter: (page) => !page.includes('dna-testing-for-parrot-gender-accurate-fast-and-scalable-solutions-from-seno-laboratory'),
-    }),
+    sitemap(),
   ],
 });
