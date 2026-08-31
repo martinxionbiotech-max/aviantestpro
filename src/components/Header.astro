@@ -120,6 +120,88 @@ const navItems = [
   { href: "/faq/", key: "faq" },
   { href: "/contact/", key: "contact" },
 ];
+
+// 各语言的导航 slug 本地化映射（英文为 key 本身）
+const LANG_SLUGS: Record<string, Record<string, string>> = {
+  ar: {
+    "about-us": "نبذة-عنا",
+    "racing-pigeon-performance-dna-test": "اختبار-الحمض-النووي-لأداء-الحمام-الزا",
+    "avian-virus-rt-pcr-test": "اختبار-فيروسات-الطيور",
+    "avian-gender-dna-test": "اختبار-الحمض-النووي-الصبغي-للطيور",
+    "pigeon-dna-fingerprinting": "بصمات-الحمض-النووي-للحمام",
+    "build-avian-dna-test-lab": "بناء-معمل-اختبار-الحمض-النووي-للطيور",
+    "become-an-agent": "أن-تصبح-وكيلاً",
+    "avian-dna-test-kits": "مجموعات-اختبار-الحمض-النووي-للطيور",
+    "articles": "المقالات",
+    "faq": "الأسئلة-الشائعة",
+    "contact": "الاتصال",
+  },
+  ja: {
+    "about-us": "私たちについて",
+    "racing-pigeon-performance-dna-test": "レース鳩パフォーマンスdna検査",
+    "avian-virus-rt-pcr-test": "鳥ウイルスrt-pcr検査",
+    "avian-gender-dna-test": "鳥類性別dna検査",
+    "pigeon-dna-fingerprinting": "ハトのdna指紋",
+    "build-avian-dna-test-lab": "鳥類dna検査ラボの建設",
+    "become-an-agent": "エージェントになる",
+    "avian-dna-test-kits": "鳥類dna検査キット",
+    "articles": "記事",
+    "faq": "よくある質問",
+    "contact": "コンタクト",
+  },
+  ko: {
+    "about-us": "회사-소개",
+    "racing-pigeon-performance-dna-test": "레이싱-비둘기-성능-dna-테스트",
+    "avian-virus-rt-pcr-test": "조류-바이러스-rt-pcr-검사",
+    "avian-gender-dna-test": "조류-성별-dna-테스트",
+    "pigeon-dna-fingerprinting": "비둘기-dna-핑거프린팅",
+    "build-avian-dna-test-lab": "조류-dna-테스트-랩-구축",
+    "become-an-agent": "에이전트-되기",
+    "avian-dna-test-kits": "조류-dna-테스트-키트",
+    "articles": "기사",
+    "faq": "faq",
+    "contact": "연락처",
+  },
+  es: {
+    "about-us": "acerca-de-nosotros",
+    "racing-pigeon-performance-dna-test": "prueba-de-adn-del-rendimiento-de-las-palomas-de-carreras",
+    "avian-virus-rt-pcr-test": "prueba-rt-pcr-del-virus-aviar",
+    "avian-gender-dna-test": "prueba-de-adn-de-genero-aviar",
+    "pigeon-dna-fingerprinting": "huellas-de-adn-de-palomas",
+    "build-avian-dna-test-lab": "construir-un-laboratorio-de-analisis-de-adn-aviar",
+    "become-an-agent": "conviertase-en-agente",
+    "avian-dna-test-kits": "kits-de-analisis-de-adn-aviar",
+    "articles": "articulos",
+    "faq": "faq",
+    "contact": "pongase-en-contacto-con",
+  },
+  fr: {
+    "about-us": "a-propos-de-nous",
+    "racing-pigeon-performance-dna-test": "test-dadn-pour-la-performance-des-pigeons-voyageurs",
+    "avian-virus-rt-pcr-test": "virus-aviaire-rt-pcr-test",
+    "avian-gender-dna-test": "test-dadn-sur-le-genre-aviaire",
+    "pigeon-dna-fingerprinting": "empreinte-genetique-des-pigeons",
+    "build-avian-dna-test-lab": "construction-dun-laboratoire-danalyse-de-ladn-aviaire",
+    "become-an-agent": "devenir-agent",
+    "avian-dna-test-kits": "kits-de-test-dadn-aviaire",
+    "articles": "articles",
+    "faq": "faq",
+    "contact": "contact",
+  },
+  de: {
+    "about-us": "uber-uns",
+    "racing-pigeon-performance-dna-test": "brieftauben-leistungs-dna-test",
+    "avian-virus-rt-pcr-test": "aviarer-virus-rt-pcr-test",
+    "avian-gender-dna-test": "vogelgeschlechtlicher-dna-test",
+    "pigeon-dna-fingerprinting": "tauben-dna-fingerprinting",
+    "build-avian-dna-test-lab": "bau-eines-labors-fur-vogel-dna-tests",
+    "become-an-agent": "agent-werden",
+    "avian-dna-test-kits": "vogel-dna-testkits",
+    "articles": "artikel",
+    "faq": "faq",
+    "contact": "kontakt",
+  },
+};
 ---
 
 <header class="site-header">
@@ -130,15 +212,20 @@ const navItems = [
     </a>
     <nav class="site-nav" aria-label="Main navigation">
       {
-        navItems.map((item) => (
-          <a
-            href={`${prefix}${item.href}`}
-            aria-current={isActive(item.href) ? "page" : undefined}
-            class={isActive(item.href) ? "active" : undefined}
-          >
-            {labels[item.key]}
-          </a>
-        ))
+        navItems.map((item) => {
+          const localized = isLangPage ? (LANG_SLUGS[currentLang]?.[item.key] ?? item.key) : item.key;
+          const href = isLangPage ? `/${currentLang}/${localized}/` : `/${localized}/`;
+          const plainPath = `/${localized}/`;
+          return (
+            <a
+              href={href}
+              aria-current={isActive(plainPath) ? "page" : undefined}
+              class={isActive(plainPath) ? "active" : undefined}
+            >
+              {labels[item.key]}
+            </a>
+          );
+        })
       }
     </nav>
   </div>

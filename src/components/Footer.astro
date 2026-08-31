@@ -15,14 +15,402 @@ const languages = [
   { code: "de", name: "Deutsch", flag: "🇩🇪" },
 ];
 
+// 页脚快捷链接的本地化 slug（英文为 key 本身）
+const FOOTER_SLUGS: Record<string, Record<string, string>> = {
+  ar: {
+    "html-sitemap": "خريطة-موقع-html",
+    "disclaimer": "إخلاء-المسؤولية",
+    "privacy-policy": "سياسة-الخصوصية-2",
+    "terms-and-conditions": "الشروط-والأحكام",
+    "scientific-regulatory-compliance-statement": "بيان-الامتثال-التنظيمي-العلمي",
+    "sample-shipping": "عينة-الشحن",
+  },
+  ja: {
+    "html-sitemap": "htmlサイトマップ",
+    "disclaimer": "免責事項",
+    "privacy-policy": "プライバシーポリシー-2",
+    "terms-and-conditions": "諸条件",
+    "scientific-regulatory-compliance-statement": "科学的規制遵守声明",
+    "sample-shipping": "サンプル出荷",
+  },
+  ko: {
+    "html-sitemap": "html-사이트맵",
+    "disclaimer": "고지-사항",
+    "privacy-policy": "개인정보-보호정책-2",
+    "terms-and-conditions": "이용-약관",
+    "scientific-regulatory-compliance-statement": "과학적-규제-준수-성명서",
+    "sample-shipping": "샘플-배송",
+  },
+  es: {
+    "html-sitemap": "mapa-del-sitio-html",
+    "disclaimer": "descargo-de-responsabilidad",
+    "privacy-policy": "politica-de-privacidad",
+    "terms-and-conditions": "condiciones-generales",
+    "scientific-regulatory-compliance-statement": "declaracion-de-cumplimiento-de-la-normativa-cientifica",
+    "sample-shipping": "envio-de-muestras",
+  },
+  fr: {
+    "html-sitemap": "sitemap-html",
+    "disclaimer": "clause-de-non-responsabilite",
+    "privacy-policy": "politique-de-confidentialite",
+    "terms-and-conditions": "conditions-generales",
+    "scientific-regulatory-compliance-statement": "declaration-de-conformite-a-la-reglementation-scientifique",
+    "sample-shipping": "envoi-dechantillons",
+  },
+  de: {
+    "html-sitemap": "html-sitemap",
+    "disclaimer": "haftungsausschluss",
+    "privacy-policy": "datenschutzbestimmungen",
+    "terms-and-conditions": "bedingungen-und-konditionen",
+    "scientific-regulatory-compliance-statement": "erklarung-zur-einhaltung-wissenschaftlicher-vorschriften",
+    "sample-shipping": "musterversand",
+  },
+};
+
+const LANG_ALL_SLUGS: Record<string, Record<string, string>> = {
+  "avian-molecular-biology-guide-the-foundation-of-bird-dna-testing": {
+    "ar": "avian-molecular-biology-guide-the-foundation-of-bird-dna-testing",
+    "ja": "avian-molecular-biology-guide-the-foundation-of-bird-dna-testing",
+    "ko": "avian-molecular-biology-guide-the-foundation-of-bird-dna-testing",
+    "es": "avian-molecular-biology-guide-the-foundation-of-bird-dna-testing",
+    "fr": "avian-molecular-biology-guide-the-foundation-of-bird-dna-testing",
+    "de": "avian-molecular-biology-guide-the-foundation-of-bird-dna-testing"
+  },
+  "avian-virus-rt-pcr-test": {
+    "ar": "اختبار-فيروسات-الطيور",
+    "ja": "鳥ウイルスrt-pcr検査",
+    "ko": "조류-바이러스-rt-pcr-검사",
+    "es": "prueba-rt-pcr-del-virus-aviar",
+    "fr": "virus-aviaire-rt-pcr-test",
+    "de": "aviarer-virus-rt-pcr-test"
+  },
+  "about-us": {
+    "ar": "نبذة-عنا",
+    "ja": "私たちについて",
+    "ko": "회사-소개",
+    "es": "acerca-de-nosotros",
+    "fr": "a-propos-de-nous",
+    "de": "uber-uns"
+  },
+  "faq": {
+    "ar": "الأسئلة-الشائعة",
+    "ja": "よくある質問",
+    "ko": "faq",
+    "es": "faq",
+    "fr": "faq",
+    "de": "faq"
+  },
+  "become-an-agent": {
+    "ar": "أن-تصبح-وكيلاً",
+    "ja": "エージェントになる",
+    "ko": "에이전트-되기",
+    "es": "conviertase-en-agente",
+    "fr": "devenir-agent",
+    "de": "agent-werden"
+  },
+  "build-avian-dna-test-lab": {
+    "ar": "بناء-معمل-اختبار-الحمض-النووي-للطيور",
+    "ja": "鳥類dna検査ラボの建設",
+    "ko": "조류-dna-테스트-랩-구축",
+    "es": "construir-un-laboratorio-de-analisis-de-adn-aviar",
+    "fr": "construction-dun-laboratoire-danalyse-de-ladn-aviaire",
+    "de": "bau-eines-labors-fur-vogel-dna-tests"
+  },
+  "avian-dna-test-kits": {
+    "ar": "مجموعات-اختبار-الحمض-النووي-للطيور",
+    "ja": "鳥類dna検査キット",
+    "ko": "조류-dna-테스트-키트",
+    "es": "kits-de-analisis-de-adn-aviar",
+    "fr": "kits-de-test-dadn-aviaire",
+    "de": "vogel-dna-testkits"
+  },
+  "pigeon-dna-fingerprinting": {
+    "ar": "بصمات-الحمض-النووي-للحمام",
+    "ja": "ハトのdna指紋",
+    "ko": "비둘기-dna-핑거프린팅",
+    "es": "huellas-de-adn-de-palomas",
+    "fr": "empreinte-genetique-des-pigeons",
+    "de": "tauben-dna-fingerprinting"
+  },
+  "racing-pigeon-performance-dna-test": {
+    "ar": "اختبار-الحمض-النووي-لأداء-الحمام-الزا",
+    "ja": "レース鳩パフォーマンスdna検査",
+    "ko": "레이싱-비둘기-성능-dna-테스트",
+    "es": "prueba-de-adn-del-rendimiento-de-las-palomas-de-carreras",
+    "fr": "test-dadn-pour-la-performance-des-pigeons-voyageurs",
+    "de": "brieftauben-leistungs-dna-test"
+  },
+  "avian-gender-dna-test": {
+    "ar": "اختبار-الحمض-النووي-الصبغي-للطيور",
+    "ja": "鳥類性別dna検査",
+    "ko": "조류-성별-dna-테스트",
+    "es": "prueba-de-adn-de-genero-aviar",
+    "fr": "test-dadn-sur-le-genre-aviaire",
+    "de": "vogelgeschlechtlicher-dna-test"
+  },
+  "html-sitemap": {
+    "ar": "خريطة-موقع-html",
+    "ja": "htmlサイトマップ",
+    "ko": "html-사이트맵",
+    "es": "mapa-del-sitio-html",
+    "fr": "sitemap-html",
+    "de": "html-sitemap"
+  },
+  "contact": {
+    "ar": "الاتصال",
+    "ja": "コンタクト",
+    "ko": "연락처",
+    "es": "pongase-en-contacto-con",
+    "fr": "contact",
+    "de": "kontakt"
+  },
+  "sample-shipping": {
+    "ar": "عينة-الشحن",
+    "ja": "サンプル出荷",
+    "ko": "샘플-배송",
+    "es": "envio-de-muestras",
+    "fr": "envoi-dechantillons",
+    "de": "musterversand"
+  },
+  "disclaimer": {
+    "ar": "إخلاء-المسؤولية",
+    "ja": "免責事項",
+    "ko": "고지-사항",
+    "es": "descargo-de-responsabilidad",
+    "fr": "clause-de-non-responsabilite",
+    "de": "haftungsausschluss"
+  },
+  "terms-and-conditions": {
+    "ar": "الشروط-والأحكام",
+    "ja": "諸条件",
+    "ko": "이용-약관",
+    "es": "condiciones-generales",
+    "fr": "conditions-generales",
+    "de": "bedingungen-und-konditionen"
+  },
+  "privacy-policy": {
+    "ar": "سياسة-الخصوصية-2",
+    "ja": "プライバシーポリシー-2",
+    "ko": "개인정보-보호정책-2",
+    "es": "politica-de-privacidad",
+    "fr": "politique-de-confidentialite",
+    "de": "datenschutzbestimmungen"
+  },
+  "scientific-regulatory-compliance-statement": {
+    "ar": "بيان-الامتثال-التنظيمي-العلمي",
+    "ja": "科学的規制遵守声明",
+    "ko": "과학적-규제-준수-성명서",
+    "es": "declaracion-de-cumplimiento-de-la-normativa-cientifica",
+    "fr": "declaration-de-conformite-a-la-reglementation-scientifique",
+    "de": "erklarung-zur-einhaltung-wissenschaftlicher-vorschriften"
+  },
+  "articles": {
+    "ar": "المقالات",
+    "ja": "記事",
+    "ko": "기사",
+    "es": "articulos",
+    "fr": "articles",
+    "de": "artikel"
+  },
+  "how-capillary-electrophoresis-analysis-works-in-bird-sexing-and-parentage-testing": {
+    "ar": "how-capillary-electrophoresis-analysis-works-in-bird-sexing-and-parentage-testing",
+    "ja": "how-capillary-electrophoresis-analysis-works-in-bird-sexing-and-parentage-testing",
+    "ko": "how-capillary-electrophoresis-analysis-works-in-bird-sexing-and-parentage-testing",
+    "es": "how-capillary-electrophoresis-analysis-works-in-bird-sexing-and-parentage-testing",
+    "fr": "how-capillary-electrophoresis-analysis-works-in-bird-sexing-and-parentage-testing",
+    "de": "how-capillary-electrophoresis-analysis-works-in-bird-sexing-and-parentage-testing"
+  },
+  "capillary-electrophoresis-vs-traditional-gel-electrophoresis-which-should-your-bird-dna-lab-use": {
+    "ar": "capillary-electrophoresis-vs-traditional-gel-electrophoresis-which-should-your-bird-dna-lab-use",
+    "ja": "capillary-electrophoresis-vs-traditional-gel-electrophoresis-which-should-your-bird-dna-lab-use",
+    "ko": "capillary-electrophoresis-vs-traditional-gel-electrophoresis-which-should-your-bird-dna-lab-use",
+    "es": "capillary-electrophoresis-vs-traditional-gel-electrophoresis-which-should-your-bird-dna-lab-use",
+    "fr": "capillary-electrophoresis-vs-traditional-gel-electrophoresis-which-should-your-bird-dna-lab-use",
+    "de": "capillary-electrophoresis-vs-traditional-gel-electrophoresis-which-should-your-bird-dna-lab-use"
+  },
+  "the-complete-guide-to-bird-dna-sexing": {
+    "ar": "the-complete-guide-to-bird-dna-sexing",
+    "ja": "the-complete-guide-to-bird-dna-sexing",
+    "ko": "the-complete-guide-to-bird-dna-sexing",
+    "es": "the-complete-guide-to-bird-dna-sexing",
+    "fr": "the-complete-guide-to-bird-dna-sexing",
+    "de": "the-complete-guide-to-bird-dna-sexing"
+  },
+  "do-you-need-to-test-pmv-virus-in-pigeons-why-and-how": {
+    "ar": "do-you-need-to-test-pmv-virus-in-pigeons-why-and-how",
+    "ja": "do-you-need-to-test-pmv-virus-in-pigeons-why-and-how",
+    "ko": "do-you-need-to-test-pmv-virus-in-pigeons-why-and-how",
+    "es": "do-you-need-to-test-pmv-virus-in-pigeons-why-and-how",
+    "fr": "do-you-need-to-test-pmv-virus-in-pigeons-why-and-how",
+    "de": "do-you-need-to-test-pmv-virus-in-pigeons-why-and-how"
+  },
+  "what-racing-pigeon-laboratory-testing-can-you-do-performance-dna-testing": {
+    "ar": "what-racing-pigeon-laboratory-testing-can-you-do-performance-dna-testing",
+    "ja": "what-racing-pigeon-laboratory-testing-can-you-do-performance-dna-testing",
+    "ko": "what-racing-pigeon-laboratory-testing-can-you-do-performance-dna-testing",
+    "es": "what-racing-pigeon-laboratory-testing-can-you-do-performance-dna-testing",
+    "fr": "what-racing-pigeon-laboratory-testing-can-you-do-performance-dna-testing",
+    "de": "what-racing-pigeon-laboratory-testing-can-you-do-performance-dna-testing"
+  },
+  "what-is-an-avian-dna-lab-what-does-it-do": {
+    "ar": "what-is-an-avian-dna-lab-what-does-it-do",
+    "ja": "what-is-an-avian-dna-lab-what-does-it-do",
+    "ko": "what-is-an-avian-dna-lab-what-does-it-do",
+    "es": "what-is-an-avian-dna-lab-what-does-it-do",
+    "fr": "what-is-an-avian-dna-lab-what-does-it-do",
+    "de": "what-is-an-avian-dna-lab-what-does-it-do"
+  },
+  "how-to-build-a-systematic-viral-monitoring-program-for-safe-loft-management-and-one-loft-race-operations": {
+    "ar": "how-to-build-a-systematic-viral-monitoring-program-for-safe-loft-management-and-one-loft-race-operations",
+    "ja": "how-to-build-a-systematic-viral-monitoring-program-for-safe-loft-management-and-one-loft-race-operations",
+    "ko": "how-to-build-a-systematic-viral-monitoring-program-for-safe-loft-management-and-one-loft-race-operations",
+    "es": "how-to-build-a-systematic-viral-monitoring-program-for-safe-loft-management-and-one-loft-race-operations",
+    "fr": "how-to-build-a-systematic-viral-monitoring-program-for-safe-loft-management-and-one-loft-race-operations",
+    "de": "how-to-build-a-systematic-viral-monitoring-program-for-safe-loft-management-and-one-loft-race-operations"
+  },
+  "data-driven-biosecurity-in-racing-pigeon-lofts-how-periodic-qpcr-testing-transforms-flock-management-from-reactive-to-predictive": {
+    "ar": "data-driven-biosecurity-in-racing-pigeon-lofts-how-periodic-qpcr-testing-transforms-flock-management-from-reactive-to-predictive",
+    "ja": "data-driven-biosecurity-in-racing-pigeon-lofts-how-periodic-qpcr-testing-transforms-flock-management-from-reactive-to-predictive",
+    "ko": "data-driven-biosecurity-in-racing-pigeon-lofts-how-periodic-qpcr-testing-transforms-flock-management-from-reactive-to-predictive",
+    "es": "data-driven-biosecurity-in-racing-pigeon-lofts-how-periodic-qpcr-testing-transforms-flock-management-from-reactive-to-predictive",
+    "fr": "data-driven-biosecurity-in-racing-pigeon-lofts-how-periodic-qpcr-testing-transforms-flock-management-from-reactive-to-predictive",
+    "de": "data-driven-biosecurity-in-racing-pigeon-lofts-how-periodic-qpcr-testing-transforms-flock-management-from-reactive-to-predictive"
+  },
+  "how-do-we-test-the-birds-gender-using-rt-pcr-method": {
+    "ar": "كيف-نختبر-جنس-الطيور-باستخدام-طريقة-rt-pcr",
+    "ja": "rt-pcr法で鳥の性別を調べるには？",
+    "ko": "rt-pcr-방법을-사용하여-새의-성별을-테스트하는-방법",
+    "es": "como-comprobar-el-sexo-de-las-aves-mediante-el-metodo-rt-pcr",
+    "fr": "comment-tester-le-sexe-des-oiseaux-en-utilisant-la-methode-rt-pcr",
+    "de": "wie-kann-man-das-geschlecht-der-vogel-mit-der-rt-pcr-methode-bestimmen"
+  },
+  "how-to-tell-emu-gender": {
+    "ar": "كيفية-معرفة-جنس-الاتحاد-الاقتصادي-وال",
+    "ja": "エミューの性別の見分け方",
+    "ko": "에뮤-성별을-구분하는-방법",
+    "es": "como-saber-el-sexo-de-un-emu",
+    "fr": "comment-reconnaitre-le-sexe-dun-emeu",
+    "de": "wie-man-das-geschlecht-des-emus-erkennt"
+  },
+  "test-bird-dna-at-home-what-equipment-and-reagents-do-you-need": {
+    "ar": "اختبار-الحمض-النووي-للطيور-في-المنزل-م",
+    "ja": "鳥のdnaを自宅で検査するために必要な器具や試薬",
+    "ko": "집에서-조류-dna-테스트-장비와-시약이-필요한-경우",
+    "es": "analizar-el-adn-de-las-aves-en-casa-que-equipo-y-reactivos-necesita",
+    "fr": "tester-ladn-dun-oiseau-a-la-maison-quel-materiel-et-quels-reactifs-sont-necessaires",
+    "de": "test-von-vogel-dna-zu-hause-welche-gerate-und-reagenzien-benotigen-sie"
+  },
+  "how-feather-pcr-testing-works-for-pbfd-and-avian-polyomavirus": {
+    "ar": "كيفية-عمل-اختبار-الحمض-النووي-الريشي-ل",
+    "ja": "pbfdおよび鳥ポリオマウイルスの羽毛pcr検査の仕組み",
+    "ko": "깃털-pcr-검사로-pbfd-및-조류-폴리오바이러스를-검사하는",
+    "es": "como-funcionan-las-pruebas-pcr-en-plumas-para-pbfd-y-poliomavirus-aviar",
+    "fr": "comment-fonctionne-le-test-pcr-de-la-plume-pour-la-pbfd-et-le-polyomavirus-aviaire",
+    "de": "wie-funktionieren-feder-pcr-tests-auf-pbfd-und-aviare-polyomaviren"
+  },
+  "rt-pcr-vs-traditional-pcr-in-a-bird-dna-testing-lab": {
+    "ar": "اختبار-الحمض-النووي-الريبي-المنقوص-ال",
+    "ja": "鳥類dna検査ラボにおけるrt-pcrと従来のpcrの比較",
+    "ko": "조류-dna-검사-실험실의-rt-pcr과-기존-pcr-비교",
+    "es": "rt-pcr-vs-pcr-tradicional-en-un-laboratorio-de-analisis-de-adn-de-aves",
+    "fr": "pcr-rt-vs-pcr-traditionnelle-dans-un-laboratoire-danalyse-dadn-doiseaux",
+    "de": "rt-pcr-vs-traditionelle-pcr-in-einem-vogel-dna-testlabor"
+  },
+  "how-much-does-it-cost-to-dna-test-a-bird": {
+    "ar": "كم-يكلف-فحص-الحمض-النووي-للطيور؟",
+    "ja": "鳥のdna鑑定にかかる費用は？",
+    "ko": "조류-dna-검사-비용은-얼마인가요",
+    "es": "cuanto-cuesta-el-analisis-de-adn-de-un-ave",
+    "fr": "quel-est-le-cout-dun-test-adn-pour-un-oiseau",
+    "de": "wie-viel-kostet-es-einen-vogel-auf-dna-zu-testen"
+  },
+  "what-is-ldha-gene-in-racing-pigeons": {
+    "ar": "ما-هو-الجين-ldha-في-حمام-السباق",
+    "ja": "レース鳩におけるldha遺伝子とは何か？",
+    "ko": "경주용-비둘기의-ldha-유전자는-무엇인가요",
+    "es": "que-es-el-gen-ldha-en-las-palomas-de-carreras",
+    "fr": "quest-ce-que-le-gene-ldha-chez-les-pigeons-voyageurs",
+    "de": "was-ist-das-ldha-gen-bei-brieftauben"
+  },
+  "377-2": {
+    "ar": "377-2",
+    "ja": "377-2",
+    "ko": "377-2",
+    "es": "377-2",
+    "fr": "377-2",
+    "de": "377-2"
+  },
+  "dna-testing-for-parrot-gender-accurate-fast-and-scalable-solutions-from-seno-laboratory": {
+    "ar": "اختبار-الحمض-النووي-لجنس-الببغاء-حلول",
+    "ja": "セキセイインコ性別のdna検査-セノ・ラボラトリー",
+    "ko": "세노-연구소의-빠르고-확장-가능한-솔루션으로-앵무",
+    "es": "pruebas-de-adn-para-el-genero-de-los-loros-soluciones-precisas-rapidas-y-escalables-del-laboratorio-seno",
+    "fr": "test-dadn-pour-les-perroquets-solutions-precises-rapides-et-evolutives-de-seno-laboratory",
+    "de": "dna-tests-fur-das-papageiengeschlecht-genaue-schnelle-und-skalierbare-losungen-von-seno-laboratory"
+  },
+  "can-you-do-a-dna-test-on-a-racing-pigeon": {
+    "ar": "هل-يمكنك-إجراء-اختبار-الحمض-النووي-على",
+    "ja": "レース鳩のdna鑑定は可能か？",
+    "ko": "경주용-비둘기의-dna-검사를-할-수-있나요",
+    "es": "se-puede-hacer-una-prueba-de-adn-a-una-paloma-de-carreras",
+    "fr": "peut-on-faire-un-test-adn-sur-un-pigeon-voyageur",
+    "de": "kann-man-einen-dna-test-bei-einer-brieftaube-durchfuhren"
+  },
+  "dna-testing-for-parrot-gender": {
+    "ar": "اختبار-الحمض-النووي-لجنس-الببغاء",
+    "ja": "オウムの性別のdna検査",
+    "ko": "앵무새-성별을-위한-dna-검사",
+    "es": "pruebas-de-adn-para-determinar-el-sexo-de-los-loros",
+    "fr": "test-dadn-pour-determiner-le-sexe-des-perroquets",
+    "de": "dna-tests-fur-das-geschlecht-von-papageien"
+  },
+  "can-you-only-tell-a-birds-gender-with-a-dna-test": {
+    "ar": "هل-يمكنك-معرفة-جنس-الطيور-فقط-من-خلال-اخ",
+    "ja": "鳥の性別はdna検査でしかわからないのか？",
+    "ko": "dna-검사로만-새의-성별을-알-수-있나요",
+    "es": "solo-se-puede-saber-el-sexo-de-un-pajaro-con-una-prueba-de-adn",
+    "fr": "le-test-adn-permet-il-de-determiner-le-sexe-dun-oiseau",
+    "de": "kann-man-das-geschlecht-eines-vogels-nur-mit-einem-dna-test-feststellen"
+  }
+};
+
+// 反向映射：URL slug -> en_slug
+const SLUG_TO_EN: Record<string, string> = {};
+for (const enSlug of Object.keys(LANG_ALL_SLUGS)) {
+  SLUG_TO_EN[enSlug] = enSlug;
+  for (const lg of LANG_CODES) {
+    const loc = LANG_ALL_SLUGS[enSlug]?.[lg];
+    if (loc) SLUG_TO_EN[loc] = enSlug;
+  }
+}
+
+function footerHref(key: string) {
+  const slug = isLangPage ? (FOOTER_SLUGS[currentLang]?.[key] ?? key) : key;
+  return isLangPage ? `/${currentLang}/${slug}/` : `/${slug}/`;
+}
+
 // 当前页去掉语言前缀的路径
 const pathWithoutLang = isLangPage
   ? Astro.url.pathname.replace(/^\/[a-z]{2}\//, "/") || "/"
   : Astro.url.pathname;
 
+// 从当前路径解析出英文 slug，再映射到目标语言本地化 slug
 function langPath(code: string) {
-  if (code === "en") return pathWithoutLang;
-  return `/${code}${pathWithoutLang === "/" ? "/" : pathWithoutLang}`;
+  let slug = pathWithoutLang.replace(/^\//, "").replace(/\/$/, "");
+  try {
+    slug = decodeURIComponent(slug);
+  } catch (e) {
+    // ignore malformed encoding
+  }
+  if (!slug) {
+    return code === "en" ? "/" : `/${code}/`;
+  }
+  const enSlug = SLUG_TO_EN[slug] ?? slug;
+  if (code === "en") {
+    return `/${enSlug}/`;
+  }
+  const loc = LANG_ALL_SLUGS[enSlug]?.[code] ?? enSlug;
+  return `/${code}/${loc}/`;
 }
 ---
 
@@ -58,12 +446,12 @@ function langPath(code: string) {
       <h2>Quick Links</h2>
       <nav aria-label="Footer navigation">
         <a href={`${prefix}/`}>Home</a>
-        <a href={`${prefix}/html-sitemap/`}>Sitemap</a>
-        <a href={`${prefix}/disclaimer/`}>Disclaimer</a>
-        <a href={`${prefix}/privacy-policy/`}>Privacy Policy</a>
-        <a href={`${prefix}/terms-and-conditions/`}>Terms and Conditions</a>
-        <a href={`${prefix}/scientific-regulatory-compliance-statement/`}>Scientific, Regulatory &amp; Compliance Statement</a>
-        <a href={`${prefix}/sample-shipping/`}>Sample Shipping</a>
+        <a href={footerHref("html-sitemap")}>Sitemap</a>
+        <a href={footerHref("disclaimer")}>Disclaimer</a>
+        <a href={footerHref("privacy-policy")}>Privacy Policy</a>
+        <a href={footerHref("terms-and-conditions")}>Terms and Conditions</a>
+        <a href={footerHref("scientific-regulatory-compliance-statement")}>Scientific, Regulatory &amp; Compliance Statement</a>
+        <a href={footerHref("sample-shipping")}>Sample Shipping</a>
       </nav>
     </div>
     <div class="footer-col">
