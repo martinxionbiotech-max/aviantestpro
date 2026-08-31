@@ -343,3 +343,216 @@ table.data-table { width: 100%; border-collapse: collapse; font-size: 0.94rem; }
   .site-nav { gap: 0; }
   .site-nav a { font-size: 0.85rem; padding: 0.4rem 0.55rem; }
 }
+
+/* ============================================================
+   Gutenberg (WordPress) block compatibility layer
+   The body content is ported directly from WordPress, so all
+   wp-block-* / is-layout-* classes must be styled here.
+   Focus: image + text pairing, consistent sizing, responsive.
+   ============================================================ */
+
+/* --- Main content: constrain to container width (was overflowing to full viewport) --- */
+main#main {
+  max-width: var(--maxw);
+  margin: 0 auto;
+  padding: 2rem 1.25rem 0;
+  width: 100%;
+}
+
+/* --- Entry content wrapper --- */
+.entry-content { font-size: 1rem; line-height: 1.75; color: var(--ink); }
+.entry-content > * + * { margin-top: 1.25rem; }
+
+/* --- Generic block images: consistent, bounded, rounded --- */
+.entry-content img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+  border-radius: var(--radius);
+}
+.entry-content figure { margin: 1.5rem 0; }
+.entry-content figure img { margin: 0 auto; }
+
+/* --- Columns (the core of image+text pairing) --- */
+.wp-block-columns {
+  display: flex;
+  gap: 2rem;
+  align-items: flex-start;
+  margin: 2rem 0;
+}
+.wp-block-columns.is-vertically-aligned-center { align-items: center; }
+.wp-block-columns.is-vertically-aligned-bottom { align-items: flex-end; }
+.wp-block-columns.is-vertically-aligned-top { align-items: flex-start; }
+
+.wp-block-column {
+  flex: 1 1 0;
+  min-width: 0; /* allow shrink, prevent overflow */
+}
+.wp-block-column[style*="flex-basis"] { flex: 0 0 auto; }
+
+/* Content justification within a column */
+.wp-block-column.is-content-justification-right { text-align: right; }
+.wp-block-column.is-content-justification-center { text-align: center; }
+.wp-block-column.is-content-justification-left { text-align: left; }
+
+/* --- Layout flex/flow gaps (Gutenberg is-layout-*) --- */
+.is-layout-flex {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.25rem;
+}
+.is-layout-flow > * + * { margin-top: 1rem; }
+.is-layout-constrained { margin-inline: auto; }
+
+/* --- Cover (hero) blocks: fix the 600px-tall bar issue --- */
+.wp-block-cover {
+  position: relative;
+  overflow: hidden;
+  border-radius: 15px;
+  background-size: cover;
+  background-position: center;
+  min-height: auto !important; /* override inline 600px that stretches a 1024x252 strip */
+  aspect-ratio: auto !important;
+}
+.wp-block-cover img {
+  width: 100%;
+  height: auto;
+  border-radius: 15px;
+}
+.wp-block-cover__background { display: none; }
+.wp-block-cover__inner-container {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 2rem;
+  color: #fff;
+  text-align: left;
+  z-index: 1;
+}
+.wp-block-cover__inner-container h2 {
+  color: #fff;
+  font-size: clamp(1.5rem, 3vw, 2.2rem);
+  margin-bottom: 0.75rem;
+  text-shadow: 0 1px 8px rgba(0,0,0,0.45);
+}
+.wp-block-cover__inner-container p {
+  color: rgba(255,255,255,0.95);
+  max-width: 640px;
+  text-shadow: 0 1px 5px rgba(0,0,0,0.4);
+}
+.wp-block-cover__inner-container a { color: #fff; font-weight: 600; text-decoration: underline; }
+
+/* --- Separator --- */
+.wp-block-separator {
+  border: none;
+  border-top: 1px solid var(--border);
+  margin: 2.5rem 0;
+  width: 100%;
+}
+
+/* --- Quote --- */
+.wp-block-quote {
+  margin: 1.5rem 0;
+  padding: 1rem 1.5rem;
+  border-left: 4px solid var(--primary);
+  background: var(--bg-alt);
+  border-radius: 0 var(--radius) var(--radius) 0;
+}
+.wp-block-quote p { margin: 0; }
+
+/* --- Table --- */
+.wp-block-table { overflow-x: auto; margin: 1.5rem 0; }
+.wp-block-table table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.94rem;
+}
+.wp-block-table th {
+  background: var(--bg-alt);
+  text-align: left;
+  padding: 0.7rem 0.9rem;
+  font-weight: 600;
+  border-bottom: 2px solid var(--border);
+  white-space: nowrap;
+}
+.wp-block-table td {
+  padding: 0.65rem 0.9rem;
+  border-bottom: 1px solid var(--border);
+  vertical-align: top;
+}
+.wp-block-table tr:last-child td { border-bottom: none; }
+
+/* --- Figure with caption --- */
+.wp-block-image figcaption,
+.wp-element-caption {
+  font-size: 0.82rem;
+  color: var(--ink-muted);
+  text-align: center;
+  margin-top: 0.5rem;
+  font-style: italic;
+}
+
+/* --- Code --- */
+.wp-block-code {
+  background: #f6f8fa;
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 1rem 1.25rem;
+  font-family: 'SF Mono', Monaco, Consolas, monospace;
+  font-size: 0.9rem;
+  overflow-x: auto;
+}
+
+/* --- Spacer --- */
+.wp-block-spacer { display: block; }
+
+/* --- Embed (YouTube) --- */
+.wp-block-embed {
+  position: relative;
+  padding-bottom: 56.25%;
+  height: 0;
+  margin: 1.5rem 0;
+  overflow: hidden;
+  border-radius: var(--radius);
+}
+.wp-block-embed iframe {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  border: 0;
+}
+
+/* --- Gallery --- */
+.wp-block-gallery {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  margin: 1.5rem 0;
+}
+.wp-block-gallery figure {
+  flex: 1 1 220px;
+  margin: 0;
+}
+
+/* --- Ast "global color" utility blocks (the navy "Why Choose Us" band) --- */
+.has-ast-global-color-4-color { color: #ffffff; }
+.has-ast-global-color-1-background-color {
+  background: linear-gradient(135deg, var(--primary), var(--primary-dark));
+}
+[class*="has-background"].has-text-color {
+  border-radius: 15px;
+  padding: 1.5rem;
+}
+
+/* --- Responsive: collapse columns and tame hero on mobile --- */
+@media (max-width: 780px) {
+  .wp-block-columns { flex-direction: column; gap: 1.25rem; }
+  .wp-block-column[style*="flex-basis"] { flex: 1 1 auto; }
+  .wp-block-column.is-content-justification-right,
+  .wp-block-column.is-content-justification-center { text-align: left; }
+  .wp-block-cover__inner-container { padding: 1.25rem; }
+  .wp-block-cover__inner-container h2 { font-size: 1.35rem; }
+}
