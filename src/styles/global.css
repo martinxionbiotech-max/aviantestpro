@@ -556,3 +556,121 @@ main#main {
   .wp-block-cover__inner-container { padding: 1.25rem; }
   .wp-block-cover__inner-container h2 { font-size: 1.35rem; }
 }
+
+/* ============================================================
+   Design system polish (premium tier) — P0/P1/P3 landing
+   ============================================================ */
+
+/* Hero actions + outline button on dark bg */
+.hero-actions { display: flex; gap: .75rem; flex-wrap: wrap; margin-top: 1.5rem; }
+.hero .btn.outline { background: transparent; color: #fff; border-color: #fff; }
+.hero .btn.outline:hover { background: rgba(255,255,255,0.15); color: #fff; }
+.hero .lead a { color: #fff; border-bottom: 1px solid rgba(255,255,255,0.5); }
+.hero .lead a:hover { color: #fff; border-bottom-color: #fff; }
+.hero-badge { backdrop-filter: blur(4px); }
+
+/* Section title spacing */
+.section-title { margin-top: 0; }
+
+/* Card lists + icon */
+.card ul { margin: .75rem 0 1rem; padding-left: 1.1rem; color: var(--ink-soft); font-size: .95rem; }
+.card .card-icon { display: flex; width: 48px; height: 48px; align-items: center; justify-content: center; background: var(--bg-alt); border-radius: 10px; font-size: 1.4rem; }
+.card .card-link { font-weight: 600; display: inline-block; margin-top: .25rem; }
+
+/* Stat label-only variant (Why Choose Us) */
+.stat.stat-label-only { text-align: left; }
+.stat .stat-label { display: block; line-height: 1.45; }
+
+/* Button feedback */
+.btn { transition: background .15s ease, transform .15s ease, box-shadow .15s ease; }
+.btn:hover { transform: translateY(-2px); box-shadow: 0 6px 16px rgba(4,107,210,.28); }
+
+/* Richer card hover shadow */
+.card { transition: transform .16s ease, box-shadow .16s ease; }
+.card:hover { transform: translateY(-3px); box-shadow: 0 12px 24px rgba(17,24,39,.12); }
+
+/* Type scale polish */
+h2 { font-size: clamp(1.6rem, 3vw, 2.1rem); }
+h3 { font-size: 1.25rem; }
+.entry-content h2 { margin-top: 3rem; }
+
+/* Link underline scoped to prose only (not nav/cards) */
+p a, li a, .entry-content a { text-decoration: underline; }
+.site-nav a, .card a, .btn, .breadcrumbs a, .footer a, .site-footer a { text-decoration: none; }
+
+/* ============================================================
+   Header: language switcher + mobile hamburger (P2)
+   ============================================================ */
+.header-right { display: flex; align-items: center; gap: .75rem; }
+.header-inner { display: flex; align-items: center; justify-content: space-between; gap: 1rem; }
+
+.lang-switch { position: relative; }
+.lang-switch summary {
+  list-style: none;
+  cursor: pointer;
+  font-size: .9rem;
+  font-weight: 600;
+  color: var(--ink-soft);
+  padding: .4rem .6rem;
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  background: #fff;
+  display: inline-flex;
+  align-items: center;
+  gap: .3rem;
+}
+.lang-switch summary::-webkit-details-marker { display: none; }
+.lang-switch summary:hover { border-color: var(--primary); color: var(--primary); }
+.lang-menu {
+  position: absolute;
+  right: 0;
+  top: calc(100% + 6px);
+  background: #fff;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  box-shadow: var(--shadow-md);
+  min-width: 140px;
+  z-index: 200;
+  overflow: hidden;
+}
+.lang-menu a {
+  display: block;
+  padding: .55rem .8rem;
+  color: var(--ink-soft);
+  font-size: .9rem;
+  text-decoration: none;
+}
+.lang-menu a:hover { background: var(--bg-alt); color: var(--primary); }
+.lang-menu a.lang-active { color: var(--primary); font-weight: 700; }
+
+.nav-toggle {
+  display: none;
+  background: none;
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  font-size: 1.3rem;
+  line-height: 1;
+  padding: .35rem .6rem;
+  cursor: pointer;
+  color: var(--ink);
+}
+
+@media (max-width: 900px) {
+  .nav-toggle { display: inline-block; }
+  .site-nav {
+    display: none;
+    flex-direction: column;
+    width: 100%;
+    order: 10;
+    gap: 0;
+    padding-top: .5rem;
+  }
+  .site-nav.open { display: flex; }
+  .site-nav a {
+    padding: .7rem .5rem;
+    border-radius: 6px;
+    white-space: nowrap;
+    font-size: .95rem;
+  }
+  .header-inner { flex-wrap: wrap; }
+}

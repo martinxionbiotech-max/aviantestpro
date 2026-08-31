@@ -202,8 +202,46 @@ const LANG_SLUGS: Record<string, Record<string, string>> = {
     "contact": "kontakt",
   },
 };
----
 
+const LANG_OPTIONS = [
+  { code: "en", label: "EN", name: "English" },
+  { code: "ar", label: "العربية", name: "Arabic" },
+  { code: "ja", label: "日本語", name: "Japanese" },
+  { code: "ko", label: "한국어", name: "Korean" },
+  { code: "es", label: "ES", name: "Español" },
+  { code: "fr", label: "FR", name: "Français" },
+  { code: "de", label: "DE", name: "Deutsch" },
+];
+
+// 反向映射：本地化 slug → 英文 slug（用于语言切换）
+const LANG_SLUG_TO_EN: Record<string, Record<string, string>> = {};
+for (const [lg, locMap] of Object.entries(LANG_SLUGS)) {
+  for (const [enSlug, loc] of Object.entries(locMap)) {
+    if (!LANG_SLUG_TO_EN[lg]) LANG_SLUG_TO_EN[lg] = {};
+    LANG_SLUG_TO_EN[lg][loc] = enSlug;
+  }
+}
+
+function switchLangPath(code: string) {
+  let slug = pathWithoutLang.replace(/^\//, "").replace(/\/$/, "");
+  try {
+    slug = decodeURIComponent(slug);
+  } catch (e) {
+    // ignore malformed encoding
+  }
+  if (!slug) {
+    return code === "en" ? "/" : `/${code}/`;
+  }
+  const enSlug = isLangPage ? (LANG_SLUG_TO_EN[currentLang]?.[slug] ?? slug) : slug;
+  if (code === "en") {
+    return `/${enSlug}/`;
+  }
+  const loc = LANG_SLUGS[code]?.[enSlug] ?? enSlug;
+  return `/${code}/${loc}/`;
+}
+
+const currentLangLabel = (isLangPage ? LANG_OPTIONS.find((l) => l.code === currentLang)?.label : "EN") ?? "EN";
+---
 <header class="site-header">
   <div class="container header-inner">
     <a href={`${prefix}/`} class="brand" aria-label="SENO INTERNATIONAL AVIAN GENETIC TEST — Home">
@@ -228,5 +266,32 @@ const LANG_SLUGS: Record<string, Record<string, string>> = {
         })
       }
     </nav>
+    <div class="header-right">
+      <details class="lang-switch">
+        <summary aria-label="Language switcher">🌐 {currentLangLabel}</summary>
+        <div class="lang-menu">
+          {
+            LANG_OPTIONS.map((l) => (
+              <a
+                href={switchLangPath(l.code)}
+                lang={l.code}
+                class={l.code === (isLangPage ? currentLang : "en") ? "lang-active" : undefined}
+              >
+                {l.label}
+              </a>
+            ))
+          }
+        </div>
+      </details>
+      <button class="nav-toggle" aria-label="Toggle menu" aria-expanded="false">☰</button>
+    </div>
   </div>
 </header>
+<script>
+  const toggle = document.querySelector('.nav-toggle');
+  const nav = document.querySelector('.site-nav');
+  toggle?.addEventListener('click', () => {
+    const open = nav?.classList.toggle('open');
+    toggle.setAttribute('aria-expanded', String(open));
+  });
+</script>
