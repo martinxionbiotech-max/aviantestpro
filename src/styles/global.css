@@ -396,6 +396,27 @@ main#main {
 .wp-block-column.is-content-justification-center { text-align: center; }
 .wp-block-column.is-content-justification-left { text-align: left; }
 
+/* 图文并排（两列）区块：水平+垂直居中，文字/图片居中 */
+.wp-block-columns:has(> .wp-block-column + .wp-block-column) {
+  align-items: center;
+  justify-content: center;
+}
+.wp-block-columns:has(.wp-block-column > img) .wp-block-column:not(:has(> img)) {
+  text-align: center;
+}
+.wp-block-columns:has(.wp-block-column > img) .wp-block-column:not(:has(> img)) ul {
+  list-style: none;
+  padding-left: 0;
+  margin: 0 auto;
+}
+.wp-block-columns:has(.wp-block-column > img) .wp-block-column > img {
+  margin-inline: auto;
+}
+/* 单列图片列（证书/单图封面）图片居中 */
+.wp-block-column > img {
+  margin-inline: auto;
+}
+
 /* --- Layout flex/flow gaps (Gutenberg is-layout-*) --- */
 .is-layout-flex {
   display: flex;
