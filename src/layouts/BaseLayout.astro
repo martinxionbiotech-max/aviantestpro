@@ -173,6 +173,8 @@ const breadcrumbJsonLd = {
     <meta name="twitter:title" content={fullTitle} />
     <meta name="twitter:description" content={description} />
     <meta name="twitter:image" content={ogImage.startsWith("http") ? ogImage : SITE + ogImage} />
+    <meta name="twitter:url" content={canonicalUrl} />
+    <meta name="twitter:site" content="@martinw13461856" />
 
     {datePublished && <meta property="article:published_time" content={datePublished} />}
     {dateModified && <meta property="article:modified_time" content={dateModified} />}
