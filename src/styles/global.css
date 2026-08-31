@@ -121,6 +121,7 @@ img { max-width: 100%; height: auto; border-radius: var(--radius); }
   color: var(--ink-soft);
   padding: 0.45rem 0.7rem;
   border-radius: 6px;
+  font-family: var(--font-body);
   font-size: 0.92rem;
   font-weight: 500;
 }
@@ -341,7 +342,7 @@ table.data-table { width: 100%; border-collapse: collapse; font-size: 0.94rem; }
 /* ---------- Responsive nav ---------- */
 @media (max-width: 860px) {
   .site-nav { gap: 0; }
-  .site-nav a { font-size: 0.85rem; padding: 0.4rem 0.55rem; }
+  .site-nav a { font-size: 0.95rem; padding: 0.4rem 0.55rem; }
 }
 
 /* ============================================================
@@ -681,6 +682,12 @@ p a, li a, .entry-content a { text-decoration: underline; }
     white-space: nowrap;
     font-size: .95rem;
   }
+  .nav-drop > summary {
+    font-size: .95rem;
+  }
+  .nav-drop-menu a {
+    font-size: .95rem;
+  }
   .header-inner { flex-wrap: wrap; }
 }
 
@@ -721,6 +728,8 @@ p a, li a, .entry-content a { text-decoration: underline; }
   list-style: none;
   cursor: pointer;
   color: var(--ink-soft);
+  font-family: var(--font-body);
+  font-size: 0.92rem;
   font-weight: 500;
   padding: .5rem .75rem;
   border-radius: 6px;
@@ -762,6 +771,7 @@ p a, li a, .entry-content a { text-decoration: underline; }
   padding: .55rem .8rem;
   border-radius: 6px;
   color: var(--ink-soft);
+  font-family: var(--font-body);
   font-size: .92rem;
   line-height: 1.35;
   white-space: normal;
