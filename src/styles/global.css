@@ -741,7 +741,9 @@ p a, li a, .entry-content a { text-decoration: underline; }
 .stats-compact .stat-num { font-size: 1.6rem; }
 
 /* Cert gallery: 竖版证书 3:4（完整显示，不裁切） */
-.cert-gallery { display: flex; flex-wrap: wrap; gap: 1rem; margin: 1.5rem 0; }
+.cert-gallery { display: flex; flex-wrap: wrap; gap: 1rem; margin: 1.5rem 0; justify-content: center; }
+/* 证书所在单列占满父容器，实现证书画廊页面居中 */
+.wp-block-column:has(.cert-gallery) { flex-basis: 100% !important; }
 .cert-gallery figure {
   flex: 1 1 200px;
   margin: 0;
