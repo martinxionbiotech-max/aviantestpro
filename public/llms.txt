@@ -1,0 +1,27 @@
+# SENO Avian Genetic Test — aviantestpro.com
+
+> Bird DNA testing laboratory services: avian gender (sex) determination, viral PCR screening, parentage and DNA fingerprinting, plus lab-building and agent programmes. Reports are issued from a molecular diagnostics laboratory with 15 years of experience.
+
+## Core services
+- [Avian Gender DNA Test](https://aviantestpro.com/avian-gender-dna-test/): CHD-gene based sex determination from feather, blood or swab samples.
+- [Avian Virus RT-PCR Test](https://aviantestpro.com/avian-virus-rt-pcr-test/): Molecular screening for PBFD, avian polyomavirus, PPMV and other avian pathogens.
+- [Racing Pigeon Performance DNA Test](https://aviantestpro.com/racing-pigeon-performance-dna-test/): Genetic markers associated with performance traits in racing pigeons.
+- [Pigeon DNA Fingerprinting](https://aviantestpro.com/pigeon-dna-fingerprinting/): Individual identity and parentage verification for racing pigeons.
+- [Avian DNA Test Kits](https://aviantestpro.com/avian-dna-test-kits/): Sample collection kits for breeders and clinics.
+- [Build an Avian DNA Test Lab](https://aviantestpro.com/build-avian-dna-test-lab/): Turnkey laboratory setup and training.
+- [Become an Agent](https://aviantestpro.com/become-an-agent/): Regional distribution and referral programme.
+
+## Reference and company
+- [Articles](https://aviantestpro.com/articles/): Technical guides on bird DNA sexing, avian disease testing and pigeon genetics.
+- [FAQ](https://aviantestpro.com/faq/): Sample types, turnaround times and result interpretation.
+- [About Us](https://aviantestpro.com/about-us/): Laboratory background and certifications.
+- [Scientific & Regulatory Compliance Statement](https://aviantestpro.com/scientific-regulatory-compliance-statement/): Testing scope and limitations.
+- [Contact](https://aviantestpro.com/contact/): Enquiries and sample submission.
+- [HTML Sitemap](https://aviantestpro.com/html-sitemap/): Full page index.
+
+## Languages
+English, Arabic, Japanese, Korean, Spanish, French, German — each with its own hreflang-annotated URL prefix (`/ar/`, `/ja/`, `/ko/`, `/es/`, `/fr/`, `/de/`).
+
+## Notes
+- Results are laboratory reports, not veterinary diagnosis; clinical interpretation belongs to the attending veterinarian.
+- Sample collection guidance is published per test; incorrect sampling is the most common cause of an inconclusive result.
