@@ -1,4 +1,6 @@
 ---
+import fs from 'node:fs';
+import path from 'node:path';
 const year = new Date().getFullYear();
 const currentLang = Astro.url.pathname.split("/")[1];
 const LANG_CODES = ["ar", "ja", "ko", "es", "fr", "de"];
@@ -412,6 +414,29 @@ function langPath(code: string) {
   const loc = LANG_ALL_SLUGS[enSlug]?.[code] ?? enSlug;
   return `/${code}/${loc}/`;
 }
+const currentEnSlug = (() => {
+  let slug = pathWithoutLang.replace(/^\//, "").replace(/\/$/, "");
+  try { slug = decodeURIComponent(slug); } catch (e) {}
+  return SLUG_TO_EN[slug] ?? slug;
+})();
+
+function langExists(code: string, enSlug: string) {
+  if (code === "en") return true;
+  const loc = LANG_ALL_SLUGS[enSlug]?.[code] ?? enSlug;
+  const base = path.join(process.cwd(), "src", "pages", code);
+  if (!enSlug) return fs.existsSync(path.join(base, "index.astro")) || fs.existsSync(path.join(base, "index.md"));
+  return [
+    path.join(base, loc, "index.astro"),
+    path.join(base, loc, "index.md"),
+    path.join(base, `${loc}.astro`),
+    path.join(base, `${loc}.md`),
+  ].some((candidate) => fs.existsSync(candidate));
+}
+
+const availableLanguages = languages.filter(
+  (l) => l.code === (isLangPage ? currentLang : "en") || langExists(l.code, currentEnSlug)
+);
+
 ---
 
 <footer class="site-footer">
@@ -420,7 +445,7 @@ function langPath(code: string) {
       <h2>Language</h2>
       <nav aria-label="Language switcher">
         {
-          languages.map((l) => (
+          availableLanguages.map((l) => (
             <a
               href={langPath(l.code)}
               lang={l.code}
