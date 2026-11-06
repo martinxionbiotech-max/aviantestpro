@@ -1,4 +1,6 @@
 ---
+import fs from 'node:fs';
+import path from 'node:path';
 const LANG_CODES = ["ar", "ja", "ko", "es", "fr", "de"];
 const currentLang = Astro.url.pathname.split("/")[1];
 const isLangPage = LANG_CODES.includes(currentLang);
@@ -274,6 +276,29 @@ function switchLangPath(code: string) {
   return `/${code}/${loc}/`;
 }
 
+const currentEnSlug = (() => {
+  let slug = pathWithoutLang.replace(/^\//, "").replace(/\/$/, "");
+  try { slug = decodeURIComponent(slug); } catch (e) {}
+  return isLangPage ? (LANG_SLUG_TO_EN[currentLang]?.[slug] ?? slug) : slug;
+})();
+
+function langExists(code: string, enSlug: string) {
+  if (code === "en") return true;
+  const loc = LANG_SLUGS[code]?.[enSlug] ?? enSlug;
+  const base = path.join(process.cwd(), "src", "pages", code);
+  if (!enSlug) return fs.existsSync(path.join(base, "index.astro")) || fs.existsSync(path.join(base, "index.md"));
+  return [
+    path.join(base, loc, "index.astro"),
+    path.join(base, loc, "index.md"),
+    path.join(base, `${loc}.astro`),
+    path.join(base, `${loc}.md`),
+  ].some((candidate) => fs.existsSync(candidate));
+}
+
+const availableLangs = LANG_OPTIONS.filter(
+  (l) => l.code === (isLangPage ? currentLang : "en") || langExists(l.code, currentEnSlug)
+);
+
 const currentLangLabel = (isLangPage ? LANG_OPTIONS.find((l) => l.code === currentLang)?.label : "EN") ?? "EN";
 ---
 <header class="site-header">
@@ -338,7 +363,7 @@ const currentLangLabel = (isLangPage ? LANG_OPTIONS.find((l) => l.code === curre
         <summary aria-label="Language switcher">🌐 {currentLangLabel}</summary>
         <div class="lang-menu">
           {
-            LANG_OPTIONS.map((l) => (
+            availableLangs.map((l) => (
               <a
                 href={switchLangPath(l.code)}
                 lang={l.code}
