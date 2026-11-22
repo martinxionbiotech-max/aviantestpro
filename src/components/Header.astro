@@ -1,6 +1,7 @@
 ---
 import fs from 'node:fs';
 import path from 'node:path';
+import { LANG_ALL_SLUGS } from './Footer.astro';
 const LANG_CODES = ["ar", "ja", "ko", "es", "fr", "de"];
 const currentLang = Astro.url.pathname.split("/")[1];
 const isLangPage = LANG_CODES.includes(currentLang);
@@ -251,6 +252,12 @@ const LANG_OPTIONS = [
 
 // 反向映射：本地化 slug → 英文 slug（用于语言切换）
 const LANG_SLUG_TO_EN: Record<string, Record<string, string>> = {};
+for (const [enSlug, locMap] of Object.entries(LANG_ALL_SLUGS)) {
+  for (const [lg, loc] of Object.entries(locMap)) {
+    if (!LANG_SLUG_TO_EN[lg]) LANG_SLUG_TO_EN[lg] = {};
+    LANG_SLUG_TO_EN[lg][loc] = enSlug;
+  }
+}
 for (const [lg, locMap] of Object.entries(LANG_SLUGS)) {
   for (const [enSlug, loc] of Object.entries(locMap)) {
     if (!LANG_SLUG_TO_EN[lg]) LANG_SLUG_TO_EN[lg] = {};
@@ -272,7 +279,7 @@ function switchLangPath(code: string) {
   if (code === "en") {
     return `/${enSlug}/`;
   }
-  const loc = LANG_SLUGS[code]?.[enSlug] ?? enSlug;
+  const loc = LANG_ALL_SLUGS[enSlug]?.[code] ?? LANG_SLUGS[code]?.[enSlug] ?? enSlug;
   return `/${code}/${loc}/`;
 }
 
@@ -284,7 +291,7 @@ const currentEnSlug = (() => {
 
 function langExists(code: string, enSlug: string) {
   if (code === "en") return true;
-  const loc = LANG_SLUGS[code]?.[enSlug] ?? enSlug;
+  const loc = LANG_ALL_SLUGS[enSlug]?.[code] ?? LANG_SLUGS[code]?.[enSlug] ?? enSlug;
   const base = path.join(process.cwd(), "src", "pages", code);
   if (!enSlug) return fs.existsSync(path.join(base, "index.astro")) || fs.existsSync(path.join(base, "index.md"));
   return [
