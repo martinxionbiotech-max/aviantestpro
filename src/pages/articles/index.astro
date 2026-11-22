@@ -35,12 +35,26 @@ const posts = [
   { slug: "can-you-only-tell-a-birds-gender-with-a-dna-test", title: "Can You Only Tell a Bird’s Gender With a DNA Test?", date: "May 10, 2026", excerpt: "The short answer to whether a DNA test is the only reliable way to tell a bird's gender." },
 ];
 
+const guides = [
+  { slug: "avian-testing-laboratory-quality-validation", title: "Avian Testing Laboratory Quality & Validation", excerpt: "How laboratory method, validation, controls, traceability, reporting and accreditation fit together as one evidence chain." },
+  { slug: "evaluate-avian-dna-testing-laboratory", title: "How to Evaluate an Avian DNA Testing Laboratory", excerpt: "A due-diligence sequence and weighted scorecard for comparing laboratories on evidence rather than logos." },
+  { slug: "pcr-assay-validation-avian-samples", title: "PCR Assay Validation for Avian Samples", excerpt: "Intended use, sample matrix, acceptance criteria and the validation record a laboratory should be able to show." },
+  { slug: "analytical-vs-diagnostic-sensitivity", title: "Analytical vs Diagnostic Sensitivity in Avian PCR", excerpt: "Why a limit of detection is not a diagnostic accuracy claim, with the formula and worked examples." },
+  { slug: "pcr-positive-negative-controls", title: "PCR Positive and Negative Controls in Avian Testing", excerpt: "What each control catches, what it misses, and how a failed control should change a batch result." },
+  { slug: "sample-traceability-chain-of-custody-dna-testing", title: "Sample Traceability and Chain of Custody", excerpt: "How identifiers, receipt records, storage and data linkage keep a result attached to the right bird." },
+  { slug: "failed-avian-dna-tests", title: "Failed Avian DNA Tests: Causes and Next Steps", excerpt: "How to classify rejection, inhibition, invalid runs and inconclusive results before switching laboratories." },
+  { slug: "bird-dna-test-report", title: "What a Bird DNA Test Report Should Contain", excerpt: "A pre-acceptance checklist for sample identity, method, controls, limitations, dates and amendments." },
+  { slug: "laboratory-accreditation-vs-quality-certification", title: "Laboratory Accreditation vs Quality Certification", excerpt: "ISO/IEC 17025, ISO 9001, scope and how to verify a credential against the test being purchased." },
+  { slug: "avian-dna-testing-supplier-evaluation", title: "Evaluating Avian DNA Testing Suppliers and Kits", excerpt: "Validation evidence, lot consistency, extraction fit, support and a ten-criterion supplier scorecard." },
+  { slug: "quality-control-high-volume-avian-testing", title: "Quality Control in High-Volume Avian Testing", excerpt: "Batch design, contamination control, review and performance indicators when sample volume rises." },
+];
+
 const hreflang = "<link rel=\"alternate\" hreflang=\"en-US\" href=\"https://aviantestpro.com/articles/\" /> <link rel=\"alternate\" hreflang=\"en\" href=\"https://aviantestpro.com/articles/\" /> <link rel=\"alternate\" hreflang=\"ar\" href=\"https://aviantestpro.com/ar/المقالات/\" /> <link rel=\"alternate\" hreflang=\"ja\" href=\"https://aviantestpro.com/ja/記事/\" /> <link rel=\"alternate\" hreflang=\"ko-KR\" href=\"https://aviantestpro.com/ko/기사/\" /> <link rel=\"alternate\" hreflang=\"ko\" href=\"https://aviantestpro.com/ko/기사/\" /> <link rel=\"alternate\" hreflang=\"es-ES\" href=\"https://aviantestpro.com/es/articulos/\" /> <link rel=\"alternate\" hreflang=\"es\" href=\"https://aviantestpro.com/es/articulos/\" /> <link rel=\"alternate\" hreflang=\"fr-FR\" href=\"https://aviantestpro.com/fr/articles/\" /> <link rel=\"alternate\" hreflang=\"fr\" href=\"https://aviantestpro.com/fr/articles/\" /> <link rel=\"alternate\" hreflang=\"de-DE\" href=\"https://aviantestpro.com/de/artikel/\" /> <link rel=\"alternate\" hreflang=\"de\" href=\"https://aviantestpro.com/de/artikel/\" /> <link rel=\"alternate\" hreflang=\"x-default\" href=\"https://aviantestpro.com/articles/\" />";
 ---
 <BaseLayout title={page.title} hreflang={hreflang} description={page.description} canonical={page.canonical} ogType="website" author={page.author} datePublished="2026-08-27" dateModified="2026-08-27">
   <article class="page-content">
     <h1 class="page-title">{page.h1}</h1>
-    <div class="entry-meta">By SENO Testing Center <span>/ {posts.length} articles</span></div>
+    <div class="entry-meta">By SENO Testing Center <span>/ {posts.length} articles + {guides.length} quality guides</span></div>
     <div class="article-list">
       {
         posts.map((p) => (
@@ -51,6 +65,23 @@ const hreflang = "<link rel=\"alternate\" hreflang=\"en-US\" href=\"https://avia
             <p class="article-list-excerpt">{p.excerpt}</p>
             <div class="article-list-meta">
               <span class="article-list-date">{p.date}</span>
+              <a class="article-list-more" href={`/${p.slug}/`}>Read more →</a>
+            </div>
+          </article>
+        ))
+      }
+    </div>
+    <h2 class="section-title" style="margin-top: 2.5rem;">Laboratory quality and validation</h2>
+    <p>Eleven guides on how to read laboratory evidence, from PCR validation and controls to reporting, accreditation and high-volume quality control.</p>
+    <div class="article-list">
+      {
+        guides.map((p) => (
+          <article class="article-list-item">
+            <h2 class="article-list-title">
+              <a href={`/${p.slug}/`}>{p.title}</a>
+            </h2>
+            <p class="article-list-excerpt">{p.excerpt}</p>
+            <div class="article-list-meta">
               <a class="article-list-more" href={`/${p.slug}/`}>Read more →</a>
             </div>
           </article>
