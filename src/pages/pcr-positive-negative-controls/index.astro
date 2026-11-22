@@ -1,0 +1,105 @@
+---
+import BaseLayout from "../../layouts/BaseLayout.astro";
+
+const page = {
+  title: "PCR Positive and Negative Controls in Avian Testing | SENO",
+  h1: "PCR Positive and Negative Controls in Avian Testing",
+  description: "What positive, negative, extraction, inhibition and internal controls detect in avian PCR, how to read a failed control, and when to reject a run.",
+  canonical: "/pcr-positive-negative-controls/",
+  author: "SENO Avian Genetic Test",
+  date: "November 22, 2026",
+};
+const articleHtml = `
+<p>A PCR plate can show a clean curve in a positive well, a flat line in a negative well, and three strong signals in field samples. None of those observations is self-validating. A result exists only after the controls, sample records and acceptance rules have been reviewed together. The <a href="/avian-testing-laboratory-quality-validation/">laboratory quality and validation guide</a> treats controls as one part of that chain, not a ritual added after the test.</p>
+<p>This page is for the person reading a laboratory SOP or deciding what to do after a control fails. It explains what common controls catch, what they miss, and how a run becomes an accepted result.</p>
+
+<h2>A Band or Curve Is Not Yet a Result</h2>
+<p>A band on a gel, a fluorescent curve or a called cycle threshold is raw evidence. It becomes a result when the target signal is interpreted against a cutoff and controls show the workflow performed as intended. A strong sample signal does not excuse a failed control; a blank well does not prove the batch is clean if extraction was compromised.</p>
+<p>Acceptance rules should be written before the batch, with signal limits, control criteria, and actions for partial and complete failures. Reviewers should not invent a new rule after seeing the samples.</p>
+
+<h2>Controls That Watch the Reaction</h2>
+<p>A positive control contains the target and should produce the expected signal. It checks reagent activity, setup, amplification and detection. A plasmid control may not behave like a virus in feather extract. It cannot show correct sample extraction if added only at amplification.</p>
+<p>A negative control contains no target but otherwise follows the relevant process. A no-template control (NTC) adds reagents without nucleic acid at PCR setup, looking for contamination in reagents or pipetting. They are not interchangeable: an NTC cannot detect extraction contamination, while a negative matrix control can expose more of the sample path.</p>
+
+<h2>Controls That Watch the Sample Path</h2>
+<p>An extraction control travels through lysis, binding, washing and elution. It may be a known negative matrix, a blank or a spiked sample that checks recovery. A blank detects contamination but not target loss from a difficult feather. A positive extraction control shows recovery, though it needs an acceptance range and a matrix resembling the client's sample.</p>
+<p>An internal amplification control (IAC) is added to each reaction or master mix and should amplify whether or not target is present. It catches inhibition and reaction failure in that tube. An inhibition control applies the idea to the sample matrix: known target is spiked into a representative extract to test suppression. Neither reveals a tube swap or mislabeled source.</p>
+
+<h2>How Many Controls and Where They Sit</h2>
+<p>The right number depends on batch size, extraction format, contamination risk and the validated design. Controls should cover reagent setup, the extraction batch and each reported reaction. A control at the end of a large batch may not represent the first samples.</p>
+<p>Place controls where they can expose the failure you care about. An NTC checks the master mix; extraction blanks at the start and end of a series can show carryover. Plate maps should connect each control to the samples it brackets. The <a href="/quality-control-high-volume-avian-testing/">high-volume quality-control</a> discussion covers scale.</p>
+<div class="table-wrap">
+<table class="data-table">
+<thead>
+<tr><th>Control</th><th>Failure it detects</th><th>Failure it misses</th><th>Typical placement</th></tr>
+</thead>
+<tbody>
+<tr><td>Positive control</td><td>Reaction, reagent or detection failure</td><td>Extraction loss if PCR-only</td><td>Each amplification batch</td></tr>
+<tr><td>Negative matrix control</td><td>Sample-path contamination</td><td>Reagent-only contamination</td><td>With extraction batch</td></tr>
+<tr><td>No-template control</td><td>Reagent or setup contamination</td><td>Extraction contamination</td><td>PCR setup, each plate</td></tr>
+<tr><td>Extraction blank</td><td>Carryover during extraction</td><td>Target loss</td><td>Start and end of extraction</td></tr>
+<tr><td>Internal amplification control</td><td>Inhibition or reaction failure</td><td>Mix-up or contamination</td><td>Each reaction or master mix</td></tr>
+<tr><td>Inhibition control</td><td>Matrix suppression</td><td>Mislabeling or carryover</td><td>Representative extracts</td></tr>
+</tbody>
+</table>
+</div>
+
+<h2>When a Control Fails</h2>
+<p>A failed control makes the affected run invalid until the cause is understood. It does not mean every sample is negative, or that every positive is false. It means the acceptance rule was not met, so the batch cannot support a reported call. Quarantine the run, review the control pattern and sample layout, check reagents and extraction records, and decide whether the fault is isolated or systemic.</p>
+<p>Invalid is not negative. A negative result means target was not detected above cutoff in a valid run. An invalid result means the run did not meet interpretation criteria. An inconclusive result means the run was valid but the sample lacked enough evidence for a confident category. Keep the states separate.</p>
+<p>Contamination investigation follows the pattern: a single failed NTC points to setup, repeated failures to a reagent or environment, and failures tied to one extraction batch to the sample path. A positive-control failure may be reagent, storage or dilution. Fix the action rather than simply repeating the plate.</p>
+<div class="table-wrap">
+<table class="data-table">
+<thead>
+<tr><th>Positive control</th><th>Negative or NTC</th><th>Internal control</th><th>Run status</th><th>Action</th></tr>
+</thead>
+<tbody>
+<tr><td>Pass</td><td>Pass</td><td>Pass</td><td>Valid</td><td>Review sample calls and report</td></tr>
+<tr><td>Fail</td><td>Any</td><td>Any</td><td>Invalid</td><td>Check material and reaction; repeat</td></tr>
+<tr><td>Any</td><td>Fail</td><td>Any</td><td>Invalid</td><td>Investigate contamination; repeat</td></tr>
+<tr><td>Any</td><td>Any</td><td>Fail</td><td>Invalid for affected samples</td><td>Re-extract; record inhibition</td></tr>
+</tbody>
+</table>
+</div>
+
+<h2>Control Material, Records, and Limits</h2>
+<p>Control material needs a defined source, lot, concentration range, storage condition and expiry. Prepare and aliquot it to limit freeze-thaw damage or contamination. A positive control beyond its useful life can fail for reasons unrelated to the assay; negative material can become contaminated.</p>
+<p>Records should show which controls ran, their values, the acceptance decision and the action. Link each repeat to the original batch. Controls do not replace proficiency testing, validation or a competent reviewer. The <a href="/pcr-assay-validation-avian-samples/">PCR validation guide</a> explains how acceptance criteria are set, and the <a href="/avian-virus-rt-pcr-test/">avian virus RT-PCR</a> page covers the RNA workflow. If a laboratory cannot explain a failure, use the <a href="/contact/">technical contact route</a> to request the batch record, not a different result.</p>
+
+<h2>Scenario: A Late Signal in the Negative Control</h2>
+<p>A laboratory reviews a plate with a late signal in the negative control and strong positive curves in three samples. The client has already asked whether the three birds are positive. The reviewer cannot answer from the sample curves alone.</p>
+<p>First, the acceptance rule decides whether the late signal is inside the validated negative-control limit. If it is above that limit, the run is not reportable under the SOP. If the signal sits in a defined review zone, the SOP may require a repeat before release. The laboratory should not decide by eye after seeing the positives.</p>
+<p>The strong sample signals are useful but not a result until the batch passes. Were controls placed before or after samples? Did the extraction blank also signal? Was the NTC in the same master mix? Did one operator handle positive control near sample setup? Are the three positives from one extraction batch? A repeat with fresh reagents and a new plate map can separate contamination from true positives. The control pattern, not the sample signal, decides whether the plate can be released.</p>
+<p>The client should be told that the batch is under review, which control failed and when a repeat will be reported. If the repeat passes and the three samples remain positive, the later report can describe detected results with the original review documented. If the repeat is invalid again, investigate before accepting another batch. Reporting the first plate and explaining away the control would make positives look stronger than the evidence allows. Rejecting without investigation would also be premature; the pattern, not fear, sets the next step.</p>
+
+<h2>What we would do</h2>
+<p>We would not release a result from a plate whose negative control meets the laboratory's failure rule, even when the sample curves are strong. We would ask for the control values, plate map, extraction records and predefined action. The exception is a signal formally inside the validated negative-control acceptance band, in which case the documented review route applies. Otherwise, we would request a repeat with fresh reagents and a written explanation to the client.</p>
+
+<h2>Questions buyers ask</h2>
+<h3>What is the difference between a negative control and an NTC?</h3>
+<p>A negative control can include a target-free matrix and may follow extraction, while an NTC contains reagents without template and usually begins at PCR setup. The NTC looks for reagent or setup contamination. A negative matrix control can expose sample-path contamination that an NTC cannot see.</p>
+<h3>Does a failed positive control invalidate every sample on the plate?</h3>
+<p>Under most acceptance rules, yes, because the reaction system cannot be shown to work for any result on that plate. The laboratory may repeat the batch or test a new aliquot, but it should not report the original calls until the failure is explained and the rule is met.</p>
+<h3>How many controls should a PCR batch contain?</h3>
+<p>There is no universal number. The set should cover reagent setup, extraction and each reported call, with placement that reflects the batch design. Ask for the rule and plate map rather than a control count without context.</p>
+<h3>Can strong positives be reported if the negative control shows a late signal?</h3>
+<p>Not while the batch fails the acceptance rule. A late signal may be inside a review zone or above the failure limit; the SOP should decide. Sample-curve strength does not override contamination evidence. Repeat or investigate first, then report the accepted batch.</p>
+<h3>What should a laboratory tell a client after an invalid run?</h3>
+<p>The laboratory should name the control category that failed, explain that results are not reportable, state whether re-extraction or a new sample is needed, and give a repeat timeline. Keep the original records and do not present a retest as if the first run never happened.</p>
+
+<h2>Sources</h2>
+<ol>
+<li><a href="https://doi.org/10.1373/clinchem.2008.112797">MIQE guidelines for quantitative real-time PCR experiments</a>, <em>Clinical Chemistry</em>.</li>
+<li><a href="https://www.who.int/publications/i/item/9789240011311">Laboratory biosafety manual, fourth edition</a>, World Health Organization.</li>
+<li><a href="https://www.iso.org/standard/76677.html">ISO 15189:2022, Medical laboratories — Requirements for quality and competence</a>, International Organization for Standardization.</li>
+<li><a href="https://www.iso.org/ISO-IEC-17025-testing-and-calibration-laboratories.html">ISO/IEC 17025: testing and calibration laboratories</a>, International Organization for Standardization.</li>
+</ol>
+`;
+---
+<BaseLayout title={page.title} description={page.description} canonical={page.canonical} ogType="article" author={page.author} datePublished="2026-11-22" dateModified="2026-11-22">
+  <article class="page-content">
+    <h1 class="page-title">{page.h1}</h1>
+    <div class="entry-meta">By SENO Avian Genetic Test <span>/ Published November 22, 2026</span></div>
+    <div class="entry-content" set:html={articleHtml} />
+  </article>
+</BaseLayout>

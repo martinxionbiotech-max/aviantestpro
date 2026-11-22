@@ -1,0 +1,116 @@
+---
+import BaseLayout from "../../layouts/BaseLayout.astro";
+
+const page = {
+  title: "Failed Avian DNA Tests: Causes and Next Steps | SENO",
+  h1: "Failed Avian DNA Tests: Causes and Next Steps",
+  description: "How to classify a failed avian DNA test, separate sample from laboratory causes, plan a repeat, and decide when switching labs solves the real problem.",
+  canonical: "/failed-avian-dna-tests/",
+  author: "SENO Avian Genetic Test",
+  date: "November 22, 2026",
+};
+const articleHtml = `
+<p>A client opens a report and sees the word "failed" beside a sample. Before calling the laboratory unreliable or sending a replacement, separate what failed from where it failed. The <a href="/avian-testing-laboratory-quality-validation/">laboratory quality and validation guide</a> treats a failed test as one event in a chain that runs from collection through reporting.</p>
+<p>A damaged feather, rejected tube, inhibited extract, invalid control and weak signal can all end in a failure message. They call for different responses. Classify the event, ask what evidence accompanies it, and then decide whether a new supplier would change the outcome.</p>
+
+<h2>When a Result Says Failed</h2>
+<p>"Failed" is not a diagnosis of the laboratory or the bird. It is a label placed on a defined point in the workflow. The same word may mean that a sample was never tested, that DNA could not be recovered, that amplification was suppressed, that a control invalidated the run, or that the evidence did not support a confident call.</p>
+<p>Ask for the exact status and the stage where it occurred. A laboratory that cannot name the stage is giving the client a mood, not a result. The written policy should define each status and its action.</p>
+
+<h2>Pre-Analytical, Analytical, and Post-Analytical Failures</h2>
+<p>Pre-analytical events happen before testing: poor collection, heat exposure, leakage, missing labels or rejection at receipt. Analytical events occur inside testing: extraction loss, inhibition, failed controls or low target. Post-analytical failure covers a wrong identifier, transcription error or report released against the wrong record.</p>
+<p>The category changes the remedy. Another PCR run cannot fix unsuitable material. An analytical failure may be resolved with a new extract. A post-analytical error requires a controlled correction and a check of other reports.</p>
+<div class="table-wrap">
+<table class="data-table">
+<thead>
+<tr><th>Failure category</th><th>Typical signal</th><th>First question</th><th>Usual next step</th></tr>
+</thead>
+<tbody>
+<tr><td>Rejection at receipt</td><td>Broken tube, missing label or leak</td><td>Was condition recorded before accessioning?</td><td>Resample or document acceptance</td></tr>
+<tr><td>Extraction failure</td><td>Low DNA recovery or extraction control outside limit</td><td>Did sample type and lysis suit the protocol?</td><td>Re-extract or request a new sample</td></tr>
+<tr><td>Inhibition</td><td>Internal control suppressed or delayed</td><td>Was the extract inhibited or diluted?</td><td>Re-extract or clean up, then repeat</td></tr>
+<tr><td>Invalid controls</td><td>Failed negative or positive control</td><td>Which control failed and what did the SOP require?</td><td>Reject the run and repeat</td></tr>
+<tr><td>Insufficient signal</td><td>Target near or below the cutoff</td><td>Is evidence below the reporting limit?</td><td>Call inconclusive, not negative</td></tr>
+<tr><td>Inconclusive result</td><td>Conflicting replicates or weak evidence</td><td>Were predefined decision rules followed?</td><td>Repeat, test another marker or recollect</td></tr>
+<tr><td>Post-analytical error</td><td>Identifier mismatch or wrong report version</td><td>Does the audit trail match the accession?</td><td>Correct through a documented amendment</td></tr>
+</tbody>
+</table>
+</div>
+
+<h2>Rejection, Extraction Failure, Inhibition, and Inconclusive Calls</h2>
+<p>Rejection means the laboratory declined the sample, usually for identity, condition or safety. Extraction failure means the protocol did not recover usable material. Inhibition means the extract suppressed the reaction. Invalid controls mean the run cannot support any sample call. Insufficient signal falls below the reporting limit. Inconclusive means the evidence did not resolve the question.</p>
+<p>These statuses should not be collapsed into "negative." A failed test is not evidence of absence. It is evidence that the process did not reach a reportable conclusion.</p>
+
+<h2>What the Report Should State</h2>
+<p>The failure notice should carry the same client and sample identifiers as a successful report. It should name the stage, observed result, acceptance rule, receipt condition, disposition of remaining material and next step. It should state whether a repeat is included and who authorizes any charge.</p>
+<p>Ask whether the record is final, provisional or a laboratory incident note. The <a href="/bird-dna-test-report/">bird DNA test report guide</a> explains why version and authorization matter. A failure result that cannot be tied to an accession is not useful for a supplier comparison. The <a href="/sample-traceability-chain-of-custody-dna-testing/">sample traceability guide</a> covers the identity records behind that link. If the service involves a pathogen, <a href="/avian-virus-rt-pcr-test/">avian virus RT-PCR testing</a> may impose additional reporting requirements.</p>
+
+<h2>Investigating the Batch and Splitting Responsibility</h2>
+<p>Start with the batch, not the single tube. Did other samples in the same extraction, plate or lot fail? Were failures clustered by collection date, route, species or operator? A batch pattern points toward a shared cause; isolated failures look sample-specific.</p>
+<p>Responsibility follows documented control over each step. The useful question is who can supply the missing record.</p>
+<div class="table-wrap">
+<table class="data-table">
+<thead>
+<tr><th>Stage</th><th>Client</th><th>Courier</th><th>Laboratory</th></tr>
+</thead>
+<tbody>
+<tr><td>Collection and identification</td><td>Correct sample, unique label, collection record</td><td>Not usually involved</td><td>Provide label instructions and acceptance criteria</td></tr>
+<tr><td>Packaging and handover</td><td>Use specified materials and record dispatch</td><td>Check receipt condition and custody record</td><td>Publish packaging and shipping requirements</td></tr>
+<tr><td>Transit and delivery</td><td>Choose a suitable service and track the parcel</td><td>Protect the parcel and record transfers</td><td>Record arrival time and condition without delay</td></tr>
+<tr><td>Receipt and testing</td><td>Respond to a documented discrepancy</td><td>Provide delivery evidence when asked</td><td>Accession, test, review and report under controlled procedures</td></tr>
+</tbody>
+</table>
+</div>
+
+<h2>Repeat Policy, Corrective Action, and When to Switch</h2>
+<p>A repeat is appropriate when retained material can answer the question and the cause is understood well enough to avoid repeating it. Re-extraction may help inhibition; it will not repair a degraded feather. The policy should assign automatic repeats, approval needs, new-sample cases, payment and record handling.</p>
+<p>Corrective action addresses the immediate event. Preventive action asks what would stop it next time. A useful record covers the cause, action, owner and completion check. A promise to "try again" is not corrective action if the cause remains unknown.</p>
+<p>Switching makes sense when the same failure repeats without explanation, records cannot be produced, policy changes after the fact, or competence cannot be shown for the test. One shipping-linked cluster may not justify a move.</p>
+<p>A short written message can keep the exchange factual:</p>
+<ul>
+<li>List the affected sample identifiers and ask for the exact failure category and stage.</li>
+<li>Request the batch records, control outcome, acceptance rule and report version.</li>
+<li>Ask whether failures share a lot, operator, extraction batch or receipt route.</li>
+<li>State the decision needed, the response date and whether the client will authorize a repeat.</li>
+</ul>
+<p>If a result is disputed, link the communication to the identity record and report. For time-sensitive work, use the <a href="/contact/">contact route</a> to agree a response point before the next batch is prepared.</p>
+
+<h2>Scenario: Twelve Feather Samples in One Batch</h2>
+<p>Twelve of forty feather samples fail extraction in one submission. The client wants to change laboratories immediately. The reaction is understandable, but the count does not show where the problem began.</p>
+<p>First, treat the batch as the unit of investigation. Were the failures grouped by collection date, bird age, feather condition or courier parcel? Did the extraction control meet its criterion? Was DNA measurable but inhibited, or was recovery too low? A shared reagent lot or protocol change points toward a laboratory cause. A cluster tied to one collection event may point toward sample condition before arrival.</p>
+<p>The laboratory should show the receipt record, extraction batch sheet, reagent lot, control results, recovery data, analyst and instrument records, and any repeat outcome. It should say whether other same-day batches performed normally. A note that names "poor sample quality" without those records leaves the client unable to distinguish a sample problem from an extraction problem.</p>
+<p>Next, design the repeat rather than resubmitting the same material. If extracts are available, retest a subset with a different extraction route and fresh reagent lot. Include control material that represents feathers. If samples are exhausted, request a new collection with clear drying and packaging instructions, split by collection date and condition.</p>
+<p>Switch only after the current investigation has a documented outcome or misses a reasonable response commitment. A change may still be right, but it should rest on a pattern or missing evidence, not one unexplained cluster. The twelve failures are a signal to investigate, not verdicts on every result.</p>
+
+<h2>What we would do</h2>
+<p>We would request the exact failure code, batch record and affected report versions before discussing a new laboratory. We would separate receipt condition, extraction recovery, inhibition and control failures, then compare the twelve results with other batches. The exception is a documented identity breach or a repeated unexplained pattern across several batches; that can justify moving new work while the investigation continues. We would also set a written response point and keep the original reports linked to any replacement.</p>
+
+<h2>Questions buyers ask</h2>
+<h3>Does a failed avian DNA test mean the laboratory is unreliable?</h3>
+<p>No. One failure can come from sample condition, shipping, extraction, inhibition or a control event. Reliability depends on whether the laboratory identifies the stage and applies a remedy.</p>
+<h3>Should I send a replacement sample as soon as a test fails?</h3>
+<p>Ask whether retained material can support a repeat. If sample damage or low recovery is likely, a better-collected replacement may be faster. If the run was invalid, the laboratory should explain what it will repeat.</p>
+<h3>Who should pay for a repeat extraction or test?</h3>
+<p>The contract and failure policy decide. A laboratory-caused failure usually falls to the laboratory; a rejected or unsuitable sample may be charged again. Ask before submission and get the rule in writing.</p>
+<h3>How should a laboratory communicate a failed batch?</h3>
+<p>It should name the affected identifiers, failure category, stage, control result, disposition, repeat plan and contact. Avoid vague phrases such as technical issue, and do not present a retest as if the first run never occurred.</p>
+<h3>When is changing laboratories the right decision?</h3>
+<p>Change when failures repeat without a credible explanation, records are missing, the scope does not fit, or the repeat policy is ignored. A single sample-specific failure with a clear remedy is a reason to correct the process, not restart it.</p>
+
+<h2>Sources</h2>
+<ol>
+<li><a href="https://www.iso.org/ISO-IEC-17025-testing-and-calibration-laboratories.html">ISO/IEC 17025: testing and calibration laboratories</a>, International Organization for Standardization.</li>
+<li><a href="https://www.iso.org/standard/76677.html">ISO 15189:2022, Medical laboratories</a>, International Organization for Standardization.</li>
+<li><a href="https://doi.org/10.1373/clinchem.2008.112797">MIQE guidelines for quantitative real-time PCR experiments</a>, Clinical Chemistry.</li>
+<li><a href="https://www.aavld.org/accreditation-requirements">Accreditation requirements</a>, American Association of Veterinary Laboratory Diagnosticians.</li>
+<li><a href="https://data.aviantestpro.com/quality-control/lab-workflow/">Laboratory quality-control workflow</a>, SENO technical data.</li>
+</ol>
+`;
+---
+<BaseLayout title={page.title} description={page.description} canonical={page.canonical} ogType="article" author={page.author} datePublished="2026-11-22" dateModified="2026-11-22">
+  <article class="page-content">
+    <h1 class="page-title">{page.h1}</h1>
+    <div class="entry-meta">By SENO Avian Genetic Test <span>/ Published November 22, 2026</span></div>
+    <div class="entry-content" set:html={articleHtml} />
+  </article>
+</BaseLayout>

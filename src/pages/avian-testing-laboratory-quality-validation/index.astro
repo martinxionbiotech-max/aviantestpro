@@ -1,0 +1,266 @@
+---
+import BaseLayout from "../../layouts/BaseLayout.astro";
+
+const page = {
+  title: "Avian Testing Laboratory Quality & PCR Validation | SENO",
+  h1: "Avian Testing Laboratory Quality & Validation",
+  description: "How to evaluate avian DNA testing laboratories: PCR assay validation, controls, sample traceability, reports, accreditation and supplier evidence.",
+  canonical: "/avian-testing-laboratory-quality-validation/",
+  author: "SENO Avian Genetic Test",
+  date: "November 22, 2026",
+};
+const articleHtml = `
+<p>A breeder receives two quotations for parentage testing of a young bird. One is a price sheet with a turnaround promise and certificate-shaped graphic. The other includes the sample form, marker names, invalid-run policy, and a technical contact. The second package does not prove better quality, but it gives the buyer documents that can be checked.</p>
+<p>Laboratory quality becomes visible when a feather has no usable follicle, two reports disagree, or a viral screen is ambiguous. This guide explains what to request and how far the evidence goes. The <a href="/about-us/">SENO about page</a> describes the publisher; it is not evidence that any named laboratory, including SENO, holds a particular accreditation or validation status.</p>
+<p>That distinction matters because buyers often compare the wrong artifacts: price, speed, and visual polish. Useful evidence lives in scope statements, validation summaries, control rules, sample records, and report design.</p>
+
+<h2>What a Reliable Avian Laboratory Actually Is</h2>
+<p>A reliable laboratory is a controlled sequence: accepted sample, defined method, validation, controls, traceability, data review, authorized report, and quality management. Equipment matters, but two laboratories with identical cyclers can differ because one has written acceptance rules, training, record linkage, and an analyst empowered to invalidate a run.</p>
+<p>Ask a process question, such as what happens if an extraction control fails. A laboratory that answers with a defined investigation has exposed a system. One that returns to a broad accuracy claim has not.</p>
+<p>Quality management is not a certificate on a wall. It is the documented way a laboratory selects methods, trains staff, reviews records, handles complaints, and changes procedures. When the system works, a deviation leaves a trail and a correction can be explained months later.</p>
+
+<h2>How to Evaluate an Avian DNA Testing Laboratory</h2>
+<p>Begin with the decision the result will support. A single-bird sexing test, a parentage dispute, and a flock screen have different requirements. Define the species, sample type, purpose, and acceptable result categories before comparing price.</p>
+<div class="table-wrap">
+<table class="data-table">
+<thead>
+<tr><th>What to establish</th><th>Ask for</th><th>Strong response</th><th>Weak response</th></tr>
+</thead>
+<tbody>
+<tr><td>Test scope</td><td>Intended use, analytes, result categories</td><td>A written scope with clear boundaries</td><td>A generic DNA-testing page</td></tr>
+<tr><td>Species and sample fit</td><td>Evidence for your bird group and material</td><td>Validation or verification for both</td><td>“Works for all birds”</td></tr>
+<tr><td>Method suitability</td><td>Target, chemistry, platform, call rule</td><td>A specific method summary</td><td>A brand name only</td></tr>
+<tr><td>Validation</td><td>Study design and acceptance criteria</td><td>Dated summary with exclusions</td><td>One percentage, no denominator</td></tr>
+<tr><td>Controls</td><td>Control set and invalid-run rule</td><td>Defined limits and failure actions</td><td>“We always run controls”</td></tr>
+<tr><td>Traceability</td><td>Identifiers and record linkage</td><td>Accession to extraction, run, and report</td><td>Name-only labels</td></tr>
+<tr><td>Reporting</td><td>Template and authorization process</td><td>Clear status, method, and limitations</td><td>Result without context</td></tr>
+<tr><td>Failure handling</td><td>Investigation and resampling policy</td><td>Reason codes, action, communication</td><td>A silent retest</td></tr>
+<tr><td>Quality system</td><td>Certificate and current scope</td><td>Independent directory listing</td><td>A cropped logo</td></tr>
+<tr><td>Support</td><td>Named scientific contact</td><td>Answers on method and failure</td><td>Sales-only replies</td></tr>
+</tbody>
+</table>
+</div>
+<p>Where a partner or subcontractor performs part of the work, ask which entity handles each step and where records sit. A cheap test becomes costly when it must be repeated by a laboratory that cannot explain the first report.</p>
+<p>Use the same scope when comparing quotes. A fee may exclude re-extraction, a second review, or a report usable by a registry. Ask what triggers an extra charge and whether a repeat caused by laboratory error is handled differently from one caused by sample quality.</p>
+
+<h2>PCR Assay Validation: What the Record Must Show</h2>
+<p>Validation demonstrates that a method performs for a declared purpose. Verification checks that a method established elsewhere still works in the receiving laboratory. A new primer, species, sample matrix, or interpretation rule should trigger evidence that the change did not undermine the result.</p>
+<p>The intended use should name the analyte, taxonomic group, sample type, purpose, and permitted outcomes. “Avian sexing” is broad; W-chromosome detection from feather or blood in a named bird group, reported as male, female, or inconclusive, is testable.</p>
+<div class="table-wrap">
+<table class="data-table">
+<thead>
+<tr><th>Parameter</th><th>Question answered</th><th>Record should show</th></tr>
+</thead>
+<tbody>
+<tr><td>Detection limit</td><td>How little target is found reliably?</td><td>Replicates, matrix, and detection rule</td></tr>
+<tr><td>Specificity</td><td>Does it react to the wrong target?</td><td>Related organisms and host DNA</td></tr>
+<tr><td>Precision and repeatability</td><td>Do repeats agree in one run?</td><td>Levels, replicates, and variation</td></tr>
+<tr><td>Reproducibility</td><td>Does it hold across conditions?</td><td>Days, operators, or reagent lots</td></tr>
+<tr><td>Robustness</td><td>Which small changes matter?</td><td>Deliberate process variation</td></tr>
+<tr><td>Interference</td><td>Can inhibitors distort the call?</td><td>Relevant contaminants and mitigation</td></tr>
+<tr><td>Diagnostic agreement</td><td>How does it compare with truth?</td><td>Independent reference and uncertainty</td></tr>
+<tr><td>Sample-specific fit</td><td>Is your material represented?</td><td>Feather, blood, swab, or tissue data</td></tr>
+</tbody>
+</table>
+</div>
+<p>Sample-specific validation deserves particular attention. A method that performs on blood cannot be assumed to work on a feather, buccal swab, or dried stain. Extraction chemistry, inhibitors, target concentration, and DNA quality differ. If a laboratory adds a sample type, ask for bridging evidence showing that the new material performs under the reported acceptance rules.</p>
+<p>Acceptance criteria belong in the protocol before data arrive. They should set minimum performance, classify borderline samples, and define what happens outside the rule. The validation record should include the reference method, data, deviations, conclusion, version, and approval.</p>
+<p>Ask whether deviations were investigated and whether the approved version is still the one in use. A validation report that cannot be matched to a method version is difficult to apply to the sample in front of you.</p>
+<h3>What Validation Does Not Prove</h3>
+<p>It does not prove correct collection, equal operator performance, transfer to every species, or clinical meaning. A laboratory’s own summary is also self-reported until underlying records or external assessment support it. It cannot establish that performance will remain unchanged indefinitely; ongoing quality control and periodic review support that. Read the scope rather than treating validation as a universal badge. The <a href="/bird-dna-test-accuracy-validation/">accuracy validation guide</a> explains study design further.</p>
+
+<h2>Analytical Sensitivity and Diagnostic Sensitivity Are Not the Same</h2>
+<p>Analytical sensitivity is detection capability, often expressed as the lowest target amount found reliably in a specified matrix. Diagnostic sensitivity is the share of truly positive individuals classified positive:</p>
+<p><strong>Diagnostic sensitivity = TP / (TP + FN)</strong>, where TP is true positives and FN is false negatives. The denominator is all reference-positive cases, not all samples submitted.</p>
+<p>Analytical specificity is the companion question: does the assay respond only to the intended target? A method that reacts to a related organism can look sensitive while producing misleading classifications. The analysis of diagnostic agreement should include false positives and false negatives rather than only missed positives.</p>
+<p>A strong limit of detection does not establish diagnostic performance. The sample may be taken at the wrong time or site, transportation may degrade nucleic acid, extraction may fail, or the target strain may vary at a primer-binding site. The reference used to define “truly positive” also limits the conclusion.</p>
+<p>Diagnostic sensitivity depends on specimen selection, collection, timing, storage, extraction, inhibitors, target variability, and the link between analyte and condition. Prevalence changes the predictive meaning of a result but not sensitivity itself. Ask which definition a claim uses, and request the denominator or confidence interval rather than a bare proportion.</p>
+
+<h2>Controls: Why One Check Cannot Cover Every Failure</h2>
+<p>A control is useful only when its purpose and limit are defined. Each one watches a different part of the workflow, so a passing positive control cannot rescue a failed extraction.</p>
+<div class="table-wrap">
+<table class="data-table">
+<thead>
+<tr><th>Control</th><th>Failure it helps detect</th><th>What it cannot establish</th></tr>
+</thead>
+<tbody>
+<tr><td>Positive</td><td>Reagent, cycling, or detection failure</td><td>Sample recovery or diagnostic meaning</td></tr>
+<tr><td>Negative</td><td>Contamination during reaction setup</td><td>A clean extraction area</td></tr>
+<tr><td>No-template</td><td>Contamination in mix or consumables</td><td>Every carryover route</td></tr>
+<tr><td>Extraction</td><td>Lysis, binding, wash, or elution failure</td><td>Recovery from every sample</td></tr>
+<tr><td>Internal</td><td>Inhibition or failure in one tube</td><td>Extraction loss after the control is added</td></tr>
+</tbody>
+</table>
+</div>
+<p>Predefine how many controls are required, what signals are acceptable, and what invalidates a batch. A failed control should stop release unless a documented exception was approved in advance. A run cannot be rescued by reporting only the samples with attractive curves.</p>
+<p>Control failures should be reviewed as patterns. A contaminated reagent lot, a drifting extraction method, and a recurring internal-control delay point to different corrective actions. A positive control can pass while target is lost from a difficult matrix during extraction, which is why validation and extraction controls work together.</p>
+<p>Controls are run-specific assurance, not validation. For viral work, control design must also suit the sample type; the <a href="/avian-virus-rt-pcr-test/">avian virus RT-PCR overview</a> covers those context questions.</p>
+
+<h2>Sample Traceability and Chain of Custody</h2>
+<p>Traceability reconstructs what happened to a sample. Chain of custody records possession and safeguards. Identification links material to a bird, while data traceability links a result to extraction, instrument run, analysis file, and reviewer. A laboratory can have one without the others.</p>
+<p>A sound record uses a unique accession identifier and notes the bird, sample type, collection date, receipt condition, and discrepancies. It then links extraction, reagent lot, run, controls, analysis, authorization, storage, and retention. Corrections should preserve the original rather than overwrite history.</p>
+<p>Look for an audit trail that records who changed what. A record that can be edited without a version history is not a reliable account, even when the current entry looks complete. Retention matters too: a result may need to be reconstructed after the bird has moved or the original tube has been discarded.</p>
+<p>Photographs and barcodes help, but neither is custody by itself. Formal custody is proportionate for ownership disputes, legal or regulatory movement, studbook decisions, and high-value sales. Routine testing still needs identification and processing records; a missing formal protocol is not automatically a defect, but an inability to link sample to result is.</p>
+
+<h2>When a Test Fails, Is Inconclusive, or Is Invalid</h2>
+<p>Rejection occurs when material is unsuitable or unidentifiable. An invalid run failed a control or acceptance rule. An inconclusive result is valid but lacks a confident classification. A negative result comes from a valid method below its detection threshold. These categories should not be used interchangeably.</p>
+<p>Investigation should confirm identity and receipt, review extraction, inspect controls and raw data, check related failures, then repeat from retained extract or request a fresh sample. The outcome needs a documented corrective action and clear communication: what failed, whether a new sample is needed, and when.</p>
+<p>Failure categories help choose the response. A pre-analytical rejection may need a new sample; an analytical failure may need reagent, instrument, or method review; a post-analytical error may require report correction and client notification. A repeat without a reason code is activity, not corrective action.</p>
+<p>A failed test is not proof of an unreliable laboratory. A pattern of unexplained failures, missing records, or untraceable amendments is more serious than one well-explained rejection.</p>
+
+<h2>What a Useful Laboratory Report Contains</h2>
+<p>A report should identify the laboratory and site, client, bird or submission, unique sample, sample type, receipt date, test, method or target, result, interpretation, authorizer, and issue date. It should state limitations and paginate or version amendments so the issued record is unambiguous.</p>
+<p>Use a controlled vocabulary. <strong>Detected</strong> means the target was found above the reporting rule; it does not establish disease. <strong>Not detected</strong> means no target above the detection limit in that sample. <strong>Valid</strong> means controls and acceptance criteria passed. <strong>Invalid</strong> means reporting rules failed. <strong>Inconclusive</strong> means a valid run did not support a confident call.</p>
+<p>These terms should appear in the report itself, not just in a conversation with support staff. If a report uses “positive” or “negative,” the legend should define the target and the evidence. A result table without thresholds or validity status is difficult to audit.</p>
+<p>Method information and limitations are part of the result, not boilerplate. Report integrity means revisions are traceable and the result remains tied to the correct accession, run, and authorization record.</p>
+
+<h2>Accreditation and Quality Certification Are Different Claims</h2>
+<p>ISO/IEC 17025 addresses the competence of testing and calibration laboratories. ISO 9001 addresses a quality management system across many organizations. A laboratory may hold either, both, or neither. Neither credential proves that a particular species, sample, or assay was validated.</p>
+<p>Accreditation depends on scope. Ask for the certificate and scope, then verify the legal entity, site, standard, dates, methods, and sample matrices with the issuing body. A method outside the listed scope remains outside it, and a saved certificate may no longer reflect current status.</p>
+<p>Accreditation bodies assess against a standard and publish the scope, while certification bodies issue management-system certificates. The distinction matters when one is presented as the other, or when a certificate is displayed without the activities it covers. Ask whether the specific test is performed at an accredited site by a listed method.</p>
+<p>Veterinary laboratories may also be assessed against AAVLD requirements or other criteria. Read what is included rather than treating a logo as a finding. This page does not claim that SENO or any other laboratory holds a specific accreditation.</p>
+
+<h2>Evaluating Kits, Reagents, and Testing Services</h2>
+<p>Supplier evaluation starts with intended use and ends with records that can be reviewed. A certificate of analysis does not establish suitability for a new species or matrix, and a polished service portal is not a technical dossier.</p>
+<div class="table-wrap">
+<table class="data-table">
+<thead>
+<tr><th>Evaluation area</th><th>Question to ask</th><th>Evidence that counts</th></tr>
+</thead>
+<tbody>
+<tr><td>Documentation</td><td>What is the current intended use?</td><td>Instructions, protocol, and version history</td></tr>
+<tr><td>Technical consistency</td><td>Does the target match the claim?</td><td>Method summary and interpretation rule</td></tr>
+<tr><td>Validation claims</td><td>What was studied and against what?</td><td>Design, reference, criteria, and limitations</td></tr>
+<tr><td>Species and sample</td><td>Is my use represented?</td><td>Matrix-specific performance data</td></tr>
+<tr><td>Controls</td><td>How is each run judged?</td><td>Required controls and failure actions</td></tr>
+<tr><td>Lot consistency</td><td>What changes between lots?</td><td>Release criteria and lot records</td></tr>
+<tr><td>Stability and shipping</td><td>What preserves performance?</td><td>Storage and transport evidence</td></tr>
+<tr><td>Software</td><td>How are calls made and changed?</td><td>Version, thresholds, audit trail</td></tr>
+<tr><td>Technical support</td><td>Who resolves unexpected results?</td><td>Named route and escalation</td></tr>
+<tr><td>Change notice</td><td>Will users learn of changes?</td><td>Notification and revalidation policy</td></tr>
+</tbody>
+</table>
+</div>
+<p>Sort claims into performance, process, and credential categories. A performance claim needs analytical or diagnostic data; a process claim needs a procedure and record; a credential claim needs a current certificate and scope. Mixing them lets a strong credential stand in for evidence that was never supplied.</p>
+<p>The published <a href="https://data.aviantestpro.com/quality-control/lab-workflow/" target="_blank" rel="noopener">quality-control workflow reference</a> can help structure the comparison. Use it to ask where a supplier covers or omits a step, not as an audit finding.</p>
+
+<h2>High Volume Is Not the Same as High Quality</h2>
+<p>A rack of ninety-six samples does not prove competence. Volume can justify automation and specialization, but it can also spread a small error across more results. Barcoding, verified plate maps, defined batch sizes, and independent review reduce variation; they do not remove the need for calibrated equipment, contamination control, or a reviewer who can stop release.</p>
+<p>Track invalid, repeat, rejection, and control-failure rates with denominators and reason codes. Turnaround time needs a definition: receipt to accession, accession to result, and result to report are different intervals. A fast report on an invalid or untraceable result is not an advantage.</p>
+<p>Track report corrections and complaints as well, because they reveal failures detected internally or challenged by a client. A number without a period, denominator, and reason category can make normal variation look like a trend. Ask how indicators are reviewed and what change followed.</p>
+
+<h2>What Counts as Evidence of Credibility</h2>
+<p>Credible claims point to documents someone outside marketing can examine. The document need not be a journal article for every operational statement, but it should connect the claim to a defined test, species, sample, and use.</p>
+<div class="table-wrap">
+<table class="data-table">
+<thead>
+<tr><th>Claim</th><th>Ask for</th><th>Insufficient by itself</th></tr>
+</thead>
+<tbody>
+<tr><td>Accredited</td><td>Current certificate and scope</td><td>A logo or old PDF</td></tr>
+<tr><td>Validated</td><td>Summary for this intended use</td><td>The word “validated”</td></tr>
+<tr><td>Sensitive</td><td>Definition and measured limit</td><td>An unqualified percentage</td></tr>
+<tr><td>Species-specific</td><td>Named species data</td><td>“Works for all birds”</td></tr>
+<tr><td>Fast</td><td>Start and end of the interval</td><td>A banner promise</td></tr>
+<tr><td>Secure records</td><td>Audit trail and amendment history</td><td>A padlock icon</td></tr>
+</tbody>
+</table>
+</div>
+<p>Proficiency testing and interlaboratory comparison add external evidence, but their sample set, target list, frequency, and outlier response limit what they show. Participation is not successful performance, and a good round does not validate an unlisted species. Check whether evidence is current, in scope, species-relevant, sample-relevant, and fit for your use.</p>
+<p>Currency has two dimensions: the document date and the underlying method version. A current certificate can list an older method, while an older validation can be the only evidence for a newer kit. Ask for the version that applies to the sample you will send.</p>
+
+<h2>Scenario: Two Sexing Reports for the Same Bird</h2>
+<p>Imagine a buyer has a young parrot sexed before a sale. The first report says male; a second sample a week later says female. Both look official. Neither certificate resolves the conflict.</p>
+<p>First establish whether the reports concern the same bird and sample. Compare names or ring numbers, sample type, dates, and laboratory identifiers. A transposed label can create a disagreement before any assay is examined. If identity is weak, technical comparison is premature.</p>
+<p>Ask each laboratory for the record behind its call: species and method, validation for that group, controls, interpretation rule, and authorization. Certainty language is a reporting style, not evidence. A fresh sample can help if labeling is witnessed; rerunning the original extract tests repeatability, not sample identity. These are different experiments.</p>
+<p>If valid results remain discordant, ask whether both methods share the same marker assumptions. Two logos do not make two tests independent. A different method or reference sample may be needed. Preserve both reports and any correction, which should explain what changed and why.</p>
+<p>Language can also mislead. A result labelled “male” without a validity statement is less informative than one that states the method, control status, and limitation. The simpler report may have hidden the questions.</p>
+
+<h2>Decision Walk-Through: A Viral PCR Result Marked Detected</h2>
+<p>An owner sees “Detected” on a routine screen. The word can be valid without answering every question.</p>
+<ol>
+<li>Confirm the sample identifier, control result, and authorization.</li>
+<li>Identify the target and sample type, including whether a pool obscures attribution.</li>
+<li>Ask whether the signal was near the detection limit and whether it was repeated.</li>
+<li>Read the limitation: nucleic acid detection is not by itself evidence of infection or disease; clinical interpretation belongs to the attending veterinarian.</li>
+<li>Ask what alternative or confirmatory evidence exists, without treating a testing answer as treatment advice.</li>
+</ol>
+<p>A valid result, a suitable sample, and an explicit limitation belong together. A forceful email cannot replace them.</p>
+
+<h2>How a Weak Link Moves Through the Workflow</h2>
+<p>The chain runs from sample to method, validation and quality control, data review, and report. A failure at one stage changes the meaning of everything after it. A well-controlled extraction from the wrong bird is still the wrong bird. A validated assay outside its species scope is still unevidenced. A review without raw-data access is still incomplete.</p>
+<p>Sample collection is part of the chain too. A correctly processed tube from an unverified bird can be internally perfect and externally useless. The buyer controls some links, which is why collection instructions, labels, and storage guidance deserve the same attention as assay selection.</p>
+<p>Some defects are structural: a blood-only method offered for feathers without bridging work, a batch reviewed for transcription but not inhibition, or a report that omits whether a test was even performed. A later strong stage cannot repair the earlier gap. The confidence of the final report cannot exceed its weakest documented link.</p>
+
+<h2>Supporting Guides</h2>
+<p>Each guide below takes one part of the evidence chain and shows what to request, what the document can support, and where the claim stops.</p>
+<ul>
+<li><a href="/evaluate-avian-dna-testing-laboratory/">How to evaluate an avian DNA testing laboratory</a> — a due-diligence sequence and weighted scorecard for comparing providers.</li>
+<li><a href="/pcr-assay-validation-avian-samples/">PCR assay validation for avian samples</a> — intended use, sample matrix, acceptance criteria and the validation record.</li>
+<li><a href="/analytical-vs-diagnostic-sensitivity/">Analytical vs diagnostic sensitivity</a> — why a detection limit is not a diagnostic accuracy claim, with the formula and worked examples.</li>
+<li><a href="/pcr-positive-negative-controls/">PCR positive and negative controls</a> — what each control catches, what it misses, and when a batch should be rejected.</li>
+<li><a href="/sample-traceability-chain-of-custody-dna-testing/">Sample traceability and chain of custody</a> — identifiers, record linkage and the limits of a label or photograph.</li>
+<li><a href="/failed-avian-dna-tests/">Failed avian DNA tests</a> — classifying rejection, inhibition, invalid runs and inconclusive results before changing laboratories.</li>
+<li><a href="/bird-dna-test-report/">What a bird DNA test report should contain</a> — a pre-acceptance checklist for identity, method, controls, limitations and amendments.</li>
+<li><a href="/laboratory-accreditation-vs-quality-certification/">Laboratory accreditation vs quality certification</a> — ISO/IEC 17025, ISO 9001, scope and how to verify a claim.</li>
+<li><a href="/avian-dna-testing-supplier-evaluation/">Evaluating avian DNA testing suppliers and kits</a> — lot consistency, extraction fit, support and a ten-criterion scorecard.</li>
+<li><a href="/quality-control-high-volume-avian-testing/">Quality control in high-volume avian testing</a> — batch design, contamination control, review and performance indicators.</li>
+</ul>
+
+<h2>Questions to Ask Before Choosing a Laboratory</h2>
+<p>Put the questions in writing and tie them to your sample.</p>
+<ul>
+<li><strong>Capability:</strong> Which species, sample types, and purposes are covered, and what is subcontracted?</li>
+<li><strong>Validation:</strong> What is the intended use, and can I see evidence for my species and sample?</li>
+<li><strong>Quality control:</strong> Which controls are used, what invalidates a batch, and how are failures investigated?</li>
+<li><strong>Sample management:</strong> How are identifiers, receipt conditions, extracts, and records linked?</li>
+<li><strong>Reporting:</strong> Can I see the template, validity terms, limitations, authorizer, and amendment process?</li>
+<li><strong>Credentials:</strong> If accreditation is claimed, what exact scope, site, standard, and current status apply?</li>
+<li><strong>Support:</strong> Who answers technical questions, and what happens after a disputed result?</li>
+</ul>
+<p>These are procurement questions, not accusations. SENO’s <a href="/contact/">contact page</a> is one route for sample or document questions, and the <a href="/faq/">FAQ</a> covers common service topics.</p>
+<p>If an answer is missing, ask again rather than inferring quality from silence. A laboratory may need time to locate a document, but it should be able to say which document applies and who owns it.</p>
+<h3>What We Would Do</h3>
+<p>Before sending a sample, we would request the test scope, the validation summary for the named species and sample type, and the current report template. We would ask how invalid runs are handled and read the accreditation certificate and scope if accreditation is offered. If the laboratory would not describe its method, controls, or failure process at all, we would walk away. The exception is a single failed test with a documented investigation; that can show a working system rather than a broken one. A pattern of unexplained failures would change that judgment.</p>
+
+<h2>Frequently Asked Questions</h2>
+<h3>Does ISO/IEC 17025 accreditation mean every test is accurate for every bird?</h3>
+<p>No. Accreditation applies to a defined scope, including listed activities, sites, and methods. A test outside that scope may still be offered, but it is not automatically covered. Read the current scope for your species and sample.</p>
+<h3>What is the difference between an invalid and an inconclusive test?</h3>
+<p>An invalid test failed a predefined control or acceptance rule, so the result cannot be reported as a classification. An inconclusive test had a valid run but did not produce enough evidence for a confident call.</p>
+<h3>How can I check whether a test was validated for my bird species?</h3>
+<p>Ask for the validation or verification record for the named species group and sample type. It should state intended use, reference samples, acceptance criteria, and limitations. A general claim that a test works for birds is not species-specific evidence.</p>
+<h3>Why ask for both negative and no-template controls?</h3>
+<p>They can detect contamination at different stages. A negative control may carry a blank through the workflow, while a no-template control monitors reaction setup without added nucleic acid. Ask how each is prepared and what invalidates the run.</p>
+<h3>Does a “detected” PCR result mean the bird is infected or diseased?</h3>
+<p>Not by itself. It means the method found the declared target above its reporting rule in that sample. It does not automatically establish infection, infectiousness, or disease; clinical interpretation belongs with the attending veterinarian.</p>
+<h3>Do I need chain of custody for a routine DNA sexing test?</h3>
+<p>Formal custody is usually unnecessary for a companion-bird sex test, but identification still matters. The laboratory should link the sample to an identifier, record receipt and processing, and preserve the result. Formal custody matters more in disputes or regulated movement.</p>
+<h3>Can a failed sample indicate a laboratory problem?</h3>
+<p>It can, but it is not proof. Failure may arise from collection, storage, transport, extraction, inhibition, or a control issue. What counts is whether the laboratory investigates, gives a reason category, and takes defined corrective action.</p>
+<h3>Does a bigger laboratory provide better quality?</h3>
+<p>Not necessarily. Scale can support automation, but it can also spread a process weakness across more samples. Evaluate scope, validation, controls, traceability, review, reporting, and failure handling at any size.</p>
+<h3>Can one laboratory use another laboratory’s validation evidence?</h3>
+<p>It may start with a manufacturer’s package or published evidence, but the receiving laboratory should verify performance under its own conditions. Species, sample type, reagents, equipment, and operators can all differ.</p>
+<h3>What should happen if a laboratory corrects my report?</h3>
+<p>A correction should produce a traceable amendment explaining what changed, when, and why. The original should remain retrievable and linked to the same accession and authorization record; a replacement PDF without history is weaker evidence.</p>
+<h3>How should I compare two laboratory quotations?</h3>
+<p>Compare the same intended use, species, sample type, controls, report format, repeat policy, and turnaround definition. A lower price does not compensate for a missing method description or an unclear invalid-run rule.</p>
+
+<h2>Sources</h2>
+<ol>
+<li><a href="https://www.iso.org/ISO-IEC-17025-testing-and-calibration-laboratories.html">ISO/IEC 17025: testing and calibration laboratories</a>, International Organization for Standardization.</li>
+<li><a href="https://www.iso.org/standard/66912.html">ISO 15189:2022, Medical laboratories — Requirements for quality and competence</a>, International Organization for Standardization.</li>
+<li><a href="https://www.iso.org/quality-management/">ISO quality management</a>, International Organization for Standardization.</li>
+<li><a href="https://www.aavld.org/accreditation-requirements">Accreditation requirements</a>, American Association of Veterinary Laboratory Diagnosticians.</li>
+<li><a href="https://data.aviantestpro.com/quality-control/lab-workflow/">Laboratory quality-control workflow</a>, SENO technical data.</li>
+</ol>
+`;
+---
+<BaseLayout title={page.title} description={page.description} canonical={page.canonical} ogType="article" author={page.author} datePublished="2026-11-22" dateModified="2026-11-22">
+  <article class="page-content">
+    <h1 class="page-title">{page.h1}</h1>
+    <div class="entry-meta">By SENO Avian Genetic Test <span>/ Published November 22, 2026</span></div>
+    <div class="entry-content" set:html={articleHtml} />
+  </article>
+</BaseLayout>

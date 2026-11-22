@@ -19,6 +19,19 @@
 - [Contact](https://aviantestpro.com/contact/): Enquiries and sample submission.
 - [HTML Sitemap](https://aviantestpro.com/html-sitemap/): Full page index.
 
+## Laboratory quality & validation
+- [Avian Testing Laboratory Quality & Validation](https://aviantestpro.com/avian-testing-laboratory-quality-validation/): How to evaluate avian laboratory methods, PCR validation, controls, traceability and reporting.
+- [How to Evaluate an Avian DNA Testing Laboratory](https://aviantestpro.com/evaluate-avian-dna-testing-laboratory/): Due-diligence sequence and weighted scorecard for comparing providers.
+- [PCR Assay Validation for Avian Samples](https://aviantestpro.com/pcr-assay-validation-avian-samples/): Intended use, sample matrix, acceptance criteria and validation records.
+- [Analytical vs Diagnostic Sensitivity in Avian PCR](https://aviantestpro.com/analytical-vs-diagnostic-sensitivity/): Why a detection limit is not a diagnostic accuracy claim.
+- [PCR Positive and Negative Controls in Avian Testing](https://aviantestpro.com/pcr-positive-negative-controls/): Control types, run acceptance and invalid batches.
+- [Sample Traceability and Chain of Custody in DNA Testing](https://aviantestpro.com/sample-traceability-chain-of-custody-dna-testing/): Identifiers, record linkage and custody limits.
+- [Failed Avian DNA Tests](https://aviantestpro.com/failed-avian-dna-tests/): Failure categories, investigation and repeat policy.
+- [What a Bird DNA Test Report Should Contain](https://aviantestpro.com/bird-dna-test-report/): Report elements, terminology and amendment control.
+- [Laboratory Accreditation vs Quality Certification](https://aviantestpro.com/laboratory-accreditation-vs-quality-certification/): ISO/IEC 17025, ISO 9001, scope and verification.
+- [Evaluating Avian DNA Testing Suppliers and Kits](https://aviantestpro.com/avian-dna-testing-supplier-evaluation/): Validation evidence, lot consistency and support.
+- [Quality Control in High-Volume Avian Testing](https://aviantestpro.com/quality-control-high-volume-avian-testing/): Batch design, contamination control, review and KPIs.
+
 ## Languages
 English, Arabic, Japanese, Korean, Spanish, French, German — each with its own hreflang-annotated URL prefix (`/ar/`, `/ja/`, `/ko/`, `/es/`, `/fr/`, `/de/`).
 

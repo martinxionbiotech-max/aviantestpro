@@ -1,0 +1,106 @@
+---
+import BaseLayout from "../../layouts/BaseLayout.astro";
+
+const page = {
+  title: "Sample Traceability and Chain of Custody | SENO",
+  h1: "Sample Traceability and Chain of Custody in DNA Testing",
+  description: "How sample identity and chain of custody work from collection to DNA report, where records break, and what documentation supports a parentage dispute.",
+  canonical: "/sample-traceability-chain-of-custody-dna-testing/",
+  author: "SENO Avian Genetic Test",
+  date: "November 22, 2026",
+};
+const articleHtml = `
+<p>A pigeon breeder prepares to dispute a parentage result. The sample was collected by a helper, handed to a courier, and relabeled at a courier office when the original label became unreadable. The laboratory report is clear; the identity chain is not. The breeder's question is no longer whether the assay worked, but whether the tube came from the chick named in the report. The <a href="/avian-testing-laboratory-quality-validation/">laboratory quality and validation guide</a> treats that link as part of quality, not paperwork.</p>
+<p>Traceability and chain of custody overlap, but they are not the same promise. This page separates the terms, follows identity from collection to report, and shows which records can resolve a dispute. A perfect assay cannot compensate for a broken identity chain.</p>
+
+<h2>The Sample With Two Names</h2>
+<p>A sample swap can happen at the bird, bench, courier office or data entry screen. It may be accidental: two feathers from one envelope, a label transferred with a smudge, a handwritten name read incorrectly. Deliberate substitution is also possible. Either way, the result can be accurate for the tube and wrong for the bird.</p>
+<p>Identity risk rises when collection is delegated, labels are ambiguous, samples are repackaged, or names rather than unique identifiers travel with the material. A result without an identity trail concerns an unidentified sample. A custody review starts before the laboratory receives anything.</p>
+
+<h2>Four Terms That Answer Different Questions</h2>
+<p>Traceability follows a sample and its records through the workflow. Chain of custody is a documented sequence of possession and transfer, often with signatures, seals and dates. Identification links the physical sample to the bird or source. Data traceability connects accession, extraction, amplification, analysis and report records.</p>
+<p>A laboratory may have strong data traceability and weak collection identification. A courier may have a signed custody form but no proof that the tube contained the right feather. One record does not repair the other.</p>
+<div class="table-wrap">
+<table class="data-table">
+<thead>
+<tr><th>Term</th><th>Question it answers</th><th>Evidence</th></tr>
+</thead>
+<tbody>
+<tr><td>Traceability</td><td>Can we follow the sample and records to report?</td><td>Linked identifiers, logs and audit trail</td></tr>
+<tr><td>Chain of custody</td><td>Who held it, when, and how was transfer documented?</td><td>Signed transfers, seals and courier records</td></tr>
+<tr><td>Identification</td><td>Is this tube from the named bird?</td><td>Collection record, label control, photographs</td></tr>
+<tr><td>Data traceability</td><td>Can each data file be tied to the sample?</td><td>Accession, file links and audit log</td></tr>
+</tbody>
+</table>
+</div>
+
+<h2>Identity Begins at Collection</h2>
+<p>Assign a unique identifier before the tube reaches the laboratory and keep it attached through every transfer. A bird's name may be secondary, but not the only key; names repeat and spellings change. Barcode labels, pre-printed forms and a collection sheet reduce transcription error. The label adhesive and ink must survive moisture, cold and handling.</p>
+<p>Receipt records should capture who delivered the sample, when, in what condition, and whether the label matched the paperwork. Photographs of sealed packets before opening can help in disputes, but only if linked to the identifier and stored with the case. A seal number without a photo or transfer entry proves less than it appears to.</p>
+
+<h2>Storage, Aliquoting, Processing, and Data Linkage</h2>
+<p>Every aliquot should inherit the parent identifier plus a traceable suffix. Storage location, temperature and date belong in the record. If a sample is split for parentage and disease testing, the split should not create two unrelated names. Processing records should show extraction batch, reagent lot, instrument, analyst and any repeat.</p>
+<p>Data-to-sample linkage should survive a corrected report. The audit trail should show which result was replaced, who authorized the change and why. If the result file cannot be tied to the accession, visual polish does not help. The <a href="https://data.aviantestpro.com/quality-control/lab-workflow/">laboratory workflow records</a> should demonstrate that chain if published.</p>
+
+<h2>When Formal Chain of Custody Matters</h2>
+<p>Formal custody matters when the result may be contested or used outside routine breeding. Examples include a parentage dispute, insurance claim, regulated movement, guaranteed sale or competition inquiry. The threshold is not whether the test is scientific; it is whether someone may later ask who handled the sample and how the record was protected.</p>
+<p>A custody form should identify the sample, collector, each transfer, package condition, storage and receipt. Signatures matter when tied to named people and times. The form should state what happened to unused material and retained extracts. If the original is consumed, an aliquot record can preserve a path for re-testing.</p>
+<div class="table-wrap">
+<table class="data-table">
+<thead>
+<tr><th>Record field</th><th>Why it matters</th></tr>
+</thead>
+<tbody>
+<tr><td>Unique sample identifier</td><td>Links tube, bird and report without a name</td></tr>
+<tr><td>Collector and collection time</td><td>Establishes who took possession and when</td></tr>
+<tr><td>Collection site and sample type</td><td>Documents source and expected material</td></tr>
+<tr><td>Seal number and condition</td><td>Helps detect opening or substitution</td></tr>
+<tr><td>Transfer signatures and times</td><td>Shows continuity between custodians</td></tr>
+<tr><td>Storage and shipment conditions</td><td>Supports preservation decisions</td></tr>
+<tr><td>Receipt condition and discrepancies</td><td>Creates a record before analysis</td></tr>
+<tr><td>Aliquot and disposal records</td><td>Links derived material to the original</td></tr>
+</tbody>
+</table>
+</div>
+
+<h2>Where Chains Break and What to Keep</h2>
+<p>Common breakpoints include unnamed third-party collection, labels from memory, courier repackaging, missing transfer signatures, mixed rack tubes, unlinked re-extraction and corrected reports without an amendment trail. A dispute often turns on one gap rather than a complete absence of records.</p>
+<p>A minimum traceability record should link the bird or source, unique sample ID, collection details, receipt condition, storage and processing, data files, report version and custody transfers. It should be usable by someone not present at collection. The <a href="/bird-dna-test-report/">bird DNA test report</a> guide explains what belongs on the report, while the <a href="/failed-avian-dna-tests/">failed avian DNA tests</a> guide covers resampling. For process questions, use the <a href="/contact/">contact route</a> to request the record package before debating the conclusion.</p>
+
+<h2>Scenario: A Relabeled Sample in a Parentage Dispute</h2>
+<p>A pigeon breeder disputes a parentage result after a third party collected the samples and a courier office relabeled them. The report says the tested chick and alleged sire are inconsistent as a parent-offspring pair. The breeder suspects the tube was switched.</p>
+<p>Trace the identity chain backward. At collection, who handled each chick, how was the identifier attached, and was the sample placed directly into a sealed tube? At handover, did the courier receive a manifest matching every label? At the courier office, who relabeled, what information was copied, and was the original label photographed? At receipt, did the laboratory record condition, seal number and any discrepancy before accessioning? During processing, do the aliquot, extraction, amplification and report carry the same identifier? If any step is missing, the identity risk must be stated, not guessed.</p>
+<p>The records that could settle it include the original collection sheet, label photographs, courier manifest, transfer signatures, receipt condition note, seal log, accession record, aliquoting record and audit trail. A retest can confirm the DNA result for the retained sample, but it cannot prove that the retained sample came from the bird unless the chain is intact. The identity question remains separate from the assay. No single document resolves the chain; the records have to agree.</p>
+<p>The next step is to request the record package and find where names, identifiers or seals diverge. If the chain is intact, the result can be defended. If it is not, the sample should be recollected with a witnessed identifier process, and the uncertainty should be disclosed.</p>
+
+<h2>What we would do</h2>
+<p>We would ask for the collection record, label photographs and courier manifest before requesting a new test. A retest can confirm what is in the tube; it cannot repair an identity gap. We would trace each identifier from bird to report and mark every transfer lacking a signature, seal record or matching label. The exception is a routine test where both parties accept the sample source and only the laboratory call is in question; then the method record comes first.</p>
+
+<h2>Questions buyers ask</h2>
+<h3>Is formal chain of custody required for every DNA test?</h3>
+<p>No. Routine testing may need reliable identification without a signed custody chain. Formal custody becomes important when a result may be contested, insured, regulated or used in a sale. The sample still needs a unique identifier and a receipt record.</p>
+<h3>What should happen if a label is illegible at the courier office?</h3>
+<p>Photograph the original label before any replacement, copy the same identifier rather than a new name, and document the relabeling for the laboratory. A clean new label with no record of the old one hides the event that needs review.</p>
+<h3>Can a retest resolve a suspected sample swap?</h3>
+<p>Only partly. A retest can confirm that the retained material gives the same result, but not that it came from the named bird. Resolving identity usually requires collection, transfer, seal and receipt records, or a new sample collected under a witnessed process.</p>
+<h3>How long should sample and custody records be kept?</h3>
+<p>Retention depends on laboratory policy, contract and applicable rules, which vary by setting. Ask before submitting, especially for a dispute or resale. The rule should be written, followed and long enough for the decision the report may support.</p>
+<h3>What makes a sample identifier reliable?</h3>
+<p>It should be unique, assigned before collection, attached with a durable label, recorded on the collection sheet and carried through aliquots and reports. Barcodes or duplicate labels reduce transcription errors. A bird's name should be additional information, not the only identifier.</p>
+
+<h2>Sources</h2>
+<ol>
+<li><a href="https://www.iso.org/ISO-IEC-17025-testing-and-calibration-laboratories.html">ISO/IEC 17025: testing and calibration laboratories</a>, International Organization for Standardization.</li>
+<li><a href="https://www.iso.org/standard/76677.html">ISO 15189:2022, Medical laboratories — Requirements for quality and competence</a>, International Organization for Standardization.</li>
+<li><a href="https://www.aavld.org/accreditation-requirements">Accreditation requirements</a>, American Association of Veterinary Laboratory Diagnosticians.</li>
+<li><a href="https://data.aviantestpro.com/quality-control/lab-workflow/">Laboratory quality-control workflow</a>, SENO technical data.</li>
+</ol>
+`;
+---
+<BaseLayout title={page.title} description={page.description} canonical={page.canonical} ogType="article" author={page.author} datePublished="2026-11-22" dateModified="2026-11-22">
+  <article class="page-content">
+    <h1 class="page-title">{page.h1}</h1>
+    <div class="entry-meta">By SENO Avian Genetic Test <span>/ Published November 22, 2026</span></div>
+    <div class="entry-content" set:html={articleHtml} />
+  </article>
+</BaseLayout>

@@ -1,0 +1,100 @@
+---
+import BaseLayout from "../../layouts/BaseLayout.astro";
+
+const page = {
+  title: "Analytical vs Diagnostic Sensitivity in Avian PCR | SENO",
+  h1: "Analytical vs Diagnostic Sensitivity in Avian PCR",
+  description: "How analytical sensitivity differs from diagnostic sensitivity in avian PCR, why a detection limit cannot prove accuracy, and what evidence to request.",
+  canonical: "/analytical-vs-diagnostic-sensitivity/",
+  author: "SENO Avian Genetic Test",
+  date: "November 22, 2026",
+};
+const articleHtml = `
+<p>A supplier lists “detects 10 copies” beside a PCR test and a breeder reads it as “about 99% accurate.” The jump is unsupported. One statement describes a detection event in a prepared sample; the other would describe how often the test classifies birds correctly against a reference standard. The <a href="/avian-testing-laboratory-quality-validation/">laboratory quality and validation guide</a> sets both inside the same quality system.</p>
+<p>This page separates the two claims and gives a practical rule for reading them. It does not estimate the accuracy of any named test. It shows what a buyer should ask before a sensitivity number becomes a breeding, quarantine or dispute decision.</p>
+
+<h2>Two Different Questions Wear One Word</h2>
+<p>Analytical sensitivity asks how little target an assay can detect under controlled conditions. Diagnostic sensitivity asks how often the test calls a truly positive bird positive. The first concerns the measurement system; the second concerns a test used in a defined population against a reference standard.</p>
+<div class="table-wrap">
+<table class="data-table">
+<thead>
+<tr><th>Claim</th><th>Question</th><th>Sample set</th><th>Metric</th><th>Main threat</th><th>What it supports</th></tr>
+</thead>
+<tbody>
+<tr><td>Analytical sensitivity</td><td>How little target is detected?</td><td>Spiked matrix and replicates</td><td>Limit of detection at a stated probability</td><td>Matrix, extraction and design</td><td>Detection under named conditions</td></tr>
+<tr><td>Diagnostic sensitivity</td><td>How often are true positives found?</td><td>Birds classified by a reference standard</td><td>TP divided by TP plus FN</td><td>Standard, sampling and spectrum</td><td>Performance in a defined population</td></tr>
+</tbody>
+</table>
+</div>
+<p>Neither claim is superior. They answer different decisions, and a laboratory may need both. The error is substituting one for the other when the decision requires clinical or flock-level classification.</p>
+
+<h2>What Analytical Sensitivity Measures</h2>
+<p>A useful detection-limit claim states the target, matrix, extraction method, input volume, replicate count, detection probability and analysis rule. It may also give the confidence interval or model used. Without those conditions, the number cannot be compared with another laboratory's figure.</p>
+<p>A low detection limit shows the assay can find a small amount of target in the tested material. It does not show that the sample was collected at the right time, that the target is present in the tissue submitted, or that the bird is infected. It also does not show how often an infected bird yields a positive result. That last question belongs to diagnostic performance. The <a href="/pcr-assay-validation-avian-samples/">PCR validation guide</a> explains how the measurement is established.</p>
+
+<h2>What Diagnostic Sensitivity Measures</h2>
+<p>Diagnostic sensitivity is the proportion of reference-positive subjects that the test classifies as positive. It is written as TP/(TP + FN), where TP is a true positive and FN is a false negative. The denominator is the number with the condition according to the reference standard, not the total tested. A percentage without that denominator and the reference standard is hard to interpret.</p>
+<p>The reference standard may be another assay, a composite of tests, clinical follow-up, pathology or a known-status panel. Each has limits. An imperfect standard can misclassify some negatives. If the same assay family is the standard, agreement can look better than the truth. Ask how status was assigned and whether readers were blinded.</p>
+<div class="table-wrap">
+<table class="data-table">
+<thead>
+<tr><th>Arithmetic illustration</th><th>True positives</th><th>False negatives</th><th>Calculation</th><th>Result</th><th>What it shows</th></tr>
+</thead>
+<tbody>
+<tr><td>A</td><td>90</td><td>10</td><td>90/(90 + 10)</td><td>90%</td><td>Larger group, same result</td></tr>
+<tr><td>B</td><td>45</td><td>5</td><td>45/(45 + 5)</td><td>90%</td><td>Smaller group, same proportion</td></tr>
+<tr><td>C</td><td>18</td><td>6</td><td>18/(18 + 6)</td><td>75%</td><td>More missed positives here</td></tr>
+</tbody>
+</table>
+</div>
+<p><strong>Arithmetic illustration only:</strong> these rows demonstrate the formula. They are not measurements from a laboratory, an assay or a bird population.</p>
+
+<h2>Why Diagnostic Sensitivity Moves in Practice</h2>
+<p>Spectrum bias appears when the study group differs from the birds in front of you. A test validated in severely affected birds may behave differently in mild or asymptomatic ones. Species, age, sample type and viral load shift the mix. A sensitivity figure belongs to the studied spectrum, not every future use.</p>
+<p>Timing and sample quality alter the result before the assay begins. A swab taken after shedding has fallen may contain little target; a feather from the wrong tract may miss the infection; poor storage can fragment nucleic acid. A cutoff changes the trade-off between missed positives and false positives. Pooled samples add dilution and attribution problems. A low detection limit solves none of these.</p>
+
+<h2>Prevalence, Predictive Values, and How to Read a Claim</h2>
+<p>Prevalence changes the meaning of a positive result without changing sensitivity. In a low-prevalence flock, a test with high sensitivity and specificity can produce many false positives relative to true positives; positive predictive value falls. Negative predictive value can remain high. Do not convert sensitivity into “chance my bird is positive” without prevalence and specificity.</p>
+<p>When a laboratory says its test is sensitive, ask: sensitive to what, in which sample, against which reference, and in which population? Look for the number of true positives and false negatives, the reference standard, exclusions, confidence intervals, and the invalid rate. A claim that omits the denominator has not given you a diagnostic estimate. The <a href="/bird-dna-test-accuracy-validation/">bird DNA test accuracy</a> discussion shows how those pieces fit a report.</p>
+
+<h2>A Decision Rule for Sensitivity Claims</h2>
+<p>Use the claim for the purpose it supports. An analytical detection limit can support a statement that the assay sees low target under defined conditions. It cannot support “accurate” or “reliable” for an individual bird. Diagnostic wording needs a reference-standard study in a relevant population, with enough detail to judge spectrum, timing and handling.</p>
+<p>If a laboratory cannot supply that study, treat the service as exploratory or ask for a validation plan. A failed or inconclusive test is not automatically proof of poor quality, but a claim that never distinguishes analytical from diagnostic evidence is a warning. The <a href="/failed-avian-dna-tests/">failed avian DNA tests</a> guide covers what a result failure can and cannot tell you.</p>
+
+<h2>Scenario: From “10 Copies” to “99% Accurate”</h2>
+<p>A breeder sees a supplier advertisement: the PCR assay “detects 10 copies.” In the next conversation, the breeder describes the test as 99% accurate. The supplier does not correct the inference. A price is agreed for loft screening before a race.</p>
+<p>The advertised figure is an analytical detection statement, even if the supplier has not shown the matrix, replicate count or probability behind it. “99% accurate” sounds like diagnostic performance, but no reference-positive birds, reference standard or false-negative count have been supplied. The breeder has moved from a laboratory measurement to a promise about individual birds without evidence for the second claim.</p>
+<p>The inference fails for several reasons. A bird may be infected but not shedding when sampled. The swab may miss the target, the feather may contain degraded DNA, or the target may fall below the detection limit in that material. The test may behave differently in asymptomatic birds. A positive can also reflect contamination or a nonspecific signal, so specificity matters alongside sensitivity.</p>
+<p>Evidence for a diagnostic claim would include a defined reference standard, the number of birds classified positive and negative, the number of true positives and false negatives, the species and sample types studied, the clinical spectrum, the sampling time, and the handling of invalid results. It would also need the prevalence of the tested population or enough data to calculate predictive values. A supplier that cannot provide those details can still sell a detection assay, but the breeder should not translate “10 copies” into “99% accurate.” The correct response is to request the record, not to restate the number.</p>
+
+<h2>What we would do</h2>
+<p>We would separate the analytical sentence from the diagnostic sentence in the supplier's own materials. A detection-limit claim would lead us to request the matrix, method and probability statement. A diagnostic claim would require a reference standard, true-positive and false-negative counts, and a population similar to ours. The exception is a screening decision with a planned confirmation step, where a detection assay may be useful without a diagnostic accuracy estimate for the individual bird.</p>
+
+<h2>Questions buyers ask</h2>
+<h3>Why is a limit of detection not diagnostic sensitivity?</h3>
+<p>A detection limit describes the smallest amount of target the assay can find under stated conditions. Diagnostic sensitivity describes how often the sampling and testing pathway classifies truly positive birds correctly. The second depends on timing, reference standard and population as well as chemistry.</p>
+<h3>Can a test have high sensitivity but still produce many false positives?</h3>
+<p>Yes. Sensitivity and specificity are separate. A test can find most true positives while also reacting to samples without the target. False positives become more prominent when prevalence is low, because true positives are rarer. Ask for both measures and the setting in which they were estimated.</p>
+<h3>What is spectrum bias in a PCR study?</h3>
+<p>It is a shift in performance caused by studying a different mix of cases than the one where the test will be used. A study in severely ill birds may not predict results in healthy carriers. Species, age, sample type and viral load can change the spectrum.</p>
+<h3>What reference standard should an avian PCR test use?</h3>
+<p>There is no universal answer. A defensible study might use a validated comparator, pathology, clinical follow-up or a composite reference, provided the limitations are stated. Ask how status was assigned, whether readers were blinded, and how discordant results were resolved.</p>
+<h3>What should I request when a supplier advertises sensitivity?</h3>
+<p>Request the intended use, sample matrix, detection limit conditions, true-positive and false-negative counts, reference standard, study population, exclusions and confidence intervals. For clinical or flock decisions, also ask for specificity, invalid rate and how prevalence affects positive predictive value.</p>
+
+<h2>Sources</h2>
+<ol>
+<li><a href="https://www.equator-network.org/reporting-guidelines/stard/">STARD 2015 reporting guideline for diagnostic accuracy studies</a>, EQUATOR Network.</li>
+<li><a href="https://doi.org/10.1373/clinchem.2008.112797">MIQE guidelines for quantitative real-time PCR experiments</a>, <em>Clinical Chemistry</em>.</li>
+<li><a href="https://www.iso.org/standard/76677.html">ISO 15189:2022, Medical laboratories — Requirements for quality and competence</a>, International Organization for Standardization.</li>
+<li><a href="https://www.iso.org/ISO-IEC-17025-testing-and-calibration-laboratories.html">ISO/IEC 17025: testing and calibration laboratories</a>, International Organization for Standardization.</li>
+</ol>
+`;
+---
+<BaseLayout title={page.title} description={page.description} canonical={page.canonical} ogType="article" author={page.author} datePublished="2026-11-22" dateModified="2026-11-22">
+  <article class="page-content">
+    <h1 class="page-title">{page.h1}</h1>
+    <div class="entry-meta">By SENO Avian Genetic Test <span>/ Published November 22, 2026</span></div>
+    <div class="entry-content" set:html={articleHtml} />
+  </article>
+</BaseLayout>
